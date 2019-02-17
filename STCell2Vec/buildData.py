@@ -23,17 +23,21 @@ while 1:
     traces.append(trace)
 file.close()
 
-scores = []
+scores = [[0 for x in range(len(traces))] for y in range (len(traces))]
 for i in range(len(traces)):
+    print("computing score for the " + str(i) + "th entity...")
     scores_of_i = []
-    for j in range(len(traces)):
-        scores_of_i.append(computeSim(traces[i], traces[j]))
-    scores.append(scores_of_i)
-
+    for j in range(i, len(traces)):
+        score = len([m for m, n in zip(traces[i], traces[j]) if m == n]) / len(traces[i])
+        #print(score)
+        scores[i][j] = score
+        scores[j][i] = score
+print("score computed")
 file = open("./data/train.csv", "w+")
 file.write("id,qid1,qid2,question1,question2,is_duplicate\n")
 id = 0
 for i in range(len(traces)):
+    print("writing the " + str(i) + "th entity")
     for j in range(len(traces)):
         file.write(str(id) + "," +
                    str(i) + "," +
