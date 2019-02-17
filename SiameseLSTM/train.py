@@ -20,7 +20,7 @@ from util import split_and_zero_padding
 from util import ManDist
 
 # File paths
-TRAIN_CSV = './data/trainpart-words.csv'
+TRAIN_CSV = '../STCell2Vec/data/train.csv'
 #print(os.path.abspath(TRAIN_CSV))
 
 # Load training set
@@ -29,7 +29,7 @@ for q in ['question1', 'question2']:
     train_df[q + '_n'] = train_df[q]
 
 # Make word2vec embeddings
-embedding_dim = 300
+embedding_dim = 100
 max_seq_length = 20
 use_w2v = True
 

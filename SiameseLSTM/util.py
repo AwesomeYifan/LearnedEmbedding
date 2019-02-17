@@ -54,7 +54,7 @@ def text_to_word_list(text):
 
     return text
 
-def make_w2v_embeddings(df, embedding_dim=300, empty_w2v=False):
+def make_w2v_embeddings(df, embedding_dim=100, empty_w2v=False):
     vocabs = {}
     vocabs_cnt = 0
 

@@ -1,6 +1,6 @@
 import pandas as pd
-
 import tensorflow as tf
+import numpy as np
 
 from util import make_w2v_embeddings
 from util import split_and_zero_padding
@@ -31,4 +31,4 @@ model = tf.keras.models.load_model('./data/SiameseLSTM.h5', custom_objects={'Man
 model.summary()
 
 prediction = model.predict([X_test['left'], X_test['right']])
-print(prediction)
+np.savetxt('./data/scores', prediction)
