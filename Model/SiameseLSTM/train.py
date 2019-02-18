@@ -20,8 +20,9 @@ from util import split_and_zero_padding
 from util import ManDist
 
 # File paths
-TRAIN_CSV = "/home/yifan/Projects/LearnedEmbedding/Data/data/train.csv"
-#print(os.path.abspath(TRAIN_CSV))
+TRAIN_CSV = "../../Data/data/train.csv"
+
+print(os.path.abspath(TRAIN_CSV))
 
 # Load training set
 train_df = pd.read_csv(TRAIN_CSV)
@@ -60,7 +61,7 @@ assert len(X_train['left']) == len(Y_train)
 # Model variables
 gpus = 0
 batch_size = 1024 * (gpus+1)
-n_epoch = 50
+n_epoch = 2
 n_hidden = 50
 
 # Define the shared model

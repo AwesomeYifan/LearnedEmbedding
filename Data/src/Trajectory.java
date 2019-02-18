@@ -19,7 +19,7 @@ public class Trajectory {
 
     public static int numCellPerRow = (int)(totalLength/cellLength);
 
-    public static int numEntities = 1000;
+    public static int numEntities = Utils.numEntities;
 
     //total duration, hour
     public static int duration = 17 * 2;
@@ -278,7 +278,8 @@ class generator extends Thread{
             if(p == -1) {
                 p = rand.nextInt(numCellPerRow*numCellPerRow);
                 for(int t =  startTime; t < endTime; t++) {
-                    String cell = t + "t" + p;
+//                    String cell = t + "t" + p;
+                    String cell = "t" + p;
                     traj.add(cell);
                 }
 
@@ -303,7 +304,8 @@ class generator extends Thread{
                     p = chooseOldLoc(oldLocs);
                 }
                 for(int t =  startTime; t < endTime; t++) {
-                    String cell = t + "t" + p;
+//                    String cell = t + "t" + p;
+                    String cell = "t" + p;
                     traj.add(cell);
                 }
             }

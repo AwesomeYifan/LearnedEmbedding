@@ -1,6 +1,6 @@
 from gensim.models import Word2Vec
 
-file = open("/home/yifan/Projects/LearnedEmbedding/Data/data/traces")
+file = open("../../Data/data/traces")
 data = []
 while 1:
     line = file.readline().strip()
