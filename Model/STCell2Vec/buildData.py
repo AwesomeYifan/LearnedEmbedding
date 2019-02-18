@@ -1,3 +1,5 @@
+import os
+
 def transfer_list(list):
     s = ""
     for i in range(len(list)):
@@ -5,7 +7,8 @@ def transfer_list(list):
     return s
 
 
-file = open("./data/traces")
+file = open("/home/yifan/Projects/LearnedEmbedding/Data/data/traces")
+#print(os.path.abspath('./data/traces'))
 traces = []
 while 1:
     line = file.readline().strip()

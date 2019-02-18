@@ -20,7 +20,7 @@ from util import split_and_zero_padding
 from util import ManDist
 
 # File paths
-TRAIN_CSV = '../STCell2Vec/data/train.csv'
+TRAIN_CSV = "/home/yifan/Projects/LearnedEmbedding/Data/data/train.csv"
 #print(os.path.abspath(TRAIN_CSV))
 
 # Load training set
