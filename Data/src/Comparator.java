@@ -7,7 +7,7 @@ import java.util.TreeMap;
 
 public class Comparator {
     public static void main (String[] args) throws IOException {
-        int[] checks = {2,10,30,50,100};
+        int[] checks = {2,10,20,30,50,100};
         double[] performs = new double[checks.length];
         Comparator cmp = new Comparator();
         cmp.formatter();

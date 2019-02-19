@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5f01c0a-ebff-4e31-99e9-350abf2d5a26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Comparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Data.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/NextLoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/NextLoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Record.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/Trajectory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Trajectory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trajectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trajectory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/.idea/Model.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/Model.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/STCell2Vec/buildData.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/STCell2Vec/buildData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/STCell2Vec/buildVec.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/STCell2Vec/buildVec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/data/afterTrain.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/data/scores" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/data/test-20.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/data/trainpart-words.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comparator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,13 +41,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="3286" />
+          <entry key="java" value="3290" />
           <entry key="test" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3286" />
+          <entry key="JAVA" value="3290" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -161,9 +138,9 @@
         <option value="$PROJECT_DIR$/src/util.java" />
         <option value="$PROJECT_DIR$/data/test" />
         <option value="$PROJECT_DIR$/src/Utils.java" />
-        <option value="$PROJECT_DIR$/src/Comparator.java" />
         <option value="$PROJECT_DIR$/src/Trajectory.java" />
         <option value="$PROJECT_DIR$/src/Record.java" />
+        <option value="$PROJECT_DIR$/src/Comparator.java" />
       </list>
     </option>
   </component>
@@ -196,6 +173,24 @@
             <path>
               <item name="Data" type="b2602c69:ProjectViewProjectNode" />
               <item name="Data" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Data" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -215,7 +210,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550533890272" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550534590357" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHubDesktop/app-1.6.2/resources/app/git/cmd/git.exe" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -287,18 +282,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550503912684</updated>
-      <workItem from="1550520814507" duration="10551000" />
+      <workItem from="1550520814507" duration="11247000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10551000" />
+    <option name="totallyTimeSpent" value="11247000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13113007" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13113007" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
