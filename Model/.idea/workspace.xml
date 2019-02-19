@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d24764c-4ea0-49f1-981d-33dfd8d3ee0d" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Data/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Data/src/Comparator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Data/src/Utils.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseLSTM/data/afterTrain.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseLSTM/data/scores" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseLSTM/data/test-20.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseLSTM/data/trainpart-words.csv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/NextLoc.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/NextLoc.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Record.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/Record.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Trajectory.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/Trajectory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/generator.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/generator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Data/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Data/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/Data.iml" afterPath="$PROJECT_DIR$/../Data/Data.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/Record.java" afterPath="$PROJECT_DIR$/../Data/src/Record.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/Trajectory.java" afterPath="$PROJECT_DIR$/../Data/src/Trajectory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Model.iml" afterPath="$PROJECT_DIR$/.idea/Model.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/STCell2Vec/buildData.py" afterPath="$PROJECT_DIR$/STCell2Vec/buildData.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/STCell2Vec/buildVec.py" afterPath="$PROJECT_DIR$/STCell2Vec/buildVec.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseLSTM/predict.py" afterPath="$PROJECT_DIR$/SiameseLSTM/predict.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseLSTM/train.py" afterPath="$PROJECT_DIR$/SiameseLSTM/train.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseLSTM/util.py" afterPath="$PROJECT_DIR$/SiameseLSTM/util.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,8 +42,8 @@
       <file leaf-file-name="predict.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SiameseLSTM/predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="494">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -556,8 +533,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SiameseLSTM/predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="494">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
