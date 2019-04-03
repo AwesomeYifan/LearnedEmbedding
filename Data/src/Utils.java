@@ -8,7 +8,7 @@ import java.util.TreeMap;
 
 public class Utils {
     static int topK = 100;
-    static int numEntities = 1000;
+    static int numEntities = 20;
     static int outputSize = 10;
     public static int updateQueue(TreeMap<Double, Set<String>> queue, int count, int capacity, double score, String element) {
         if(count < capacity) {
@@ -43,7 +43,7 @@ public class Utils {
             queue.put(score, tmpSet);
         }
     }
-    public static <T, F> void writeFileReverse(BufferedWriter bw, TreeMap<T, Set<F>> map) throws IOException {
+    public static <T, F> void writeDescending(BufferedWriter bw, TreeMap<T, Set<F>> map) throws IOException {
         while(!map.isEmpty()) {
             T t = map.lastKey();
             Set<F> set = map.get(t);
@@ -53,5 +53,27 @@ public class Utils {
             map.pollLastEntry();
         }
         bw.write("\n");
+    }
+
+    public static <T, F> void writeAscending(BufferedWriter bw, TreeMap<T, Set<F>> map) throws IOException {
+        while(!map.isEmpty()) {
+            T t = map.firstKey();
+            Set<F> set = map.get(t);
+            for(F f : set) {
+                bw.write(f + ",");
+            }
+            map.pollFirstEntry();
+        }
+        bw.write("\n");
+    }
+    public static <T,F> void updatePriorityQueue(TreeMap<T, Set<F>> map, T key, F value) {
+        if(map.containsKey(key)) {
+            map.get(key).add(value);
+        }
+        else {
+            Set<F> set = new HashSet<>();
+            set.add(value);
+            map.put(key, set);
+        }
     }
 }

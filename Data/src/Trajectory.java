@@ -22,7 +22,7 @@ public class Trajectory {
     public static int numEntities = Utils.numEntities;
 
     //total duration, hour
-    public static int duration = 17 * 2;
+    public static int duration = 5;
 
     //model parameters
     public static double alpha = 0.55;

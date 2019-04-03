@@ -80,7 +80,7 @@ public class Record {
         int numEntities = Trajectory.numEntities;
         BufferedReader br1 = new BufferedReader(new FileReader("./data/traces"));
         BufferedReader br2 = new BufferedReader(new FileReader("./data/traces"));
-        File file = new File("./data/train.csv");
+        File file = new File("./data/train1.csv");
         BufferedWriter ow = new BufferedWriter(new FileWriter(file));
         BufferedWriter bwOfRank = new BufferedWriter(new FileWriter("./data/ranks"));
         BufferedWriter wTest = new BufferedWriter(new FileWriter("./data/test"));
@@ -141,7 +141,7 @@ public class Record {
             idx1++;
             idx2 = 0;
             if(idx1 < outputSize)
-                Utils.writeFileReverse(bwOfRank, rankedList);
+                Utils.writeDescending(bwOfRank, rankedList);
         }
         wTest.flush();
         wTest.close();

@@ -51,7 +51,7 @@ public class Comparator {
             count = Utils.updateQueue(treeMap, count, Utils.topK, score, Integer.toString(idx));
             idx++;
             if(idx == 1000) {
-                Utils.writeFileReverse(w,treeMap);
+                Utils.writeDescending(w,treeMap);
                 treeMap = new TreeMap<>();
                 idx = 0;
                 count = 0;
