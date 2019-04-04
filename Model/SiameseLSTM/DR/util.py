@@ -2,9 +2,9 @@ import re
 import os
 
 import time
-from tensorflow.python.keras import backend as K
-from tensorflow.python.keras.layers import Layer
-from tensorflow.python.keras.preprocessing.sequence import pad_sequences
+from keras import backend as K
+from keras.layers import Layer
+from keras.preprocessing.sequence import pad_sequences
 
 from gensim.models import KeyedVectors
 

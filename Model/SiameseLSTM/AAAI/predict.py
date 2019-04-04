@@ -6,8 +6,10 @@ from AAAI.util import ManDist
 from AAAI.util import make_w2v_embeddings
 from AAAI.util import split_and_zero_padding
 
+
+
 # File paths
-TEST_CSV = '../../Data/data/test'
+TEST_CSV = "../../../Data/data/train1.csv"
 
 # Load training set
 test_df = pd.read_csv(TEST_CSV)

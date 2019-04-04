@@ -9,8 +9,8 @@ import java.util.TreeMap;
  * Keep 2 decimals for all vectors and distances to save space
  */
 public class Vectors {
-    private int dim = 5;
-    private int numPoints = 200;
+    private int dim = 2;
+    private int numPoints = 20;
     private int axisLength = 1;
 
     public static void main(String[] args) throws IOException, InterruptedException {

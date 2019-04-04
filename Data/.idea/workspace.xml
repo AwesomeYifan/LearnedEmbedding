@@ -5,29 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5f01c0a-ebff-4e31-99e9-350abf2d5a26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Vectors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/predict.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/word2vec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/temp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/Comparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Comparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Record.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/Trajectory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Trajectory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Comparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Trajectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trajectory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/.idea/Model.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/Model.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/temp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/temp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/Vectors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Vectors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/data/temp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/data/temp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/data/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/data/test.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/data/train.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/data/train.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vectors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vectors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/AAAI/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/AAAI/predict.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/AAAI/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/AAAI/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/word2vec.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/AAAI/word2vec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/AAAI/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/AAAI/predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/data/SiameseLSTM.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/data/history-graph.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/data/history-graph.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseLSTM/DR/train.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,7 +43,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="16" />
+          <entry key="csv" value="18" />
           <entry key="java" value="5" />
           <entry key="ranks" value="8" />
           <entry key="ranks2" value="3" />
@@ -61,19 +54,19 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="5" />
-          <entry key="PLAIN_TEXT" value="37" />
+          <entry key="PLAIN_TEXT" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="java" value="6148" />
+          <entry key="java" value="6164" />
           <entry key="test" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6148" />
+          <entry key="JAVA" value="6164" />
           <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
@@ -114,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/train.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
-              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -132,11 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Vectors.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="209">
+              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -252,7 +245,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554244992611" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554392927737" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHubDesktop/app-1.6.2/resources/app/git/cmd/git.exe" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -336,12 +329,12 @@
       <workItem from="1550520814507" duration="11290000" />
       <workItem from="1550535533216" duration="38000" />
       <workItem from="1553524772221" duration="21894000" />
-      <workItem from="1554235826609" duration="2163000" />
+      <workItem from="1554235826609" duration="4406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35385000" />
+    <option name="totallyTimeSpent" value="37628000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -396,13 +389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="511" selection-start-line="511" selection-end-line="511" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/test.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -473,20 +459,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/train.csv">
+    <entry file="file://$PROJECT_DIR$/data/test.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        <state>
+          <caret column="5" selection-start-column="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Vectors.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="209">
+          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/train.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
         </state>
       </provider>
     </entry>
