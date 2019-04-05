@@ -27,4 +27,4 @@ dense1_layer_model = Model(inputs=model.input,
 
 dense1_output = dense1_layer_model.predict(data)
 print("##################################################")
-print(dense1_output.shape)
+print(dense1_output)

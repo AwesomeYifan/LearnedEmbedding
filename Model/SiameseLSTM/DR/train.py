@@ -4,31 +4,25 @@ import matplotlib
 import pandas as pd
 import numpy as np
 import keras
-import theano
-
-import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
-from keras import backend as K
-
-import tensorflow as tf
 
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Input
 from keras.models import Model
 
-#from tensorflow.python.keras.models import Model, Sequential
-#from tensorflow.python.keras.layers import Input, Embedding, LSTM
-#from tensorflow.python.keras.layers.core import Dense, Activation, Dropout
-
 from util import ManDist
 from util import reformat
+from datagenerator import DataGenerator
+
+# global variables
+DR_dim = 3
+params = {'batch_size': 64,
+          'shuffle': True}
 
 matplotlib.use('Agg')
 # File paths
 TRAIN_CSV = "../../../Data/data/train.csv"
-
-#print(os.path.abspath(TRAIN_CSV))
 
 # Load training set
 train_df = pd.read_csv(TRAIN_CSV)
@@ -43,20 +37,24 @@ Y = train_df['dist']
 X_train, X_validation, Y_train, Y_validation = train_test_split(X, Y, test_size=validation_size)
 
 # Reformt data to ndarray to feed into the ML model
-X_train = reformat(X_train)
-X_validation = reformat(X_validation)
-#print(X_train)
-input_dim = 2
+#X_train = reformat(X_train)
+#X_validation = reformat(X_validation)
+batch_size = 100
+
+training_generator = DataGenerator(X_train, Y_train, batch_size)
+validation_generator = DataGenerator(X_validation, Y_validation, batch_size)
+
+# print(X_train)
+#input_dim = X_train[0][0].size
+input_dim=2
 # Model variables
 gpus = 0
-batch_size = 1024 * (gpus+1)
 n_epoch = 5
 
 # Define the shared model
 x = Sequential()
-#x.add(Dense(4))
-#x.add(Activation('relu'))
-x.add(Dense(5,activation='softmax',name="Dense_1"))
+x.add(Dense(4,activation='relu'))
+x.add(Dense(DR_dim,activation='softmax'))
 
 shared_model = x
 
@@ -72,35 +70,33 @@ if gpus >= 2:
     model = keras.utils.multi_gpu_model(model, gpus=gpus)
 
 model.compile(loss='mean_squared_error', optimizer='sgd', metrics=['accuracy'])
-model.summary()
-#shared_model.summary()
+#model.summary()
 
 # Start trainings
 training_start_time = time()
 
-malstm_trained = model.fit(X_train, Y_train,
-                           batch_size=batch_size, epochs=n_epoch,
-                           validation_data=(X_validation, Y_validation))
+#malstm_trained = model.fit(X_train, Y_train,
+#                           batch_size=batch_size, epochs=n_epoch,
+#                           validation_data=(X_validation, Y_validation))
+
+malstm_trained = model.fit_generator(generator=training_generator,
+                    validation_data=validation_generator,
+                    epochs=n_epoch,
+                    use_multiprocessing=True,
+                    workers=6)
+
 
 training_end_time = time()
 
-dense1_layer_model = Model(inputs=model.input,outputs=model.layers[2].get_output_at(0))
-print(dense1_layer_model)
-left = np.random.random((2,2))
-right = np.random.random((2,2))
-temp_data = [left,right]
-dense1_output = dense1_layer_model.predict(temp_data)
-print(dense1_output)
+ORIGIN_CSV = "../../../Data/data/train.csv"
 
-#get_activations = theano.function([model.layers[0].input,model.layers[1].input], model.layers[2].get_output_at(0), allow_input_downcast=True)
-#activations = get_activations(X_train) # same result as above
-
-layer_output = model.layers[2].get_output_at(0)
-print(layer_output)
-
-TEST_CSV = "../../../Data/data/train.csv"
-
-# Load training set
-test_df = pd.read_csv(TEST_CSV)
-X = test_df[['P1', 'P2']]
-X = reformat(X)
+# Load entire set
+origin_df = pd.read_csv(ORIGIN_CSV)
+origin_data = origin_df[['P1', 'P2']]
+origin_data = reformat(origin_data)
+num_layers=len(model.layers)
+desired_layer = Model(inputs=model.inputs,outputs=model.layers[num_layers-1].get_input_at(0))
+dr_start_time = time()
+desired_output = desired_layer.predict(origin_data)
+dr_end_time = time()
+np.savetxt('./data/reducedVectors.txt', desired_output[0])
