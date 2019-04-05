@@ -4,10 +4,11 @@ import keras
 
 class DataGenerator(keras.utils.Sequence):
 
-    def __init__(self, X, labels, batch_size):
+    def __init__(self, X, labels, batch_size, shuffle):
         self.X = X
         self.labels = labels
         self.batch_size = batch_size
+        self.shuffle = shuffle
 
     def __len__(self):
         return int(np.ceil(len(self.X) / float(self.batch_size)))
@@ -15,11 +16,9 @@ class DataGenerator(keras.utils.Sequence):
     def __getitem__(self, idx):
         batch_x = self.X[idx * self.batch_size:(idx + 1) * self.batch_size]
         batch_y = self.labels[idx * self.batch_size:(idx + 1) * self.batch_size]
-
+        #print("********************\n" + str(idx) + "\n************************")
         flag = True
-        idx = 0
         for index, row in batch_x.iterrows():
-            idx += 1
             temp_left = np.array([[float(i) for i in str(row['P1']).split()]])
             temp_right = np.array([[float(i) for i in str(row['P2']).split()]])
             if flag:

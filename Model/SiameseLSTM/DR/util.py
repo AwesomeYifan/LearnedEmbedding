@@ -5,6 +5,7 @@ import time
 from keras import backend as K
 from keras.layers import Layer
 from keras.preprocessing.sequence import pad_sequences
+from sklearn.metrics.pairwise import euclidean_distances
 
 from gensim.models import KeyedVectors
 
@@ -190,6 +191,8 @@ def split_and_zero_padding(df):
 
     return dataset
 
+def euc_dist(y_true, y_pred):
+    return euclidean_distances(y_true, y_pred)
 
 def reformat(df):
     flag = True

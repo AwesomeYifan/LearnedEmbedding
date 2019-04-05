@@ -1,5 +1,6 @@
 from time import time
 
+import matplotlib.pyplot as plt
 import matplotlib
 import pandas as pd
 import numpy as np
@@ -13,10 +14,13 @@ from keras.models import Model
 
 from util import ManDist
 from util import reformat
+from util import euc_dist
 from datagenerator import DataGenerator
 
 # global variables
-DR_dim = 3
+DR_dim = 20
+gpus = 0
+n_epoch = 3
 params = {'batch_size': 64,
           'shuffle': True}
 
@@ -39,23 +43,20 @@ X_train, X_validation, Y_train, Y_validation = train_test_split(X, Y, test_size=
 # Reformt data to ndarray to feed into the ML model
 #X_train = reformat(X_train)
 #X_validation = reformat(X_validation)
-batch_size = 100
+#batch_size = 100
 
-training_generator = DataGenerator(X_train, Y_train, batch_size)
-validation_generator = DataGenerator(X_validation, Y_validation, batch_size)
+training_generator = DataGenerator(X_train, Y_train, **params)
+validation_generator = DataGenerator(X_validation, Y_validation, **params)
 
 # print(X_train)
 #input_dim = X_train[0][0].size
-input_dim=2
+input_dim=len(X['P1'][0].split())
 # Model variables
-gpus = 0
-n_epoch = 5
 
 # Define the shared model
 x = Sequential()
 x.add(Dense(4,activation='relu'))
 x.add(Dense(DR_dim,activation='softmax'))
-
 shared_model = x
 
 # The visible layer
@@ -69,7 +70,8 @@ model = Model(inputs=[left_input, right_input], outputs=[malstm_distance])
 if gpus >= 2:
     model = keras.utils.multi_gpu_model(model, gpus=gpus)
 
-model.compile(loss='mean_squared_error', optimizer='sgd', metrics=['accuracy'])
+#model.compile(loss='mean_squared_error', optimizer='sgd', metrics=['mse'])
+model.compile(loss='mean_squared_error', optimizer='sgd')
 #model.summary()
 
 # Start trainings
@@ -82,13 +84,13 @@ training_start_time = time()
 malstm_trained = model.fit_generator(generator=training_generator,
                     validation_data=validation_generator,
                     epochs=n_epoch,
-                    use_multiprocessing=True,
-                    workers=6)
+                    use_multiprocessing=False,
+                    workers=1)
 
 
 training_end_time = time()
 
-ORIGIN_CSV = "../../../Data/data/train.csv"
+ORIGIN_CSV = "../../../Data/data/origin.csv"
 
 # Load entire set
 origin_df = pd.read_csv(ORIGIN_CSV)
@@ -100,3 +102,15 @@ dr_start_time = time()
 desired_output = desired_layer.predict(origin_data)
 dr_end_time = time()
 np.savetxt('./data/reducedVectors.txt', desired_output[0])
+
+# Plot loss
+#plt.subplot(212)
+plt.plot(malstm_trained.history['loss'])
+plt.plot(malstm_trained.history['val_loss'])
+plt.title('Model Loss')
+plt.ylabel('Loss')
+plt.xlabel('Epoch')
+plt.legend(['Train', 'Validation'], loc='upper right')
+
+plt.tight_layout(h_pad=1.0)
+plt.savefig('./data/history-graph.png')
