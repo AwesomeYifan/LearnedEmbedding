@@ -85,6 +85,10 @@ public final class Point2d implements HyperPoint {
                 RTree.isEqual(y, p.y);
     }
 
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
+
 
     public int hashCode() {
         return Double.hashCode(x) ^ 31*Double.hashCode(y);

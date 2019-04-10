@@ -68,16 +68,16 @@ public final class Pointnd implements HyperPoint {
         return value;
     }
 
-    public final static class Builder implements RectBuilder<Point3d> {
+    public final static class Builder implements RectBuilder<Pointnd> {
 
         @Override
-        public HyperRect getBBox(final Point3d point) {
-            return new Rect3d(point);
+        public HyperRect getBBox(final Pointnd point) {
+            return new Rectnd(point);
         }
 
         @Override
         public HyperRect getMbr(final HyperPoint p1, final HyperPoint p2) {
-            return new Rect3d((Point3d)p1, (Point3d)p2);
+            return new Rectnd((Pointnd)p1, (Pointnd)p2);
         }
     }
 }

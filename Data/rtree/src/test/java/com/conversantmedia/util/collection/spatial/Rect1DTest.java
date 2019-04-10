@@ -62,7 +62,6 @@ public class Rect1DTest {
         Assert.assertTrue(r1.contains(r2));
         Assert.assertFalse(r2.contains(r1));
         Assert.assertFalse(r1.contains(r3));
-
     }
 
     @Test

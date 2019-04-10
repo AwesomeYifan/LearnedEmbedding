@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/rtree/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rtree/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/rtree/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/M-Tree-master/java" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/M-Tree-master/java/mtree/tests" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -20,6 +22,17 @@
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/rtree/src/jars/mockito-core-1.10.19.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/rtree/src/jars/mockito-core-1.10.19.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>

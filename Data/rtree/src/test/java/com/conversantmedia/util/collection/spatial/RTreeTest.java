@@ -26,6 +26,7 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.List;
@@ -36,21 +37,24 @@ import java.util.ArrayList;
  */
 public class RTreeTest {
 
+
+    //given a rectangle and a R-tree, return the number of overlapped points
     @Test
     public void pointSearchTest() {
 
         final RTree<Point2d> pTree = new RTree<>(new Point2d.Builder(), 2, 8, RTree.Split.AXIAL);
 
         for(int i=0; i<10; i++) {
-            pTree.add(new Point2d(i, i));
+            Point2d p = new Point2d(i,i);
+            pTree.add(p);
+            //System.out.println(p.toString());
         }
 
-        final Rect2d rect = new Rect2d(new Point2d(2,2), new Point2d(8,8));
-        final Point2d[] result = new Point2d[10];
-
+        final Rect2d rect = new Rect2d(new Point2d(3,3), new Point2d(3,3));
+        final Point2d[] result = new Point2d[7];
         final int n = pTree.search(rect, result);
-        Assert.assertEquals(7, n);
-
+        Assert.assertEquals(1, n);
+        System.out.println(result[0].toString());
         for(int i=0; i<n; i++) {
             Assert.assertTrue(result[i].getCoord(Point2d.X) >= 2);
             Assert.assertTrue(result[i].getCoord(Point2d.X) <= 8);
