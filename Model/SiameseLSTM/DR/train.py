@@ -17,11 +17,18 @@ from util import reformat
 from util import euc_dist
 from datagenerator import DataGenerator
 
+'''
+The complexity of the network has great influence on the accuracy,
+generally, when the original dimension is small, the more simple the 
+network is, the more accurate it is. The best is of course let the
+reduced dimension equals the original dimension and use single layer
+to keep the vectors unchanged.
+'''
 # global variables
-DR_dim = 20
+DR_dim = 2
 gpus = 0
-n_epoch = 3
-params = {'batch_size': 64,
+n_epoch = 100
+params = {'batch_size': 16,
           'shuffle': True}
 
 matplotlib.use('Agg')
@@ -55,8 +62,8 @@ input_dim=len(X['P1'][0].split())
 
 # Define the shared model
 x = Sequential()
-x.add(Dense(4,activation='relu'))
-x.add(Dense(DR_dim,activation='softmax'))
+#x.add(Dense(20,activation='relu'))
+x.add(Dense(DR_dim,activation='relu'))
 shared_model = x
 
 # The visible layer
@@ -81,18 +88,25 @@ training_start_time = time()
 #                           batch_size=batch_size, epochs=n_epoch,
 #                           validation_data=(X_validation, Y_validation))
 
+callbacks = [keras.callbacks.EarlyStopping(monitor='val_loss', min_delta=0,
+                                          patience=10, verbose=0, mode='auto',
+                                          baseline=None, restore_best_weights=False)]
+
 malstm_trained = model.fit_generator(generator=training_generator,
                     validation_data=validation_generator,
                     epochs=n_epoch,
                     use_multiprocessing=False,
-                    workers=1)
+                    workers=1,
+                    callbacks=callbacks)
 
 
 training_end_time = time()
 
-ORIGIN_CSV = "../../../Data/data/origin.csv"
+#print(model.get_weights())
+
 
 # Load entire set
+ORIGIN_CSV = "../../../Data/data/origin.csv"
 origin_df = pd.read_csv(ORIGIN_CSV)
 origin_data = origin_df[['P1', 'P2']]
 origin_data = reformat(origin_data)

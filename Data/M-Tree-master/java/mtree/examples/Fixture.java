@@ -28,8 +28,8 @@ class Fixture {
 
 	private int dimensions;
 	List<Action> actions;
+	private int ID = 0;
 
-	
 	static String path(String fixtureName) {
 		return "M-Tree-master/cpp/tests/fixtures/" + fixtureName + ".txt";
 	}
@@ -80,10 +80,11 @@ class Fixture {
 	
 
 	private Data readData(List<String> fields) {
-		int[] values = new int[dimensions];
+		double[] values = new double[dimensions];
 		for(int d = 0; d < dimensions; d++) {
-			values[d] = Integer.parseInt(fields.remove(0));
+			values[d] = Double.parseDouble(fields.remove(0));
 		}
-		return new Data(values);
+		ID++;
+		return new Data(values, ID);
 	}
 }

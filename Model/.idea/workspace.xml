@@ -2,21 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d24764c-4ea0-49f1-981d-33dfd8d3ee0d" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/tests/Search.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Data/rtree/src/main/java/com/conversantmedia/util/collection/geometry/Rectnd.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/main/resources/RTree.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/main/resources/mM.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/rtree-master.zip" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/Main.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseLSTM/DR/data/SiameseLSTM.h5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseLSTM/DR/data/history-graph.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseLSTM/DR/data/reducedVectors.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseLSTM/DR/data/scores" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Data.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Fixture.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Fixture.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest$1.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Data/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/Data.iml" afterPath="$PROJECT_DIR$/../Data/Data.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/cpp/tests/fixtures/f04.txt" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/cpp/tests/fixtures/f04.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/Data.java" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/Data.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/Fixture.java" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/Fixture.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/MTreeTest.java" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/MTreeTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Data/out/production/Data/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Data.iml" afterPath="$PROJECT_DIR$/../Data/out/production/Data/Data.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/rtree/src/main/java/com/conversantmedia/util/collection/geometry/Point2d.java" afterPath="$PROJECT_DIR$/../Data/rtree/src/main/java/com/conversantmedia/util/collection/geometry/Point2d.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/rtree/src/main/java/com/conversantmedia/util/collection/geometry/Pointnd.java" afterPath="$PROJECT_DIR$/../Data/rtree/src/main/java/com/conversantmedia/util/collection/geometry/Pointnd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/rtree/src/test/java/com/conversantmedia/util/collection/spatial/RTreeTest.java" afterPath="$PROJECT_DIR$/../Data/rtree/src/test/java/com/conversantmedia/util/collection/spatial/RTreeTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/rtree/src/test/java/com/conversantmedia/util/collection/spatial/Rect1DTest.java" afterPath="$PROJECT_DIR$/../Data/rtree/src/test/java/com/conversantmedia/util/collection/spatial/Rect1DTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/temp.java" afterPath="$PROJECT_DIR$/../Data/src/temp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/cpp/tests/fixtures/f04.txt" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/cpp/tests/fixtures/f04.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseLSTM/DR/train.py" afterPath="$PROJECT_DIR$/SiameseLSTM/DR/train.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseLSTM/DR/util.py" afterPath="$PROJECT_DIR$/SiameseLSTM/DR/util.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,11 +68,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="util.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3667">
-              <caret line="193" column="12" lean-forward="false" selection-start-line="193" selection-start-column="12" selection-end-line="193" selection-end-column="12" />
+            <state relative-caret-position="259">
+              <caret line="223" column="0" lean-forward="true" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -78,20 +81,10 @@
         </entry>
       </file>
       <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SiameseLSTM/AAAI/train.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/train.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="66" column="16" lean-forward="true" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -99,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="draw.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="draw.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/workspace/Python/Association/draw.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+            <state relative-caret-position="133">
+              <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -114,8 +107,8 @@
       <file leaf-file-name="datagenerator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/datagenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+            <state relative-caret-position="114">
+              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -126,8 +119,8 @@
       <file leaf-file-name="predict.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiameseLSTM/AAAI/predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+            <state relative-caret-position="475">
+              <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="61" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -176,10 +169,10 @@
         <option value="$PROJECT_DIR$/SiameseLSTM/AAAI/predict.py" />
         <option value="$PROJECT_DIR$/SiameseLSTM/DR/predict.py" />
         <option value="$PROJECT_DIR$/SiameseLSTM/DR/temp.py" />
-        <option value="$PROJECT_DIR$/SiameseLSTM/DR/util.py" />
         <option value="$PROJECT_DIR$/SiameseLSTM/DR/datagenerator.py" />
-        <option value="$PROJECT_DIR$/SiameseLSTM/DR/train.py" />
         <option value="C:/workspace/Python/Association/draw.py" />
+        <option value="$PROJECT_DIR$/SiameseLSTM/DR/train.py" />
+        <option value="$PROJECT_DIR$/SiameseLSTM/DR/util.py" />
       </list>
     </option>
   </component>
@@ -213,6 +206,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -262,31 +256,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SiameseLSTM" />
+              <option name="myItemId" value="AAAI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -314,7 +289,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.draw">
+  <component name="RunManager" selected="Python.train">
     <configuration default="false" name="train" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -421,8 +396,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.draw" />
-        <item index="1" class="java.lang.String" itemvalue="Python.train" />
+        <item index="0" class="java.lang.String" itemvalue="Python.train" />
+        <item index="1" class="java.lang.String" itemvalue="Python.draw" />
       </list>
     </recent_temporary>
   </component>
@@ -455,10 +430,10 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15260416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15208334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35374868" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30411828" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -486,13 +461,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/STCell2Vec/buildVec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SiameseLSTM/AAAI/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -678,16 +646,6 @@
       </provider>
     </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow/python/keras/engine/training_utils.py" />
-    <entry file="file://$PROJECT_DIR$/SiameseLSTM/AAAI/predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="4" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/temp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -703,30 +661,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/util.py">
+    <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/data/reducedVectors.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3667">
-          <caret line="193" column="12" lean-forward="false" selection-start-line="193" selection-start-column="12" selection-end-line="193" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="853">
+          <caret line="1803" column="46" lean-forward="true" selection-start-line="1803" selection-start-column="46" selection-end-line="1803" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/datagenerator.py">
+    <entry file="file://$PROJECT_DIR$/SiameseLSTM/AAAI/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        <state relative-caret-position="-836">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiameseLSTM/AAAI/predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="61" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseLSTM/AAAI/train.py">
+    <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/datagenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="31" />
+        <state relative-caret-position="114">
+          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/keras/backend/tensorflow_backend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="1499" column="4" lean-forward="false" selection-start-line="1499" selection-start-column="4" selection-end-line="1499" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -739,27 +713,29 @@
     <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="66" column="16" lean-forward="true" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/data/reducedVectors.txt">
+    <entry file="file://C:/workspace/Python/Association/draw.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="853">
-          <caret line="1803" column="46" lean-forward="true" selection-start-line="1803" selection-start-column="46" selection-end-line="1803" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="133">
+          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/workspace/Python/Association/draw.py">
+    <entry file="file://$PROJECT_DIR$/SiameseLSTM/DR/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        <state relative-caret-position="259">
+          <caret line="223" column="0" lean-forward="true" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

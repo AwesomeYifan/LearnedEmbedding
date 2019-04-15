@@ -186,8 +186,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="86">
+              <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
               <folding>
                 <element signature="e#5532#5538#0" expanded="true" />
                 <element signature="e#6317#6340#0" expanded="true" />
@@ -363,7 +363,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554843655072" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554880114895" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/rtree/src/jars/mockito-core-1.10.19.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -396,7 +396,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MTreeTest (1)">
+  <component name="RunManager" selected="JUnit.MTreeTest.test07">
     <configuration name="ConcurrentRTreeTest.testSearchLocking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Data" />
       <extension name="coverage">
@@ -441,17 +441,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RTreeTest.pointSearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MTreeTest.test07" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Data" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.conversantmedia.util.collection.spatial.*" />
+          <option name="PATTERN" value="mtree.examples.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.conversantmedia.util.collection.spatial" />
-      <option name="MAIN_CLASS_NAME" value="com.conversantmedia.util.collection.spatial.RTreeTest" />
-      <option name="METHOD_NAME" value="pointSearchTest" />
+      <option name="PACKAGE_NAME" value="mtree.examples" />
+      <option name="MAIN_CLASS_NAME" value="mtree.examples.MTreeTest" />
+      <option name="METHOD_NAME" value="test07" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -474,19 +474,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.RTreeTest.pointSearchTest" />
       <item itemvalue="JUnit.RTreeTest.rect2DSearchTest" />
       <item itemvalue="JUnit.ConcurrentRTreeTest.testSearchLocking" />
       <item itemvalue="JUnit.MTreeTest" />
       <item itemvalue="JUnit.MTreeTest (1)" />
+      <item itemvalue="JUnit.MTreeTest.test07" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MTreeTest.test07" />
         <item itemvalue="JUnit.MTreeTest (1)" />
         <item itemvalue="JUnit.MTreeTest" />
         <item itemvalue="JUnit.ConcurrentRTreeTest.testSearchLocking" />
         <item itemvalue="JUnit.RTreeTest.rect2DSearchTest" />
-        <item itemvalue="JUnit.RTreeTest.pointSearchTest" />
       </list>
     </recent_temporary>
   </component>
@@ -504,14 +504,11 @@
       <workItem from="1550535533216" duration="38000" />
       <workItem from="1553524772221" duration="21894000" />
       <workItem from="1554235826609" duration="4406000" />
-      <workItem from="1554488492683" duration="26164000" />
+      <workItem from="1554488492683" duration="27004000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RTreeTest_pointSearchTest - 2019.04.08 at 16h 26m 12s.xml">
-      <configuration name="RTreeTest.pointSearchTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RTreeTest_pointSearchTest - 2019.04.08 at 16h 26m 35s.xml">
       <configuration name="RTreeTest.pointSearchTest" configurationId="JUnit" />
     </history-entry>
@@ -539,15 +536,18 @@
     <history-entry file="MTreeTest - 2019.04.09 at 16h 32m 44s.xml">
       <configuration name="MTreeTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MTreeTest_(1) - 2019.04.09 at 17h 01m 04s.xml">
+      <configuration name="MTreeTest (1)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70777000" />
+    <option name="totallyTimeSpent" value="71617000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1040" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.1369936" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.2622449" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.14925373" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -555,8 +555,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.0" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.497545" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.30552545" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -968,6 +968,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Fixture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Data.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -983,24 +997,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Fixture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="86">
+          <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
           <folding>
             <element signature="e#5532#5538#0" expanded="true" />
             <element signature="e#6317#6340#0" expanded="true" />

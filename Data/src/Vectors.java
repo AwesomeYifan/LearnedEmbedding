@@ -11,8 +11,8 @@ import java.util.TreeMap;
 */
 
 public class Vectors {
-    private int dim = 20;
-    private int numPoints = 5000;
+    private int dim = 2;
+    private int numPoints = 200;
     private int axisLength = 1;
     private double trainRatio = 0.1;
 
@@ -27,7 +27,8 @@ public class Vectors {
         Random random = new Random();
         for(int i = 0; i < numPoints; i++) {
             for(int j = 0; j < dim; j++) {
-                bw.write(String.valueOf(Math.round(random.nextDouble() * axisLength * 100.0) / 100.0));
+                //bw.write(String.valueOf(Math.round(random.nextDouble() * axisLength * 100.0) / 100.0));
+                bw.write(String.valueOf(random.nextDouble() * axisLength));
                 if(j != dim - 1)
                     bw.write(" ");
                 else
@@ -49,8 +50,8 @@ public class Vectors {
         bwTrain.write("P1,P2,dist\n");
         String line1, line2;
         double[] vec1, vec2;
-        int[] records = new int[10];
-        double oriDist, transformedDist;
+        int[] records = new int[11];
+        double oriSim, transformedSim;
         TreeMap<Double, Set<Integer>> rankList = new TreeMap<>();
         while((line1 = br1.readLine()) != null) {
             bwOrigin.write(line1 + "," + line1 + "\n");
@@ -58,21 +59,22 @@ public class Vectors {
             int idx = 0;
             while((line2 = br2.readLine()) != null) {
                 vec2 = this.transform(line2, " ");
-                oriDist = this.computeDistance(vec1, vec2, "Euclidean");
-                //if(oriDist == 0)
-                    //continue;
-                records[(int) Math.round(oriDist)]++;
+                oriSim = this.computeSimilarity(vec1, vec2, "Euclidean");
+//                if(oriSim == 1.0)
+//                    continue;
+                records[(int) Math.round(oriSim * 10)]++;
                 //build ranking list: ordered by
-                Utils.updatePriorityQueue(rankList, oriDist, idx);
+                Utils.updatePriorityQueue(rankList, oriSim, idx);
                 idx ++;
                 //build training data: vec1#vec2#expected distance in the reduced space
-                transformedDist = this.scale(oriDist, "origin");
+                transformedSim = this.scale(oriSim, "origin");
                 if(random.nextDouble() < trainRatio) {
                     bwTrain.write(line1 + "," + line2 + "," +
-                            String.valueOf(Math.round(transformedDist * 100.0) / 100.0) + "\n");
+                            //String.valueOf(Math.round(transformedSim * 100.0) / 100.0) + "\n");
+                            String.valueOf(transformedSim) + "\n");
                 }
             }
-            Utils.writeAscending(bwRank, rankList);
+            Utils.writeDescending(bwRank, rankList);
             rankList.clear();
             br2.close();
             br2 = new BufferedReader(new FileReader(new File("./data/temp.csv")));
@@ -96,14 +98,23 @@ public class Vectors {
         return result;
     }
 
-    private double computeDistance(double[] vec1, double[] vec2, String opt) {
+    private double computeSimilarity(double[] vec1, double[] vec2, String opt) {
         switch (opt) {
             case "Euclidean": {
-                double sum = 0;
+                double sumDist = 0;
+                double maxDist = Math.sqrt(dim);
                 for(int i = 0; i < vec1.length; i++) {
-                    sum += Math.pow(vec1[i] - vec2[i], 2);
+                    sumDist += Math.pow(vec1[i] - vec2[i], 2);
                 }
-                return Math.sqrt(sum);
+                return (maxDist - Math.sqrt(sumDist)) / maxDist;
+            }
+            case "Manhattan": {
+                double sumDist = 0;
+                double maxDist = dim;
+                for(int i = 0; i < vec1.length; i++) {
+                    sumDist += Math.abs(vec1[i] - vec2[i]);
+                }
+                return (maxDist - sumDist)/maxDist;
             }
             default:
                 return 0.0;
@@ -125,6 +136,7 @@ public class Vectors {
     private double stairTransform(double v) {
         BigDecimal bd = new BigDecimal(v);
         bd = bd.round(new MathContext(3));
-        return bd.doubleValue();
+        //return bd.doubleValue();
+        return Math.pow(bd.doubleValue(),2);
     }
 }

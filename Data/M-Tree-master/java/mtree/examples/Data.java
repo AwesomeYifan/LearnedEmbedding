@@ -2,17 +2,21 @@ package mtree.examples;
 
 import mtree.DistanceFunctions.EuclideanCoordinate;
 
+//Each point is an instance of Data
 class Data implements EuclideanCoordinate, Comparable<Data> {
 	
-	private final int[] values;
+	private final double[] values;
 	private final int hashCode;
+	private final int ID;
 	
-	Data(int... values) {
+	Data(double[] values, int ID) {
 		this.values = values;
+
+		this.ID = ID;
 		
 		int hashCode = 1;
-		for(int value : values) {
-			hashCode = 31*hashCode + value;
+		for(double value : values) {
+			hashCode = (int)(31*hashCode + value);
 		}
 		this.hashCode = hashCode;
 	}
@@ -21,6 +25,8 @@ class Data implements EuclideanCoordinate, Comparable<Data> {
 	public int dimensions() {
 		return values.length;
 	}
+
+	public int getID() {return ID;}
 
 	@Override
 	public double get(int index) {
@@ -49,13 +55,14 @@ class Data implements EuclideanCoordinate, Comparable<Data> {
 			return false;
 		}
 	}
-	
+
+	//why need a compareTo function?
 	@Override
 	public int compareTo(Data that) {
 		int dimensions = Math.min(this.dimensions(), that.dimensions());
 		for(int i = 0; i < dimensions; i++) {
-			int v1 = this.values[i];
-			int v2 = that.values[i];
+			double v1 = this.values[i];
+			double v2 = that.values[i];
 			if(v1 > v2) {
 				return +1;
 			}
