@@ -7,8 +7,8 @@ public class Main {
     static int[] topK = {2,5,10};
 
     public static void main(String[] args) throws IOException {
-        //String path = "../Model/SiameseLSTM/DR/data/reducedVectors.txt";
-        String path = "data/temp.csv";
+        String path = "../Model/SiameseLSTM/DR/data/reducedVectors.txt";
+        //String path = "data/temp.csv";
         MTreeClass mtree = new MTreeClass();
         //Set<Data> allData = new HashSet<Data>();
         List<Data> allData = new ArrayList<Data>();
@@ -41,7 +41,7 @@ public class Main {
         }
         double endTime = System.currentTimeMillis();
         bw.flush();bw.close();
-        //System.out.println(endTime - startTime);
+        System.out.println(endTime - startTime);
         Main.compareRank();
     }
     private static double[] compareRank() throws IOException{
@@ -55,7 +55,7 @@ public class Main {
             String[] records2 = line2.split(",");
             List<Integer> list1 = toIntList(records1, topK[topK.length-1]);
             List<Integer> list2 = toIntList(records2, topK[topK.length-1]);
-            System.out.println(list1.size());
+            //System.out.println(list1.size());
             for(int i = 0; i < topK.length; i++) {
                 List<Integer> subList1 = list1.subList(0,topK[i]);
                 List<Integer> subList2 = list2.subList(0,topK[i]);
@@ -66,7 +66,8 @@ public class Main {
             count++;
         }
         for(int i = 0; i < topK.length; i++) {
-            perf[i] /= (count * topK[i]);
+            perf[i] -= count;
+            perf[i] /= (count * (topK[i]-1));
         }
         System.out.println(Arrays.toString(perf));
         return perf;

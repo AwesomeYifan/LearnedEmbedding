@@ -11,8 +11,8 @@ import java.util.TreeMap;
 */
 
 public class Vectors {
-    private int dim = 2;
-    private int numPoints = 200;
+    private int dim = 6;
+    private int numPoints = 2000;
     private int axisLength = 1;
     private double trainRatio = 0.1;
 
@@ -53,7 +53,11 @@ public class Vectors {
         int[] records = new int[11];
         double oriSim, transformedSim;
         TreeMap<Double, Set<Integer>> rankList = new TreeMap<>();
+        int marker = 0;
         while((line1 = br1.readLine()) != null) {
+            marker++;
+            if(marker % 1000 == 0)
+                System.out.println(marker);
             bwOrigin.write(line1 + "," + line1 + "\n");
             vec1 = this.transform(line1, " ");
             int idx = 0;
@@ -67,7 +71,7 @@ public class Vectors {
                 Utils.updatePriorityQueue(rankList, oriSim, idx);
                 idx ++;
                 //build training data: vec1#vec2#expected distance in the reduced space
-                transformedSim = this.scale(oriSim, "origin");
+                transformedSim = this.scale(oriSim, "stair");
                 if(random.nextDouble() < trainRatio) {
                     bwTrain.write(line1 + "," + line2 + "," +
                             //String.valueOf(Math.round(transformedSim * 100.0) / 100.0) + "\n");
@@ -120,7 +124,11 @@ public class Vectors {
                 return 0.0;
         }
     }
-
+    /**
+     * Simple rounding + square do not satisfy the staircase property.
+     * With this scaling, points in certain distance range become unordered
+     * and thus the accuracy becomes very low. Should consider more.
+     */
     private double scale(double oldValue, String opt) {
         switch (opt) {
             case "square": {
@@ -133,6 +141,7 @@ public class Vectors {
                 return oldValue;
         }
     }
+
     private double stairTransform(double v) {
         BigDecimal bd = new BigDecimal(v);
         bd = bd.round(new MathContext(3));
