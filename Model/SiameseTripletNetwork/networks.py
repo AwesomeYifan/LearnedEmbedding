@@ -1,7 +1,6 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
-
 class EmbeddingNet(nn.Module):
     def __init__(self):
         super(EmbeddingNet, self).__init__()
@@ -21,6 +20,22 @@ class EmbeddingNet(nn.Module):
         output = self.convnet(x)
         output = output.view(output.size()[0], -1)
         output = self.fc(output)
+        return output
+
+    def get_embedding(self, x):
+        return self.forward(x)
+
+
+class EmbeddingNetMLP(nn.Module):
+    def __init__(self, input_dim, embedding_dim):
+        super(EmbeddingNetMLP, self).__init__()
+
+        self.net = nn.Sequential(nn.Linear(input_dim, embedding_dim),
+                                 nn.PReLU()
+                                 )
+
+    def forward(self, x):
+        output = self.net(x)
         return output
 
     def get_embedding(self, x):

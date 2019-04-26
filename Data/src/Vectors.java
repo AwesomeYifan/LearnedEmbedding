@@ -11,8 +11,8 @@ import java.util.TreeMap;
 */
 
 public class Vectors {
-    private int dim = 6;
-    private int numPoints = 2000;
+    private int dim = 2;
+    private int numPoints = 20;
     private int axisLength = 1;
     private double trainRatio = 0.1;
 
