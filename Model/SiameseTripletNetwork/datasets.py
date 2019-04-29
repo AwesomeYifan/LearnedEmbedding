@@ -24,6 +24,28 @@ class SiameseDataset(Dataset):
         label = float(self.labels[idx])
         return (left, right), label
 
+#triplet dataset format: ancher, positive, negative, d(AP) - d(AN)
+class TripletDataset(Dataset):
+    def __init__(self, X, labels):
+        self.X = X
+        self.labels = labels
+
+    def __len__(self):
+        return len(self.X)
+
+    def __getitem__(self, idx):
+        #print("*****************************************")
+        #print(self.X)
+        #print("*****************************************")
+        anchor = [float(i) for i in str(self.X.loc[idx, 'anchor']).split()]
+        anchor = torch.FloatTensor(anchor)
+        positive = [float(i) for i in str(self.X.loc[idx, 'positive']).split()]
+        positive = torch.FloatTensor(positive)
+        negative = [float(i) for i in str(self.X.loc[idx, 'negative']).split()]
+        negative = torch.FloatTensor(negative)
+        label = float(self.labels[idx])
+        return (anchor, positive, negative), label
+
 
 class SiameseMNIST(Dataset):
     """

@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import math
 
 
 class ContrastiveLossMLP(nn.Module):
@@ -16,6 +17,23 @@ class ContrastiveLossMLP(nn.Module):
     def forward(self, output1, output2, target, size_average=True):
         distances = (output2 - output1).pow(2).sum(1)  # squared distances
         losses = 0.5 * (target.float() * distances)
+        return losses.mean() if size_average else losses.sum()
+
+
+class TripletLossMLP(nn.Module):
+    """
+    Triplet loss
+    Takes embeddings of an anchor sample, a positive sample and a negative sample
+    """
+
+    def __init__(self):
+        super(TripletLossMLP, self).__init__()
+
+    def forward(self, anchor, positive, negative, label, size_average=True):
+        distance_positive = (anchor - positive).pow(2).sum(1)  # .pow(.5)
+        distance_negative = (anchor - negative).pow(2).sum(1)  # .pow(.5)
+        d_p = torch.exp(-distance_positive) / (torch.exp(-distance_positive) + torch.exp(-distance_negative))
+        losses = d_p.pow(2).double() * label.double()
         return losses.mean() if size_average else losses.sum()
 
 

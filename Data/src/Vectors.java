@@ -11,141 +11,80 @@ import java.util.TreeMap;
 */
 
 public class Vectors {
-    private int dim = 2;
-    private int numPoints = 20;
-    private int axisLength = 1;
-    private double trainRatio = 0.1;
+    private int dim = 6;
+    private int numPoints = 2000;
+    private int numClusters = 3;
+    private double trainRatio = 0.00005;
 
     public static void main(String[] args) throws IOException, InterruptedException {
+
+        String path = "./data";
+
         Vectors vec = new Vectors();
-        vec.generate();
+        String[] files = new String[vec.numClusters];
+        for(int i = 0; i < vec.numClusters; i++) {
+            files[i] = "class-" + String.valueOf(i) + ".csv";
+        }
+        vec.generateGaussian(vec.getCenters(), vec.getDeviation());
+        System.out.println("points generated");
+        RankData rd = new RankData(path, files, vec.getMaxDist("Euclidean"));
+        rd.generateRanks();
+        System.out.println("rank generated");
+        TripletData td = new TripletData(path, files, vec.getMaxDist("Euclidean"), vec.trainRatio);
+        td.generateSamples();
+        System.out.println("triplet data generated");
+        SiameseData sd = new SiameseData(path, files, vec.getMaxDist("Euclidean"), vec.trainRatio);
+        sd.generateSamples();
+        System.out.println("siamese data generated");
     }
 
-    public void generate() throws IOException {
-        //generate initial vectors
-        BufferedWriter bw = new BufferedWriter(new FileWriter(new File("./data/temp.csv")));
+    public void generateGaussian(double[][] centers, double[] deviations) throws IOException {
+        BufferedWriter bw = null;
         Random random = new Random();
-        for(int i = 0; i < numPoints; i++) {
-            for(int j = 0; j < dim; j++) {
-                //bw.write(String.valueOf(Math.round(random.nextDouble() * axisLength * 100.0) / 100.0));
-                bw.write(String.valueOf(random.nextDouble() * axisLength));
-                if(j != dim - 1)
-                    bw.write(" ");
-                else
-                    bw.write("\r\n");
+        int numClusters = centers.length;
+        int numPointsEachCluster = numPoints / numClusters;
+        for(int i = 0; i < numClusters; i++) {
+            bw = new BufferedWriter(new FileWriter(new File("./data/class-" + String.valueOf(i) + ".csv")));
+            double[][] points = Utils.getGaussianPoints(numPointsEachCluster, centers[i], deviations[i]);
+            for(int j = 0; j < numPointsEachCluster; j++) {
+                for(int k = 0; k < dim - 1; k++) {
+                    bw.write(String.valueOf(points[j][k]) + " ");
+                }
+                bw.write(String.valueOf(points[j][dim-1]));
+                bw.write("\r\n");
             }
+            bw.flush();
         }
         bw.close();
-        this.createTrain();
     }
-
-    public void createTrain() throws IOException {
-        Random random = new Random();
-        BufferedReader br1 = new BufferedReader(new FileReader(new File("./data/temp.csv")));
-        BufferedReader br2 = new BufferedReader(new FileReader(new File("./data/temp.csv")));
-        BufferedWriter bwOrigin = new BufferedWriter(new FileWriter(new File("data/origin.csv")));
-        BufferedWriter bwTrain = new BufferedWriter(new FileWriter(new File("data/train.csv")));
-        BufferedWriter bwRank = new BufferedWriter(new FileWriter(new File("./data/rank.csv")));
-        bwOrigin.write("P1,P2\n");
-        bwTrain.write("P1,P2,dist\n");
-        String line1, line2;
-        double[] vec1, vec2;
-        int[] records = new int[11];
-        double oriSim, transformedSim;
-        TreeMap<Double, Set<Integer>> rankList = new TreeMap<>();
-        int marker = 0;
-        while((line1 = br1.readLine()) != null) {
-            marker++;
-            if(marker % 1000 == 0)
-                System.out.println(marker);
-            bwOrigin.write(line1 + "," + line1 + "\n");
-            vec1 = this.transform(line1, " ");
-            int idx = 0;
-            while((line2 = br2.readLine()) != null) {
-                vec2 = this.transform(line2, " ");
-                oriSim = this.computeSimilarity(vec1, vec2, "Euclidean");
-//                if(oriSim == 1.0)
-//                    continue;
-                records[(int) Math.round(oriSim * 10)]++;
-                //build ranking list: ordered by
-                Utils.updatePriorityQueue(rankList, oriSim, idx);
-                idx ++;
-                //build training data: vec1#vec2#expected distance in the reduced space
-                transformedSim = this.scale(oriSim, "stair");
-                if(random.nextDouble() < trainRatio) {
-                    bwTrain.write(line1 + "," + line2 + "," +
-                            //String.valueOf(Math.round(transformedSim * 100.0) / 100.0) + "\n");
-                            String.valueOf(transformedSim) + "\n");
-                }
+    private double[][] getCenters() {
+        double[][] centers = new double[numClusters][dim];
+        double center = 1.0 / (numClusters + 1);
+        for(int i = 0; i < numClusters; i++) {
+            for(int j = 0; j < dim; j++) {
+                centers[i][j] = center * (i + 1);
             }
-            Utils.writeDescending(bwRank, rankList);
-            rankList.clear();
-            br2.close();
-            br2 = new BufferedReader(new FileReader(new File("./data/temp.csv")));
         }
-        br1.close();
-        br2.close();
-        bwOrigin.flush();bwOrigin.close();
-        bwTrain.flush();bwTrain.close();
-        bwRank.flush();bwRank.close();
-        System.out.println(Arrays.toString(records));
+        return centers;
     }
-
-    private double[] transform(String line, String separator) {
-        String[] record = line.split(separator);
-        double[] result = new double[record.length];
-        int idx = 0;
-        for(String s : record) {
-            result[idx] = Double.valueOf(s);
-            idx ++;
+    private double[] getDeviation() {
+        double[] deviation = new double[numClusters];
+        double dev = 0.5 / numClusters;
+        for(int i = 0; i < numClusters; i++) {
+            deviation[i] = dev;
         }
-        return result;
+        return deviation;
     }
-
-    private double computeSimilarity(double[] vec1, double[] vec2, String opt) {
+    private double getMaxDist(String opt) {
         switch (opt) {
             case "Euclidean": {
-                double sumDist = 0;
-                double maxDist = Math.sqrt(dim);
-                for(int i = 0; i < vec1.length; i++) {
-                    sumDist += Math.pow(vec1[i] - vec2[i], 2);
-                }
-                return (maxDist - Math.sqrt(sumDist)) / maxDist;
+                return Math.sqrt(dim);
             }
-            case "Manhattan": {
-                double sumDist = 0;
-                double maxDist = dim;
-                for(int i = 0; i < vec1.length; i++) {
-                    sumDist += Math.abs(vec1[i] - vec2[i]);
-                }
-                return (maxDist - sumDist)/maxDist;
+            default: {
+                return Math.sqrt(dim);
             }
-            default:
-                return 0.0;
-        }
-    }
-    /**
-     * Simple rounding + square do not satisfy the staircase property.
-     * With this scaling, points in certain distance range become unordered
-     * and thus the accuracy becomes very low. Should consider more.
-     */
-    private double scale(double oldValue, String opt) {
-        switch (opt) {
-            case "square": {
-                return Math.pow(oldValue, 2);
-            }
-            case "stair": {
-                return stairTransform(oldValue);
-            }
-            default:
-                return oldValue;
+
         }
     }
 
-    private double stairTransform(double v) {
-        BigDecimal bd = new BigDecimal(v);
-        bd = bd.round(new MathContext(3));
-        //return bd.doubleValue();
-        return Math.pow(bd.doubleValue(),2);
-    }
 }

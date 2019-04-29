@@ -5,50 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5f01c0a-ebff-4e31-99e9-350abf2d5a26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/DR.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RankData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TripletData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/trainTriplet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/Vectors.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Vectors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Vectors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vectors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/.idea/Model.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/Model.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/datasets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/anchor_negative_positive.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/anchor_negative_positive.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/contrastive_loss.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/contrastive_loss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_comp_cl.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_comp_cl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_comp_ocl.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_comp_ocl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_comp_otl.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_comp_otl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_comp_tl.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_comp_tl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_ocl_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_ocl_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_ocl_train.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_ocl_train.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_otl_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_otl_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_otl_train.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_otl_train.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_siamese_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_siamese_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_siamese_train.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_siamese_train.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_softmax_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_softmax_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_softmax_train.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_softmax_train.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_triplet_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_triplet_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/fmnist_triplet_train.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/fmnist_triplet_train.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_comp_cl.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_comp_cl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_comp_ocl.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_comp_ocl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_comp_otl.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_comp_otl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_comp_tl.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_comp_tl.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_ocl_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_ocl_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_ocl_train.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_ocl_train.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_otl_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_otl_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_otl_train.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_otl_train.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_siamese_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_siamese_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_siamese_train.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_siamese_train.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_softmax_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_softmax_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_softmax_train.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_softmax_train.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_triplet_test.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_triplet_test.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/mnist_triplet_train.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/mnist_triplet_train.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/images/triplet_loss.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/images/triplet_loss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/losses.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/losses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/networks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/networks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/temp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/trainer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Model/TripletNetwork/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/DR.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/trainSiamese.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/datasets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/losses.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/losses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/temp.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,7 +38,7 @@
     <session id="-1561114557">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.35" value="1" />
@@ -82,8 +51,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="csv" value="41" />
-          <entry key="java" value="81" />
+          <entry key="csv" value="49" />
+          <entry key="java" value="86" />
           <entry key="png" value="4" />
           <entry key="ranks" value="8" />
           <entry key="ranks2" value="3" />
@@ -95,21 +64,21 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="81" />
-          <entry key="PLAIN_TEXT" value="72" />
+          <entry key="JAVA" value="86" />
+          <entry key="PLAIN_TEXT" value="80" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="java" value="13067" />
+          <entry key="java" value="18421" />
           <entry key="test" value="1" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="13067" />
+          <entry key="JAVA" value="18421" />
           <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
@@ -118,73 +87,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3534">
-              <caret line="203" column="29" selection-start-line="203" selection-start-column="29" selection-end-line="203" selection-end-column="29" />
-              <folding>
-                <element signature="e#12152#12153#0" expanded="true" />
-                <element signature="e#12200#12201#0" expanded="true" />
-                <element signature="e#14317#14318#0" expanded="true" />
-                <element signature="e#14360#14361#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/DistanceFunctions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/PartitionFunctions.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1824">
-              <caret line="103" column="29" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Data.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="28" column="14" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="7" column="37" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4769">
-              <caret line="273" column="50" selection-start-line="273" selection-start-column="50" selection-end-line="273" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+            <state relative-caret-position="152">
+              <caret line="8" column="63" lean-forward="true" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,8 +101,50 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Vectors.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <state relative-caret-position="266">
+              <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TripletData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RankData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Comparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -204,7 +152,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Temp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="114">
               <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -237,6 +185,9 @@
       <find>mtree</find>
       <find>cpp</find>
       <find>round</find>
+      <find>axisLength</find>
+      <find>rankList</find>
+      <find>&quot;,&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>raw</replace>
@@ -255,7 +206,6 @@
         <option value="$PROJECT_DIR$/src/Euclidean.java" />
         <option value="$PROJECT_DIR$/src/Comparator.java" />
         <option value="$PROJECT_DIR$/src/Trajectory.java" />
-        <option value="$PROJECT_DIR$/src/Utils.java" />
         <option value="$PROJECT_DIR$/src/Record.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/conversantmedia/util/collection/spatial/Leaf.java" />
         <option value="$PROJECT_DIR$/Indexing/main/java/com/conversantmedia/util/collection/spatial/Leaf.java" />
@@ -280,6 +230,10 @@
         <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java" />
         <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Temp.java" />
         <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Main.java" />
+        <option value="$PROJECT_DIR$/src/GaussianNumbers.java" />
+        <option value="$PROJECT_DIR$/src/RankData.java" />
+        <option value="$PROJECT_DIR$/src/Utils.java" />
+        <option value="$PROJECT_DIR$/src/TripletData.java" />
         <option value="$PROJECT_DIR$/src/Vectors.java" />
       </list>
     </option>
@@ -289,6 +243,12 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="960" />
@@ -313,28 +273,12 @@
             <path>
               <item name="Data" type="b2602c69:ProjectViewProjectNode" />
               <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="M-Tree-master" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Data" type="b2602c69:ProjectViewProjectNode" />
               <item name="Data" type="462c0819:PsiDirectoryNode" />
               <item name="M-Tree-master" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="M-Tree-master" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mtree" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="M-Tree-master" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mtree" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Data" type="b2602c69:ProjectViewProjectNode" />
@@ -359,7 +303,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556223562064" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556421729773" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/rtree/src/jars/mockito-core-1.10.19.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -490,7 +434,7 @@
       <workItem from="1554488492683" duration="27004000" />
       <workItem from="1555338197827" duration="35985000" />
       <workItem from="1555540720180" duration="24949000" />
-      <workItem from="1556293265350" duration="108000" />
+      <workItem from="1556293265350" duration="22523000" />
     </task>
     <servers />
   </component>
@@ -527,11 +471,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132659000" />
+    <option name="totallyTimeSpent" value="155074000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.14818764" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.14925373" />
@@ -542,7 +485,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.0" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22968581" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3163597" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.30552545" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -561,8 +504,8 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32995737" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32995737" />
+      <window_info anchor="right" id="Maven Projects" order="10" weight="0.32995737" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,63 +515,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rtree/src/main/java/com/conversantmedia/util/collection/geometry/Rectnd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rtree/src/main/java/com/conversantmedia/util/collection/spatial/HyperPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rtree/src/main/java/com/conversantmedia/util/collection/geometry/Point1d.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rtree/src/main/java/com/conversantmedia/util/collection/spatial/CounterNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/APP/JDK/src.zip!/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rtree/src/test/java/com/conversantmedia/util/collection/spatial/NDRTreeTest.java" />
-    <entry file="file://$PROJECT_DIR$/rtree/src/main/java/com/conversantmedia/util/collection/spatial/RectBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rtree/src/main/java/com/conversantmedia/util/collection/spatial/Leaf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rtree/src/test/java/com/conversantmedia/util/collection/spatial/RTreeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="202" column="35" selection-start-line="202" selection-start-column="25" selection-end-line="202" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rtree/src/test/java/com/conversantmedia/util/collection/spatial/ConcurrentRTreeTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-890">
@@ -861,10 +747,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussianNumbers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Temp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="114">
           <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/rank-class-0.csv.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/reducedVectors-0.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/reducedVectors-1.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/class-0.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TripletData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RankData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -873,8 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+        <state relative-caret-position="152">
+          <caret line="8" column="63" lean-forward="true" selection-start-line="8" selection-start-column="63" selection-end-line="8" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -883,8 +830,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Vectors.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        <state relative-caret-position="266">
+          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
         </state>
       </provider>
     </entry>
