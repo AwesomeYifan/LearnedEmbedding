@@ -98,11 +98,11 @@ def generate_commands(options):
 	try:
 		num_commands = int(options.actions)
 	except ValueError:
-		generator = generate_listed_commands(options.dimensions, options.actions)
+		Traces.generator = generate_listed_commands(options.dimensions, options.actions)
 	else:
-		generator = generate_random_commands(num_commands, options.remove_chance)
+		Traces.generator = generate_random_commands(num_commands, options.remove_chance)
 	
-	return generator
+	return Traces.generator
 	
 
 
@@ -144,7 +144,7 @@ def generate_test_data(options):
 
 
 def print_test_data(fixture, options):
-	print 'from mtree.tests.fixtures.generator import ADD, REMOVE, QUERY'
+	print 'from mtree.tests.fixtures.Traces.generator import ADD, REMOVE, QUERY'
 	print '"""'
 	print 'actions = %r' % options.actions
 	print 'dimensions = %r' % options.dimensions

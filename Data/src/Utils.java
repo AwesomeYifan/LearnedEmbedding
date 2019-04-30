@@ -32,10 +32,7 @@ public class Utils {
             return count;
         }
     }
-    public static double getNextGaussian(double mean, double deviation) {
-        Random random = new Random();
-        return random.nextGaussian() * deviation + mean;
-    }
+
     public static double[][] getGaussianPoints(int numPoints, double centers[], double deviation) {
         int numDims = centers.length;
         double deviationEachAxis = Math.sqrt(Math.pow(deviation, 2)/numDims);
@@ -60,6 +57,23 @@ public class Utils {
             }
         }
         return results;
+    }
+    public static String[] getFileNames(int numFiles) {
+        String[] files = new String[numFiles];
+        for(int i = 0; i < numFiles; i++) {
+            files[i] = "class-" + String.valueOf(i) + ".csv";
+        }
+        return files;
+    }
+    public static double getMaxDist(int dim, String opt) {
+        switch (opt) {
+            case "Euclidean": {
+                return Math.sqrt(dim);
+            }
+            default: {
+                return Math.sqrt(dim);
+            }
+        }
     }
     public static double computeSimilarity(double[] vec1, double[] vec2, double maxDist, String distOpt, String scaleOpt) {
         double sim = 0;

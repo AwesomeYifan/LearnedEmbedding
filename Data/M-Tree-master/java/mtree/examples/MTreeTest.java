@@ -7,9 +7,9 @@ public class MTreeTest {
     static int[] topK = {2,5,10};
 
     public static void main(String[] args) throws IOException {
-        //String path = "../Data/data/siamese-reducedVectors-0.csv";
-        String path = "../Data/data/triplet-reducedVectors-0.csv";
-        //String path = "data/temp.csv";
+        String path = "../Data/data/siamese-reducedVectors-0.csv";
+        //String path = "../Data/data/triplet-reducedVectors-0.csv";
+        //String path = "data/class-0.csv";
         MTreeClass mtree = new MTreeClass();
         //Set<Data> allData = new HashSet<Data>();
         List<Data> allData = new ArrayList<Data>();

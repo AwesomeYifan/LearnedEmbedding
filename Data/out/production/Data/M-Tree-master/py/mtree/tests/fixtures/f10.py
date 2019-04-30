@@ -1,4 +1,4 @@
-from mtree.tests.fixtures.generator import ADD, REMOVE, QUERY
+from mtree.tests.fixtures.Traces.generator import ADD, REMOVE, QUERY
 """
 actions = '10a10r10a10r'
 dimensions = 4

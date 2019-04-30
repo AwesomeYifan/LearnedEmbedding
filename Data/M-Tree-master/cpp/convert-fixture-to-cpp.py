@@ -22,9 +22,9 @@ def main():
 	print len(actions)
 	
 	for action in actions:
-		if isinstance(action, mtree.tests.fixtures.generator.ADD):
+		if isinstance(action, mtree.tests.fixtures.Traces.generator.ADD):
 			print 'A', format_data(action.data), format_data(action.query.data), repr(action.query.radius), action.query.limit
-		elif isinstance(action, mtree.tests.fixtures.generator.REMOVE):
+		elif isinstance(action, mtree.tests.fixtures.Traces.generator.REMOVE):
 			print 'R', format_data(action.data), format_data(action.query.data), repr(action.query.radius), action.query.limit 
 		else:
 			assert False

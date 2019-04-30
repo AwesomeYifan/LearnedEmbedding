@@ -13,7 +13,7 @@ from trainer import fit
 
 embedding_dim = 6
 gpus = 0
-n_epoch = 20
+n_epoch = 10
 num_clusters = 2
 params = {'batch_size': 10,
           'shuffle': True}
