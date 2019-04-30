@@ -30,13 +30,13 @@ public class SiameseData {
                 marker++;
                 if(marker % 100 == 0)
                     System.out.println(marker);
-                points[0] = Utils.transform(lines[0], " ");
+                points[0] = Utils.getDoubles(lines[0], " ");
                 for(int j = i + 1; j < files.length; j++) {
                     p2Reader = new BufferedReader(new FileReader(new File(path + "/" + files[j])));
                     while((lines[1] = p2Reader.readLine()) != null) {
                         if(random.nextDouble() > Math.sqrt(sampleRatio))
                             continue;
-                        points[1] = Utils.transform(lines[1], " ");
+                        points[1] = Utils.getDoubles(lines[1], " ");
                         double sim = Utils.computeSimilarity(points[0], points[1], maxDist, "Euclidean", "staircase");
                         writer.write(lines[0] + "," + lines[1] + "," + String.valueOf(sim) + "\n");
                     }

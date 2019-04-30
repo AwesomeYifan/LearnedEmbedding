@@ -27,19 +27,19 @@ class TripletData {
                 marker++;
                 if(marker % 100 == 0)
                     System.out.println(marker);
-                points[0] = Utils.transform(lines[0], " ");
+                points[0] = Utils.getDoubles(lines[0], " ");
                 positiveReader = new BufferedReader(new FileReader(new File(path + "/" + files[i])));
                 while((lines[1] = positiveReader.readLine()) != null) {
                     if(random.nextDouble() > Math.sqrt(sampleRatio))
                         continue;
-                    points[1] = Utils.transform(lines[1], " ");
+                    points[1] = Utils.getDoubles(lines[1], " ");
                     for(int j = i + 1; j < files.length; j++) {
 
                         negativeReader = new BufferedReader(new FileReader(new File(path + "/" + files[j])));
                         while((lines[2] = negativeReader.readLine()) != null) {
                             if(random.nextDouble() > Math.sqrt(sampleRatio))
                                 continue;
-                            points[2] = Utils.transform(lines[2], " ");
+                            points[2] = Utils.getDoubles(lines[2], " ");
                             double simAP = Utils.computeSimilarity(points[0], points[1], maxDist, "Euclidean", "staircase");
                             double simAN = Utils.computeSimilarity(points[0], points[2], maxDist, "Euclidean", "staircase");
                             if(simAP < simAN) continue;

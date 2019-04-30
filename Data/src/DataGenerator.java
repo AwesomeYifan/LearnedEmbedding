@@ -12,7 +12,7 @@ import java.util.TreeMap;
 
 public class DataGenerator {
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws Exception {
 
         int numDims = 6;
         int numPoints = 2000;

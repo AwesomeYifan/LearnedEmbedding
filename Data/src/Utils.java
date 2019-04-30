@@ -9,29 +9,6 @@ public class Utils {
     static int topK = 100;
     static int numEntities = 20;
     static int outputSize = 10;
-    public static int updateQueue(TreeMap<Double, Set<String>> queue, int count, int capacity, double score, String element) {
-        if(count < capacity) {
-            insert(queue, score, element);
-            return count + 1;
-        }
-        else {
-            if(queue.firstKey() < score) {
-                if(queue.firstEntry().getValue().size() > 1) {
-                    String tmpStr = "";
-                    for(String s : queue.firstEntry().getValue()) {
-                        tmpStr = s;
-                        break;
-                    }
-                    queue.firstEntry().getValue().remove(tmpStr);
-                }
-                else {
-                    queue.pollFirstEntry();
-                }
-                insert(queue, score, element);
-            }
-            return count;
-        }
-    }
 
     public static double[][] getGaussianPoints(int numPoints, double centers[], double deviation) {
         int numDims = centers.length;
@@ -118,7 +95,7 @@ public class Utils {
         return sim;
     }
 
-    public static double[] transform(String line, String separator) {
+    public static double[] getDoubles(String line, String separator) {
         String[] record = line.split(separator);
         double[] result = new double[record.length];
         int idx = 0;
@@ -127,48 +104,5 @@ public class Utils {
             idx ++;
         }
         return result;
-    }
-    private static void insert(TreeMap<Double, Set<String>> queue, double score, String element) {
-        if(queue.containsKey(score)) {
-            queue.get(score).add(element);
-        }
-        else {
-            Set<String> tmpSet = new HashSet<>();
-            tmpSet.add(element);
-            queue.put(score, tmpSet);
-        }
-    }
-    public static <T, F> void writeDescending(BufferedWriter bw, TreeMap<T, Set<F>> map) throws IOException {
-        while(!map.isEmpty()) {
-            T t = map.lastKey();
-            Set<F> set = map.get(t);
-            for(F f : set) {
-                bw.write(f + ",");
-            }
-            map.pollLastEntry();
-        }
-        bw.write("\n");
-    }
-
-    public static <T, F> void writeAscending(BufferedWriter bw, TreeMap<T, Set<F>> map) throws IOException {
-        while(!map.isEmpty()) {
-            T t = map.firstKey();
-            Set<F> set = map.get(t);
-            for(F f : set) {
-                bw.write(f + ",");
-            }
-            map.pollFirstEntry();
-        }
-        bw.write("\n");
-    }
-    public static <T,F> void updatePriorityQueue(TreeMap<T, Set<F>> map, T key, F value) {
-        if(map.containsKey(key)) {
-            map.get(key).add(value);
-        }
-        else {
-            Set<F> set = new HashSet<>();
-            set.add(value);
-            map.put(key, set);
-        }
     }
 }
