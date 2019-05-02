@@ -8,17 +8,19 @@ class RankData {
     private String path;
     private String[] files;
     private double maxDist;
+    private String dataType;
 
-    RankData(String path, String[] files, double maxDist) {
+    RankData(String path, String[] files, double maxDist, String dataType) {
         this.path = path;
         this.files = files;
         this.maxDist = maxDist;
+        this.dataType = dataType;
     }
     void generateRanks() throws Exception {
         BufferedReader reader1, reader2;
 
         String line1, line2;
-        double[] vec1, vec2;
+        Object[] vec1, vec2;
         BufferedWriter writer;
 
         for (String file : files) {
@@ -27,11 +29,11 @@ class RankData {
             PriorityQueue rankQueue = new PriorityQueue(Integer.MAX_VALUE, "descending");
             reader1 = new BufferedReader(new FileReader(new File(path + "/" + file)));
             while ((line1 = reader1.readLine()) != null) {
-                vec1 = Utils.getDoubles(line1, " ");
+                vec1 = Utils.getValuesFromLine(line1, " ", dataType);
                 reader2 = new BufferedReader(new FileReader(new File(path + "/" + file)));
                 int idx = 0;
                 while ((line2 = reader2.readLine()) != null) {
-                    vec2 = Utils.getDoubles(line2, " ");
+                    vec2 = Utils.getValuesFromLine(line2, " ", dataType);
                     double sim = Utils.computeSimilarity(vec1, vec2, maxDist, "Euclidean", "stair");
                     //Utils.updatePriorityQueue(rankList, sim, idx);
                     rankQueue.insert(sim, idx);

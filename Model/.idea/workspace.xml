@@ -2,82 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d24764c-4ea0-49f1-981d-33dfd8d3ee0d" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Data/src/DataGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Data/src/GaussianData.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Comparator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/NextLoc.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Record.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Trajectory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Vectors.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/generator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/src/Vectors.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Data/src/Comparator.java" afterPath="$PROJECT_DIR$/../Data/src/Traces/Comparator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Data/src/NextLoc.java" afterPath="$PROJECT_DIR$/../Data/src/Traces/NextLoc.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Data/src/Record.java" afterPath="$PROJECT_DIR$/../Data/src/Traces/Record.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Data/src/Trajectory.java" afterPath="$PROJECT_DIR$/../Data/src/Traces/Trajectory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/DataGenerator.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/DataGenerator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/GaussianData.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/GaussianData.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/RankData.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/RankData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/SiameseData.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/SiameseData.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/TripletData.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/TripletData.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Utils.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/Utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Data/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/Data.iml" afterPath="$PROJECT_DIR$/../Data/Data.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/cpp/convert-fixture-to-cpp.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/cpp/convert-fixture-to-cpp.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/MTreeTest.java" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/MTreeTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f01.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f01.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f02.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f02.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f03.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f03.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f04.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f04.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f05.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f05.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f06.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f06.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f07.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f07.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f08.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f08.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f09.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f09.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f10.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f10.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f11.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f11.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f12.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f12.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f13.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f13.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f14.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f14.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f15.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f15.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f16.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f16.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f17.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f17.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f18.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f18.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f19.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f19.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f20.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/f20.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/fG01.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/fG01.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/fG02.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/fG02.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/fLots.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/fLots.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/generator.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/fixtures/generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/test_mtree.py" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/py/mtree/tests/test_mtree.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Data/out/production/Data/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Data.iml" afterPath="$PROJECT_DIR$/../Data/out/production/Data/Data.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/cpp/convert-fixture-to-cpp.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/cpp/convert-fixture-to-cpp.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f01.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f01.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f02.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f02.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f03.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f03.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f04.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f04.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f05.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f05.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f06.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f06.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f07.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f07.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f08.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f08.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f09.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f09.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f10.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f10.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f11.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f11.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f12.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f12.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f13.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f13.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f14.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f14.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f15.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f15.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f16.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f16.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f17.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f17.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f18.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f18.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f19.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f19.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f20.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/f20.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/fG01.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/fG01.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/fG02.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/fG02.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/fLots.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/fLots.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/generator.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/fixtures/generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/test_mtree.py" afterPath="$PROJECT_DIR$/../Data/out/production/Data/M-Tree-master/py/mtree/tests/test_mtree.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/DataGenerator.java" afterPath="$PROJECT_DIR$/../Data/src/DataGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/GaussianData.java" afterPath="$PROJECT_DIR$/../Data/src/GaussianData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/RankData.java" afterPath="$PROJECT_DIR$/../Data/src/RankData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/SiameseData.java" afterPath="$PROJECT_DIR$/../Data/src/SiameseData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/TripletData.java" afterPath="$PROJECT_DIR$/../Data/src/TripletData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/Utils.java" afterPath="$PROJECT_DIR$/../Data/src/Utils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py" />
@@ -178,8 +114,8 @@
       <file leaf-file-name="losses.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/losses.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="97">
+              <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -190,8 +126,8 @@
       <file leaf-file-name="datasets.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/datasets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="148">
+              <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -214,8 +150,8 @@
       <file leaf-file-name="trainSiamese.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="409">
+              <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -258,6 +194,7 @@
       <find>params</find>
       <find>fit</find>
       <find>batch_size</find>
+      <find>dist</find>
     </findStrings>
     <replaceStrings>
       <replace>input_dim</replace>
@@ -596,14 +533,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16979167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26504752" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26504752" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -906,16 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/datasets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -932,16 +859,6 @@
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/losses.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -994,10 +911,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/losses.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/datasets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="409">
+          <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

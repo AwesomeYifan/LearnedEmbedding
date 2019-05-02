@@ -1,16 +1,10 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.util.*;
+import java.util.Random;
 
 public class Utils {
-    static int topK = 100;
-    static int numEntities = 20;
-    static int outputSize = 10;
 
-    public static double[][] getGaussianPoints(int numPoints, double centers[], double deviation) {
+    static double[][] getGaussianPoints(int numPoints, double centers[], double deviation) {
         int numDims = centers.length;
         double deviationEachAxis = Math.sqrt(Math.pow(deviation, 2)/numDims);
         double[][] results = new double[numPoints][numDims];
@@ -18,14 +12,12 @@ public class Utils {
         for(int i = 0; i < numPoints; i++) {
             for(int j = 0; j < numDims; j++) {
 
-                do {
-                    results[i][j] = random.nextGaussian() * deviationEachAxis + centers[j];
-                } while(results[i][j] < 0 || results[i][j] >1);
+                do results[i][j] = random.nextGaussian() * deviationEachAxis + centers[j]; while(results[i][j] < 0 || results[i][j] >1);
             }
         }
         return results;
     }
-    public static double[][] getUniformPoints(int numPoints, int dim) {
+    static double[][] getUniformPoints(int numPoints, int dim) {
         double[][] results = new double[numPoints][dim];
         Random random = new Random();
         for(int i = 0; i < numPoints; i++) {
@@ -35,30 +27,14 @@ public class Utils {
         }
         return results;
     }
-    public static String[] getFileNames(int numFiles) {
-        String[] files = new String[numFiles];
-        for(int i = 0; i < numFiles; i++) {
-            files[i] = "class-" + String.valueOf(i) + ".csv";
-        }
-        return files;
-    }
-    public static double getMaxDist(int dim, String opt) {
-        switch (opt) {
-            case "Euclidean": {
-                return Math.sqrt(dim);
-            }
-            default: {
-                return Math.sqrt(dim);
-            }
-        }
-    }
-    public static double computeSimilarity(double[] vec1, double[] vec2, double maxDist, String distOpt, String scaleOpt) {
-        double sim = 0;
+
+    static double computeSimilarity(Object[] vec1, Object[] vec2, double maxDist, String distOpt, String scaleOpt) {
+        double sim;
         switch (distOpt) {
             case "Euclidean": {
                 double sumDist = 0;
                 for(int i = 0; i < vec1.length; i++) {
-                    sumDist += Math.pow(vec1[i] - vec2[i], 2);
+                    sumDist += Math.pow((Double)vec1[i] - (Double)vec2[i], 2);
                 }
                 sim = (maxDist - Math.sqrt(sumDist)) / maxDist;
                 break;
@@ -66,7 +42,7 @@ public class Utils {
             case "Manhattan": {
                 double sumDist = 0;
                 for(int i = 0; i < vec1.length; i++) {
-                    sumDist += Math.abs(vec1[i] - vec2[i]);
+                    sumDist += Math.abs((Double)vec1[i] - (Double)vec2[i]);
                 }
                 sim = (maxDist - sumDist)/maxDist;
                 break;
@@ -88,20 +64,37 @@ public class Utils {
                 sim = Math.pow(bd.doubleValue(),2);
                 break;
             }
-            default: {
-                sim = sim;
-            }
+            default: {}
         }
         return sim;
     }
 
-    public static double[] getDoubles(String line, String separator) {
+    static Object[] getValuesFromLine(String line, String separator, String opt) {
         String[] record = line.split(separator);
-        double[] result = new double[record.length];
+        Object[] result = new Object[record.length];
         int idx = 0;
-        for(String s : record) {
-            result[idx] = Double.valueOf(s);
-            idx ++;
+        switch (opt) {
+            case "Double":
+            case "double": {
+                for(String s : record) {
+                    result[idx] = Double.valueOf(s);
+                    idx ++;
+                }
+                break;
+            }
+            case "Integer":
+            case "integer":{
+                for(String s : record) {
+                    result[idx] = Integer.valueOf(s);
+                    idx ++;
+                }
+                break;
+            }
+            case "String":
+            case "string":{
+                result = record;
+                break;
+            }
         }
         return result;
     }

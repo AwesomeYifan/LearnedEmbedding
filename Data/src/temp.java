@@ -6,7 +6,7 @@ import Utils.PriorityQueue;
 
 public class temp {
     public static void main(String[] args) throws Exception {
-        PriorityQueue pq = new PriorityQueue(5, "ascending");
+        PriorityQueue pq = new PriorityQueue(5, "descending");
         for(Integer i = 0; i < 10; i++) {
             pq.insert(i, i);
         }

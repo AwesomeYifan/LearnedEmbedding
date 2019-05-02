@@ -28,7 +28,7 @@ validation_size = int(len(train_df) * 0.1)
 training_size = len(train_df) - validation_size
 
 X = train_df[['P1', 'P2']]
-Y = train_df['dist']
+Y = train_df['similarity']
 
 input_dim = len(X['P1'][0].split())
 cuda = torch.cuda.is_available()

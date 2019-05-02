@@ -7,16 +7,21 @@ public class PriorityQueue<K extends Comparable,V> {
     private int length;
     private TreeMap<K, Set<V>> queue;
     private boolean isAscending;
-    public PriorityQueue(int limit, String opt) throws Exception {
+
+    public PriorityQueue(int limit, String opt) {
         this.limit = limit;
         this.length = 0;
         this.queue = new TreeMap<>();
-        if(opt.equals("ascending"))
-            isAscending = true;
-        else if(opt.equals("descending"))
-            isAscending = false;
-        else
-            throw new IllegalArgumentException("Option error! Must be ascending ot descending");
+        switch (opt) {
+            case "ascending":
+                isAscending = true;
+                break;
+            case "descending":
+                isAscending = false;
+                break;
+            default:
+                throw new IllegalArgumentException("Option error! Must be ascending ot descending");
+        }
     }
     public void insert(K key, V value) {
         if(length < limit) {
@@ -37,9 +42,7 @@ public class PriorityQueue<K extends Comparable,V> {
             while(!queue.isEmpty()) {
                 K k = queue.firstKey();
                 Set<V> tempSet = queue.get(k);
-                for(V v: tempSet) {
-                    queueList.add(v);
-                }
+                queueList.addAll(tempSet);
                 queue.pollFirstEntry();
             }
         }
@@ -47,9 +50,7 @@ public class PriorityQueue<K extends Comparable,V> {
             while(!queue.isEmpty()) {
                 K k = queue.lastKey();
                 Set<V> tempSet = queue.get(k);
-                for(V v: tempSet) {
-                    queueList.add(v);
-                }
+                queueList.addAll(tempSet);
                 queue.pollLastEntry();
             }
         }
@@ -72,22 +73,14 @@ public class PriorityQueue<K extends Comparable,V> {
     private void cutQueue(TreeMap<K, Set<V>> queue) {
         if(isAscending) {
             Set<V> tempSet = queue.get(queue.lastKey());
-            V elementToRemove = null;
-            for(V v: tempSet) {
-                elementToRemove = v;
-                break;
-            }
+            V elementToRemove = tempSet.stream().findFirst().orElse(null);
             queue.get(queue.lastKey()).remove(elementToRemove);
             if(queue.get(queue.lastKey()).size() == 0)
                 queue.pollLastEntry();
         }
         else {
             Set<V> tempSet = queue.get(queue.firstKey());
-            V elementToRemove = null;
-            for(V v: tempSet) {
-                elementToRemove = v;
-                break;
-            }
+            V elementToRemove = tempSet.stream().findFirst().orElse(null);
             queue.get(queue.firstKey()).remove(elementToRemove);
             if(queue.get(queue.firstKey()).size() == 0)
                 queue.pollFirstEntry();
