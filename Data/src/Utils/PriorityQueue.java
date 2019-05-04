@@ -4,13 +4,23 @@ import java.util.*;
 
 public class PriorityQueue<K extends Comparable,V> {
     private int limit;
-    private int length;
+    private int size;
     private TreeMap<K, Set<V>> queue;
     private boolean isAscending;
 
     public PriorityQueue(int limit, String opt) {
+        prepareQueue(limit, opt);
+    }
+
+    public PriorityQueue(String opt) {
+        int limit = Integer.MAX_VALUE;
+        prepareQueue(limit, opt);
+
+    }
+
+    private void prepareQueue(int limit, String opt) {
         this.limit = limit;
-        this.length = 0;
+        this.size = 0;
         this.queue = new TreeMap<>();
         switch (opt) {
             case "ascending":
@@ -23,16 +33,18 @@ public class PriorityQueue<K extends Comparable,V> {
                 throw new IllegalArgumentException("Option error! Must be ascending ot descending");
         }
     }
+
     public void insert(K key, V value) {
-        if(length < limit) {
+        if(size < limit) {
             updateQueue(key, value);
-            length++;
+            size++;
         }
         else {
             if((isAscending && key.compareTo(queue.lastKey()) <= 0) ||
                     (!isAscending && key.compareTo(queue.firstKey()) >= 0)) {
                 updateQueue(key, value);
                 cutQueue(queue);
+                size = limit;
             }
         }
     }

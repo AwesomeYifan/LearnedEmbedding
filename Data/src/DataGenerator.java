@@ -8,7 +8,7 @@ import java.util.TreeMap;
 
 public class DataGenerator {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
 
         int numDims = 6;
         int numPoints = 2000;
@@ -27,16 +27,16 @@ public class DataGenerator {
         SiameseData sd = new SiameseData(path, files, maxDist, trainRatio, dataType);
 
         gd.generateData();
-        System.out.println("\n******************\n* data generated *\n******************\n");
+        System.out.println("******************\n* data generated *\n******************");
 
         rd.generateRanks();
-        System.out.println("\n***********************\n* rank data generated *\n***********************\n");
+        System.out.println("\n***********************\n* rank data generated *\n***********************");
 
         td.generateSamples();
-        System.out.println("\n*****************************\n* triplet samples generated *\n*****************************\n");
+        System.out.println("\n*****************************\n* triplet samples generated *\n*****************************");
 
         sd.generateSamples();
-        System.out.println("\n*****************************\n* siamese samples generated *\n*****************************\n");
+        System.out.println("\n*****************************\n* siamese samples generated *\n*****************************");
     }
 
     private static String[] getFileNames(int numFiles) {

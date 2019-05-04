@@ -4,7 +4,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import Utils.PriorityQueue;
 
-class RankData {
+class RankData <T> {
     private String path;
     private String[] files;
     private double maxDist;
@@ -16,7 +16,7 @@ class RankData {
         this.maxDist = maxDist;
         this.dataType = dataType;
     }
-    void generateRanks() throws Exception {
+    void generateRanks() throws IOException {
         BufferedReader reader1, reader2;
 
         String line1, line2;
@@ -26,7 +26,7 @@ class RankData {
         for (String file : files) {
             writer = new BufferedWriter(new FileWriter(new File(path + "/rank-" + file)));
             //TreeMap<Double, Set<Integer>> rankList = new TreeMap<>();
-            PriorityQueue rankQueue = new PriorityQueue(Integer.MAX_VALUE, "descending");
+            PriorityQueue rankQueue = new PriorityQueue("descending");
             reader1 = new BufferedReader(new FileReader(new File(path + "/" + file)));
             while ((line1 = reader1.readLine()) != null) {
                 vec1 = Utils.getValuesFromLine(line1, " ", dataType);
@@ -40,8 +40,8 @@ class RankData {
                     idx++;
                 }
                 //Utils.writeDescending(writer, rankList);
-                List<Integer> rankList = rankQueue.serialize();
-                for(Integer i : rankList) {
+                List<T> rankList = rankQueue.serialize();
+                for(T i : rankList) {
                     writer.write(String.valueOf(i) + ",");
                 }
                 writer.write("\n");
