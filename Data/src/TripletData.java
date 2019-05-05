@@ -42,8 +42,10 @@ class TripletData {
                             if(random.nextDouble() > Math.sqrt(sampleRatio))
                                 continue;
                             points[2] = Utils.getValuesFromLine(lines[2], " ", dataType);
-                            double simAP = Utils.computeSimilarity(points[0], points[1], maxDist, "Euclidean", "staircase");
-                            double simAN = Utils.computeSimilarity(points[0], points[2], maxDist, "Euclidean", "staircase");
+                            //double simAP = Utils.computeSimilarity(points[0], points[1], maxDist, "Euclidean", "staircase");
+                            //double simAN = Utils.computeSimilarity(points[0], points[2], maxDist, "Euclidean", "staircase");
+                            double simAP = Utils.computeEuclideanDist(points[0], points[1]);
+                            double simAN = Utils.computeEuclideanDist(points[0], points[2]);
                             if(simAP < simAN) continue;
                             writer.write(lines[0] + "," + lines[1] + "," + lines[2] + "," + String.valueOf(simAP - simAN) + "\n");
                         }

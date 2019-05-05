@@ -11,9 +11,9 @@ public class DataGenerator {
     public static void main(String[] args) throws IOException {
 
         int numDims = 6;
-        int numPoints = 2000;
+        int numPoints = 200;
         int numClusters = 3;
-        double trainRatio = 0.00005;
+        double trainRatio = 1;
         String dataType = "Double";
 
         String path = "./data";
@@ -32,11 +32,12 @@ public class DataGenerator {
         rd.generateRanks();
         System.out.println("\n***********************\n* rank data generated *\n***********************");
 
-        td.generateSamples();
+        //td.generateSamples();
         System.out.println("\n*****************************\n* triplet samples generated *\n*****************************");
 
         sd.generateSamples();
         System.out.println("\n*****************************\n* siamese samples generated *\n*****************************");
+        System.out.println("maximal knn distance: " + rd.getLowestRankScore());
     }
 
     private static String[] getFileNames(int numFiles) {

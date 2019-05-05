@@ -1,8 +1,24 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.autograd import Variable
 import math
 
+
+# class ContrastiveLossMLP(nn.Module):
+#     """
+#     Contrastive loss
+#     Takes embeddings of two samples and a target label == 1 if samples are from the same class and label == 0 otherwise
+#     """
+#
+#     def __init__(self):
+#         super(ContrastiveLossMLP, self).__init__()
+#
+#     #follows the input format?
+#     def forward(self, output1, output2, target, size_average=True):
+#         distances = (output2 - output1).pow(2).sum(1)  # squared distances
+#         losses = 0.5 * (target.float() * distances)
+#         return losses.mean() if size_average else losses.sum()
 
 class ContrastiveLossMLP(nn.Module):
     """
@@ -13,11 +29,14 @@ class ContrastiveLossMLP(nn.Module):
     def __init__(self):
         super(ContrastiveLossMLP, self).__init__()
 
-    #follows the input format?
-    def forward(self, output1, output2, target, size_average=True):
-        distances = (output2 - output1).pow(2).sum(1)  # squared distances
-        losses = 0.5 * (target.float() * distances)
-        return losses.mean() if size_average else losses.sum()
+    def forward(self, output1, output2, y):
+        _y = (output2 - output1).pow(2).sum(1).sqrt()
+        mask1 = (y < 0.4).type(torch.FloatTensor)
+        losses1 = mask1 * (y.float() - _y).abs()
+        mask2 = ((_y < 0.8) * (y >= 0.4)).type(torch.FloatTensor)
+        losses2 = mask2 * (0.8 - _y)
+        loss = losses1 + losses2
+        return loss.mean()
 
 
 class TripletLossMLP(nn.Module):

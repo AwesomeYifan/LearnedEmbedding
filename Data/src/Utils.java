@@ -28,15 +28,20 @@ public class Utils {
         return results;
     }
 
+    static double computeEuclideanDist(Object[] vec1, Object[] vec2) {
+        double sumDist = 0;
+        for(int i = 0; i < vec1.length; i++) {
+            sumDist += Math.pow((Double)vec1[i] - (Double)vec2[i], 2);
+        }
+        return Math.sqrt(sumDist);
+    }
+
     static double computeSimilarity(Object[] vec1, Object[] vec2, double maxDist, String distOpt, String scaleOpt) {
         double sim;
         switch (distOpt) {
             case "Euclidean": {
-                double sumDist = 0;
-                for(int i = 0; i < vec1.length; i++) {
-                    sumDist += Math.pow((Double)vec1[i] - (Double)vec2[i], 2);
-                }
-                sim = (maxDist - Math.sqrt(sumDist)) / maxDist;
+                double sumDist = computeEuclideanDist(vec1, vec2);
+                sim = (maxDist - sumDist) / maxDist;
                 break;
             }
             case "Manhattan": {

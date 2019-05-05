@@ -38,7 +38,8 @@ class SiameseData {
                         if(random.nextDouble() > Math.sqrt(sampleRatio))
                             continue;
                         points[1] = Utils.getValuesFromLine(lines[1], " ", dataType);
-                        double sim = Utils.computeSimilarity(points[0], points[1], maxDist, "Euclidean", "staircase");
+                        //double sim = Utils.computeSimilarity(points[0], points[1], maxDist, "Euclidean", "staircase");
+                        double sim = Utils.computeEuclideanDist(points[0], points[1]);
                         writer.write(lines[0] + "," + lines[1] + "," + String.valueOf(sim) + "\n");
                     }
                     p2Reader.close();

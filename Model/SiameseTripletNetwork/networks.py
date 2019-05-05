@@ -30,7 +30,9 @@ class EmbeddingNetMLP(nn.Module):
     def __init__(self, input_dim, embedding_dim):
         super(EmbeddingNetMLP, self).__init__()
 
-        self.net = nn.Sequential(nn.Linear(input_dim, embedding_dim),
+        self.net = nn.Sequential(nn.Linear(input_dim, 50),
+                                 nn.PReLU(),
+                                 nn.Linear(50, embedding_dim),
                                  nn.PReLU()
                                  )
 

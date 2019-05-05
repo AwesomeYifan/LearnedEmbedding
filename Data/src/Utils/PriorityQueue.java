@@ -68,7 +68,14 @@ public class PriorityQueue<K extends Comparable,V> {
         }
         return queueList;
     }
+    public K getBottomKey() {
+        if(isAscending)
+            return this.queue.lastKey();
+        else
+            return this.queue.firstKey();
+    }
     public void clear() {
+        this.size = 0;
         this.queue.clear();
     }
 

@@ -11,9 +11,9 @@ from losses import ContrastiveLossMLP
 from networks import SiameseNet, EmbeddingNetMLP
 from trainer import fit
 
-embedding_dim = 6
+embedding_dim = 8
 gpus = 0
-n_epoch = 10
+n_epoch = 20
 num_clusters = 2
 params = {'batch_size': 10,
           'shuffle': True}
