@@ -1,8 +1,9 @@
 import torch
 import numpy as np
+from pytorchtools import EarlyStopping
 
 
-def fit(train_loader, val_loader, model, loss_fn, optimizer, scheduler, n_epochs, cuda, log_interval, metrics=[],
+def fit(train_loader, val_loader, model, loss_fn, optimizer, scheduler, patience, n_epochs, cuda, log_interval, metrics=[],
         start_epoch=0):
     """
     Loaders, model, loss function and metrics should work together for a given task,
@@ -15,7 +16,7 @@ def fit(train_loader, val_loader, model, loss_fn, optimizer, scheduler, n_epochs
     """
     for epoch in range(0, start_epoch):
         scheduler.step()
-
+    early_stopping = EarlyStopping(patience=patience, verbose=True)
     for epoch in range(start_epoch, n_epochs):
         scheduler.step()
 
@@ -28,6 +29,12 @@ def fit(train_loader, val_loader, model, loss_fn, optimizer, scheduler, n_epochs
 
         val_loss, metrics = test_epoch(val_loader, model, loss_fn, cuda, metrics)
         val_loss /= len(val_loader)
+
+        early_stopping(val_loss, model)
+
+        if early_stopping.early_stop:
+            print("Early stopping")
+            break
 
         message += '\nEpoch: {}/{}. Validation set: Average loss: {:.4f}'.format(epoch + 1, n_epochs,
                                                                                  val_loss)
@@ -45,14 +52,17 @@ def train_epoch(train_loader, model, loss_fn, optimizer, cuda, log_interval, met
     losses = []
     total_loss = 0
 
-    for batch_idx, (data, target) in enumerate(train_loader):
+    for batch_idx, (data, target, threshold) in enumerate(train_loader):
         target = target if len(target) > 0 else None
+        threshold = threshold if len(threshold) > 0 else None
         if not type(data) in (tuple, list):
             data = (data,)
         if cuda:
             data = tuple(d.cuda() for d in data)
             if target is not None:
                 target = target.cuda()
+            if threshold is not None:
+                threshold = threshold.cuda()
 
 
         optimizer.zero_grad()
@@ -66,6 +76,10 @@ def train_epoch(train_loader, model, loss_fn, optimizer, cuda, log_interval, met
             target = (target,)
             loss_inputs += target
 
+        if threshold is not None:
+            threshold = (threshold,)
+            loss_inputs += threshold
+
         loss_outputs = loss_fn(*loss_inputs)
         loss = loss_outputs[0] if type(loss_outputs) in (tuple, list) else loss_outputs
         losses.append(loss.item())
@@ -73,8 +87,8 @@ def train_epoch(train_loader, model, loss_fn, optimizer, cuda, log_interval, met
         loss.backward()
         optimizer.step()
 
-        for metric in metrics:
-            metric(outputs, target, loss_outputs)
+        #for metric in metrics:
+        #    metric(outputs, target, loss_outputs)
 
         if batch_idx % log_interval == 0:
             message = 'Train: [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
@@ -96,14 +110,17 @@ def test_epoch(val_loader, model, loss_fn, cuda, metrics):
             metric.reset()
         model.eval()
         val_loss = 0
-        for batch_idx, (data, target) in enumerate(val_loader):
+        for batch_idx, (data, target, threshold) in enumerate(val_loader):
             target = target if len(target) > 0 else None
+            threshold = threshold if len(threshold) > 0 else None
             if not type(data) in (tuple, list):
                 data = (data,)
             if cuda:
                 data = tuple(d.cuda() for d in data)
                 if target is not None:
                     target = target.cuda()
+                if threshold is not None:
+                    threshold = threshold.cuda()
 
             outputs = model(*data)
 
@@ -114,11 +131,15 @@ def test_epoch(val_loader, model, loss_fn, cuda, metrics):
                 target = (target,)
                 loss_inputs += target
 
+            if threshold is not None:
+                threshold = (threshold,)
+                loss_inputs += threshold
+
             loss_outputs = loss_fn(*loss_inputs)
             loss = loss_outputs[0] if type(loss_outputs) in (tuple, list) else loss_outputs
             val_loss += loss.item()
 
-            for metric in metrics:
-                metric(outputs, target, loss_outputs)
+            #for metric in metrics:
+            #    metric(outputs, target, loss_outputs)
 
     return val_loss, metrics

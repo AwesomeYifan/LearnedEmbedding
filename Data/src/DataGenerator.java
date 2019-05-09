@@ -1,28 +1,23 @@
-import java.io.*;
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Set;
-import java.util.TreeMap;
+import java.io.IOException;
 
 public class DataGenerator {
 
     public static void main(String[] args) throws IOException {
 
         int numDims = 6;
-        int numPoints = 200;
-        int numClusters = 3;
-        double trainRatio = 1;
+        int numPoints = 2000;
+        int numClusters = 1;
+        int topK = 10;
         String dataType = "Double";
 
         String path = "./data";
         String[] files = getFileNames(numClusters);
         double maxDist = getMaxDist(numDims, "Euclidean");
+        double trainRatio = getSampleRatio(topK, numPoints);
 
         //go to this class if need to chance mean and deviation.
         GaussianData gd = new GaussianData(path, files, numDims, numPoints, numClusters);
-        RankData rd = new RankData(path, files, maxDist, dataType);
+        RankData rd = new RankData(path, files, maxDist, topK, dataType);
         TripletData td = new TripletData(path, files, maxDist, trainRatio, dataType);
         SiameseData sd = new SiameseData(path, files, maxDist, trainRatio, dataType);
 
@@ -37,7 +32,7 @@ public class DataGenerator {
 
         sd.generateSamples();
         System.out.println("\n*****************************\n* siamese samples generated *\n*****************************");
-        System.out.println("maximal knn distance: " + rd.getLowestRankScore());
+        //System.out.println("maximal knn distance: " + rd.getLowestRankScore());
     }
 
     private static String[] getFileNames(int numFiles) {
@@ -57,5 +52,9 @@ public class DataGenerator {
                 return 1.0;
             }
         }
+    }
+    //balance positive (kNN) and negative (non-kNN) points
+    private static double getSampleRatio(int topK, int numPoints) {
+        return (double)topK / (double)numPoints * 3;
     }
 }

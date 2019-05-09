@@ -4,7 +4,7 @@ import torch
 from torch.utils.data import Dataset
 from torch.utils.data.sampler import BatchSampler
 
-
+'''
 class SiameseDataset(Dataset):
     def __init__(self, X, labels):
         self.X = X
@@ -23,6 +23,27 @@ class SiameseDataset(Dataset):
         right = torch.FloatTensor(right)
         label = float(self.labels[idx])
         return (left, right), label
+'''
+
+class SiameseDataset(Dataset):
+    def __init__(self, X, labels):
+        self.X = X
+        self.labels = labels
+
+    def __len__(self):
+        return len(self.X)
+
+    def __getitem__(self, idx):
+        #print("*****************************************")
+        #print(self.X)
+        #print("*****************************************")
+        left = [float(i) for i in str(self.X.loc[idx, 'P1']).split()]
+        left = torch.FloatTensor(left)
+        right = [float(i) for i in str(self.X.loc[idx, 'P2']).split()]
+        right = torch.FloatTensor(right)
+        distance = float(self.labels.loc[idx, 'distance'])
+        cutoff = float(self.labels.loc[idx, 'cutoff'])
+        return (left, right), distance, cutoff
 
 #triplet dataset format: ancher, positive, negative, d(AP) - d(AN)
 class TripletDataset(Dataset):

@@ -2,96 +2,135 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d24764c-4ea0-49f1-981d-33dfd8d3ee0d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Data/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/Data.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/Data.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/data/SiameseData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/data/SiameseData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/data/TripletData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/data/TripletData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/data/class-0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/data/class-0.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/data/class-1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/data/class-1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/data/class-2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/data/class-2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/data/rank-class-0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/data/rank-class-0.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/data/rank-class-1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/data/rank-class-1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/data/rank-class-2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/data/rank-class-2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/Data.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/Data.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/DataGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/DataGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/GaussianData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/GaussianData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/RankData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/RankData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/SiameseData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/SiameseData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/TripletData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/TripletData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/Utils/PriorityQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/Utils/PriorityQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point1d.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point1d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point2d.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point2d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point3d.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point3d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Pointnd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Pointnd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Range1d.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Range1d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rect2d.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rect2d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rect3d.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rect3d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rectnd.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rectnd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeaf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Branch.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Branch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/ConcurrentRTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/ConcurrentRTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeaf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeaf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/SiameseData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/SiameseData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/TripletData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/TripletData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/class-0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/class-0.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/class-1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/class-1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/class-2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/class-2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/rank-class-0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/rank-class-0.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/rank-class-1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/rank-class-1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/rank-class-2.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/rank-class-2.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$1$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$1$Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$3$1IntegerListEuclideanCoordinate.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$3$1IntegerListEuclideanCoordinate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$4$1DoubleListEuclideanCoordinate.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$4$1DoubleListEuclideanCoordinate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$LeafNodeTrait.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$LeafNodeTrait.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$NonLeafNodeTrait.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$NonLeafNodeTrait.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$Query$ResultsIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$Query$ResultsIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$RootLeafNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$RootLeafNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$RootNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$RootNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/PartitionFunctions$BalancedPartition.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/PartitionFunctions$BalancedPartition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Fixture.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Fixture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeClass$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeClass$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTestold.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTestold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/utils/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/temp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/temp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/wd/Stats.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/wd/Stats.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/production/Data/wd/WordDistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/production/Data/wd/WordDistance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeafTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeafTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeafTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeafTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeafTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeafTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/RTreeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/RTreeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/Rect2DTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/Rect2DTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/Rect3DTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/Rect3DTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/src/DataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/src/DataGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/src/RankData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/src/RankData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/src/SiameseData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/src/SiameseData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/src/TripletData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/src/TripletData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/src/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/src/Utils/PriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/src/Utils/PriorityQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Model.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Model.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiameseTripletNetwork/losses.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/losses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiameseTripletNetwork/networks.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/networks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py" beforeDir="false" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py" afterDir="false" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/pytorchtools.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/trainer_saved.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/data/TripletData.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/data/class-1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/data/class-2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/data/rank-class-1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/data/rank-class-2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/data/siamese-reducedVectors-1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/TripletData.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/class-1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/class-2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/rank-class-1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/rank-class-2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/siamese-reducedVectors-1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/anchor_negative_positive.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/contrastive_loss.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_comp_cl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_comp_ocl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_comp_otl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_comp_tl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_ocl_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_ocl_train.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_otl_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_otl_train.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_siamese_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_siamese_train.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_softmax_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_softmax_train.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_triplet_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_triplet_train.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_comp_cl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_comp_ocl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_comp_otl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_comp_tl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_ocl_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_ocl_train.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_otl_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_otl_train.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_siamese_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_siamese_train.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_softmax_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_softmax_train.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_triplet_test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/mnist_triplet_train.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/images/triplet_loss.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/DataGenerator.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/DataGenerator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/GaussianData.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/GaussianData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/RankData.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/RankData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/SiameseData.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/SiameseData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/TripletData.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/TripletData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Utils.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/Utils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/Utils/PriorityQueue.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/Utils/PriorityQueue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point1d.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point1d.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point2d.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point2d.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point3d.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Point3d.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Pointnd.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Pointnd.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Range1d.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Range1d.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rect2d.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rect2d.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rect3d.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rect3d.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rectnd.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/geometry/Rectnd.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeaf.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeaf.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Branch.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Branch.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/ConcurrentRTree.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/ConcurrentRTree.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf$1.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeaf.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeaf.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeaf.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeaf.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$1$Pair.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$1$Pair.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$1.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$2.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$3$1IntegerListEuclideanCoordinate.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$3$1IntegerListEuclideanCoordinate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$3.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$4$1DoubleListEuclideanCoordinate.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$4$1DoubleListEuclideanCoordinate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$4.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/DistanceFunctions.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$LeafNodeTrait.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$LeafNodeTrait.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$Node.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$Node.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$NonLeafNodeTrait.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$NonLeafNodeTrait.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$Query$ResultsIterator.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$Query$ResultsIterator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$RootLeafNode.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$RootLeafNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$RootNode.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree$RootNode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/MTree.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/PartitionFunctions$BalancedPartition.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/PartitionFunctions$BalancedPartition.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Data.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Data.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Fixture.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/Fixture.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeClass$1.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeClass$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeClass.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTestold.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/examples/MTreeTestold.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/mtree/utils/Utils.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/mtree/utils/Utils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/temp.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/temp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/wd/Stats.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/wd/Stats.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/wd/WordDistance.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/wd/WordDistance.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeafTest.class" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeafTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeafTest.class" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeafTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeafTest.class" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeafTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/RTreeTest.class" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/RTreeTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/Rect2DTest.class" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/Rect2DTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/Rect3DTest.class" afterPath="$PROJECT_DIR$/../Data/out/test/Data/com/conversantmedia/util/collection/spatial/Rect3DTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Data/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Data/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/MTreeTest.java" afterPath="$PROJECT_DIR$/../Data/M-Tree-master/java/mtree/examples/MTreeTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/data/SiameseData.csv" afterPath="$PROJECT_DIR$/../Data/data/SiameseData.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/data/class-0.csv" afterPath="$PROJECT_DIR$/../Data/data/class-0.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/data/mtree.csv" afterPath="$PROJECT_DIR$/../Data/data/mtree.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/data/rank-class-0.csv" afterPath="$PROJECT_DIR$/../Data/data/rank-class-0.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/data/siamese-reducedVectors-0.csv" afterPath="$PROJECT_DIR$/../Data/data/siamese-reducedVectors-0.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Data/out/production/Data/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Data/out/production/Data/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/SiameseData.csv" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/SiameseData.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/class-0.csv" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/class-0.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/mtree.csv" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/mtree.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/rank-class-0.csv" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/rank-class-0.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/data/siamese-reducedVectors-0.csv" afterPath="$PROJECT_DIR$/../Data/out/production/Data/data/siamese-reducedVectors-0.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/DataGenerator.java" afterPath="$PROJECT_DIR$/../Data/src/DataGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/RankData.java" afterPath="$PROJECT_DIR$/../Data/src/RankData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/src/SiameseData.java" afterPath="$PROJECT_DIR$/../Data/src/SiameseData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Model.iml" afterPath="$PROJECT_DIR$/.idea/Model.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/datasets.py" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/datasets.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/losses.py" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/losses.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/networks.py" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/networks.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/temp.py" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/temp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SiameseTripletNetwork/trainer.py" afterPath="$PROJECT_DIR$/SiameseTripletNetwork/trainer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,6 +141,7 @@
     <SUITE FILE_PATH="coverage/Model$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1554432903386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SiameseLSTM/DR" />
     <SUITE FILE_PATH="coverage/Model$trainSiamese.coverage" NAME="trainSiamese Coverage Results" MODIFIED="1557028955288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SiameseTripletNetwork" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FUSProjectUsageTrigger">
     <session id="-1382011502">
       <usages-collector id="statistics.lifecycle.project">
@@ -140,11 +180,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="networks.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/networks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+            <state relative-caret-position="383">
+              <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -152,20 +192,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SiameseNetwork/DR/train.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1515">
-              <caret line="119" column="11" selection-start-line="119" selection-start-column="11" selection-end-line="119" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="-580">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -173,11 +204,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="temp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/temp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="95">
+              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -185,11 +216,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="losses.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/losses.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="35" column="65" lean-forward="true" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+            <state relative-caret-position="380">
+              <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trainer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="22" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -197,11 +238,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/datasets.py">
+      <file leaf-file-name="pytorchtools.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/pytorchtools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            <state relative-caret-position="760">
+              <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -209,11 +250,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="datasets.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/datasets.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trainTriplet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainTriplet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="361">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -221,23 +274,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file leaf-file-name="trainSiamese.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="70" selection-start-line="70" selection-end-line="70" />
+            <state relative-caret-position="133">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -253,7 +295,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>traces</find>
       <find>text_to_word_list</find>
       <find>epoch</find>
       <find>+00</find>
@@ -275,11 +316,15 @@
       <find>float</find>
       <find>loader</find>
       <find>params</find>
-      <find>fit</find>
-      <find>batch_size</find>
       <find>dist</find>
       <find>variable</find>
       <find>X_validation</find>
+      <find>batch_size</find>
+      <find>/</find>
+      <find>eps</find>
+      <find>loss</find>
+      <find>requires_grad</find>
+      <find>fit</find>
     </findStrings>
     <replaceStrings>
       <replace>input_dim</replace>
@@ -313,12 +358,13 @@
         <option value="$PROJECT_DIR$/TripletNetwork/temp.py" />
         <option value="$PROJECT_DIR$/SiameseTripletNetwork/utils.py" />
         <option value="$PROJECT_DIR$/SiameseTripletNetwork/DR.py" />
-        <option value="$PROJECT_DIR$/SiameseTripletNetwork/temp.py" />
-        <option value="$PROJECT_DIR$/SiameseTripletNetwork/datasets.py" />
-        <option value="$PROJECT_DIR$/SiameseTripletNetwork/networks.py" />
         <option value="$PROJECT_DIR$/SiameseTripletNetwork/trainTriplet.py" />
-        <option value="$PROJECT_DIR$/SiameseTripletNetwork/losses.py" />
+        <option value="$PROJECT_DIR$/SiameseTripletNetwork/datasets.py" />
+        <option value="$PROJECT_DIR$/SiameseTripletNetwork/trainer.py" />
+        <option value="$PROJECT_DIR$/SiameseTripletNetwork/temp.py" />
+        <option value="$PROJECT_DIR$/SiameseTripletNetwork/networks.py" />
         <option value="$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py" />
+        <option value="$PROJECT_DIR$/SiameseTripletNetwork/losses.py" />
       </list>
     </option>
   </component>
@@ -329,30 +375,59 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="812" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <expand>
-            <path>
-              <item name="Model" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SiameseTripletNetwork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -384,8 +459,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.trainSiamese">
-    <configuration name="DR" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Model" />
+    <configuration default="false" name="temp" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -396,62 +470,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Projects\LearnedEmbedding\Model\SiameseTripletNetwork\trainSiamese.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="temp (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Model" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TripletNetwork" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TripletNetwork/temp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="temp" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Model" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SiameseTripletNetwork" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SiameseTripletNetwork/temp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
+      <method />
     </configuration>
-    <configuration name="trainSiamese" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Model" />
+    <configuration default="false" name="trainTriplet" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -462,69 +488,147 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="trainTriplet" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Model" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SiameseTripletNetwork" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SiameseTripletNetwork/trainTriplet.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
+      <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="Model" />
+    <configuration default="false" name="trainSiamese" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SiameseTripletNetwork" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Model" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests for trainer.test_epoch" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SiameseTripletNetwork" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Model" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;trainer.test_epoch&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="losses" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SiameseTripletNetwork" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Model" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SiameseTripletNetwork/losses.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <module name="Model" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Model" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Model" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Model" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;.&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
+      <method />
     </configuration>
-    <list>
-      <item itemvalue="Python.temp (1)" />
-      <item itemvalue="Python.DR" />
-      <item itemvalue="Python.temp" />
-      <item itemvalue="Python.trainTriplet" />
-      <item itemvalue="Python.trainSiamese" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.temp" />
+      <item index="1" class="java.lang.String" itemvalue="Python.trainTriplet" />
+      <item index="2" class="java.lang.String" itemvalue="Python.trainSiamese" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for trainer.test_epoch" />
+      <item index="4" class="java.lang.String" itemvalue="Python.losses" />
     </list>
     <recent_temporary>
-      <list>
-        <item itemvalue="Python.trainSiamese" />
-        <item itemvalue="Python.trainTriplet" />
-        <item itemvalue="Python.temp" />
-        <item itemvalue="Python.DR" />
-        <item itemvalue="Python.temp (1)" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.trainSiamese" />
+        <item index="1" class="java.lang.String" itemvalue="Python.temp" />
+        <item index="2" class="java.lang.String" itemvalue="Python.losses" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for trainer.test_epoch" />
+        <item index="4" class="java.lang.String" itemvalue="Python.trainTriplet" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\esoadmin\AppData\Roaming\Subversion</configuration>
@@ -540,6 +644,9 @@
     <servers />
   </component>
   <component name="TestHistory">
+    <history-entry file="Unittests_for_trainer_test_epoch - 2019.05.08 at 12h 03m 39s.xml">
+      <configuration name="Unittests for trainer.test_epoch" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittests_in_train_py - 2019.04.24 at 11h 22m 06s.xml">
       <configuration name="Unittests in train.py" configurationId="tests" />
     </history-entry>
@@ -557,31 +664,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="812" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11731044" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32946146" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2777778" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.29778248" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="3" />
-      <window_info anchor="right" id="SciView" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25237593" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29778248" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +693,31 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainTriplet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SiameseLSTM/__init__.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/tensorflow/python/keras/engine/sequential.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/tensorflow/python/framework/ops.py" />
@@ -611,7 +738,7 @@
     <entry file="file://$PROJECT_DIR$/SiameseNetwork/AAAI/word2vec.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="29" column="11" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="11" />
+          <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -625,7 +752,7 @@
     <entry file="file://$PROJECT_DIR$/SiameseNetwork/DR/predict.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -650,12 +777,9 @@
     <entry file="file://$PROJECT_DIR$/SiameseNetwork/AAAI/predict.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-69">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseNetwork/DR/data/reducedVectors1.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SiameseNetwork/AAAI/util.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -663,9 +787,6 @@
           <caret line="208" column="32" lean-forward="true" selection-start-line="208" selection-start-column="32" selection-end-line="208" selection-end-column="32" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseNetwork/DR/data/history-graph.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$USER_HOME$/Desktop/triplet-network-pytorch-master/train.py" />
     <entry file="file://$PROJECT_DIR$/TripletNetwork/tripletnet.py" />
@@ -678,7 +799,7 @@
     <entry file="file://$PROJECT_DIR$/SiameseNetwork/DR/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
+          <caret line="99" column="46" lean-forward="false" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -694,7 +815,7 @@
     <entry file="file://$PROJECT_DIR$/SiameseNetwork/DR/temp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -705,29 +826,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/images/contrastive_loss.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/images/anchor_negative_positive.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/images/fmnist_otl_train.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/images/triplet_loss.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseNetwork/DR/train.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/pandas/core/indexing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
-          <caret line="119" column="11" selection-start-line="119" selection-start-column="11" selection-end-line="119" selection-end-column="11" />
+        <state relative-caret-position="204">
+          <caret line="1251" column="0" lean-forward="false" selection-start-line="1251" selection-start-column="0" selection-end-line="1251" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainer_saved.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainTriplet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="-580">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
@@ -736,68 +864,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/datasets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        <state relative-caret-position="213">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/networks.py">
+    <entry file="file://$PROJECT_DIR$/SiameseNetwork/DR/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="326">
+          <caret line="121" column="37" lean-forward="false" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/temp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainTriplet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/images/triplet_loss.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/losses.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="35" column="65" lean-forward="true" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+        <state relative-caret-position="441">
+          <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="22" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/pytorchtools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/temp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/networks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/trainSiamese.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SiameseTripletNetwork/losses.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

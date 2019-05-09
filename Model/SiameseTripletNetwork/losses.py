@@ -20,6 +20,7 @@ import math
 #         losses = 0.5 * (target.float() * distances)
 #         return losses.mean() if size_average else losses.sum()
 
+'''
 class ContrastiveLossMLP(nn.Module):
     """
     Contrastive loss
@@ -37,6 +38,32 @@ class ContrastiveLossMLP(nn.Module):
         losses2 = mask2 * (0.8 - _y)
         loss = losses1 + losses2
         return loss.mean()
+'''
+
+
+class ContrastiveLossMLP(nn.Module):
+
+    def __init__(self):
+        super(ContrastiveLossMLP, self).__init__()
+        self.eps = 1e-9
+
+    def forward(self, output1, output2, y, cutoff):
+        #print("output: " + str(output1))
+        cutoff = cutoff.type(torch.FloatTensor)
+        _y = (output2 - output1 + self.eps).pow(2).sum(1).sqrt()
+        _y = _y.type(torch.FloatTensor)
+        y = y.type(torch.FloatTensor)
+
+        mask1 = torch.le(y, cutoff.float()).type(torch.FloatTensor)
+        losses1 = mask1 * (y.float() - _y + self.eps).pow(2).sqrt()
+        mask2 = (torch.le(_y, 2 * cutoff) * torch.le(cutoff, y)).type(torch.FloatTensor)
+        #losses2 = mask2 * (2 * cutoff - _y)
+        losses2 = mask2 * torch.le(_y, 2 * cutoff).type(torch.FloatTensor)
+        scale = (losses1.mean().data.numpy()) / (losses2.mean().data.numpy() + self.eps)
+        loss = losses1 + scale * losses2
+        #print(str(losses1.mean().data.numpy()) + " # " + str(losses2.mean().data.numpy()))
+        return loss.mean()
+        #return losses1.mean()
 
 
 class TripletLossMLP(nn.Module):

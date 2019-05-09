@@ -6,16 +6,17 @@ import torch.optim as optim
 from sklearn.model_selection import train_test_split
 from torch.optim import lr_scheduler
 
+from pytorchtools import EarlyStopping
 from datasets import SiameseDataset
 from losses import ContrastiveLossMLP
 from networks import SiameseNet, EmbeddingNetMLP
 from trainer import fit
 
-embedding_dim = 8
+embedding_dim = 20
 gpus = 0
-n_epoch = 20
-num_clusters = 2
-params = {'batch_size': 10,
+n_epoch = 50
+num_clusters = 1
+params = {'batch_size': 50,
           'shuffle': True}
 
 TRAIN_CSV = "../../Data/data/SiameseData.csv"
@@ -24,11 +25,11 @@ TRAIN_CSV = "../../Data/data/SiameseData.csv"
 train_df = pd.read_csv(TRAIN_CSV, delimiter=',', encoding="utf-8-sig")
 
 # Split to train validation
-validation_size = int(len(train_df) * 0.1)
+validation_size = int(len(train_df) * 0.01)
 training_size = len(train_df) - validation_size
 
 X = train_df[['P1', 'P2']]
-Y = train_df['similarity']
+Y = train_df[['distance', 'cutoff']]
 
 input_dim = len(X['P1'][0].split())
 cuda = torch.cuda.is_available()
@@ -48,10 +49,12 @@ if cuda:
     model.cuda()
 loss_fn = ContrastiveLossMLP()
 lr = 1e-3
-optimizer = optim.Adam(model.parameters(), lr=lr)
+optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 scheduler = lr_scheduler.StepLR(optimizer, 8, gamma=0.1, last_epoch=-1)
 log_interval = 100
-fit(siamese_train_loader, siamese_test_loader, model, loss_fn, optimizer, scheduler, n_epoch, cuda, log_interval)
+patience = 3
+fit(siamese_train_loader, siamese_test_loader, model, loss_fn, optimizer, scheduler, patience, n_epoch, cuda, log_interval)
+
 
 for i in range(num_clusters):
     TEST_CSV = "../../Data/data/class-" + str(i) + ".csv"

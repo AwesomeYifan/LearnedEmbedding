@@ -4,7 +4,8 @@ import java.io.*;
 import java.util.*;
 
 public class MTreeTest {
-    static int[] topK = {2,5,10};
+    static int[] topK = {2, 5, 10};
+    //static int[] topK = {2};
 
     public static void main(String[] args) throws IOException {
         String path = "../Data/data/siamese-reducedVectors-0.csv";
