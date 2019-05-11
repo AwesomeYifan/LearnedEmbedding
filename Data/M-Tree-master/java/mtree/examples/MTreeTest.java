@@ -4,13 +4,13 @@ import java.io.*;
 import java.util.*;
 
 public class MTreeTest {
-    static int[] topK = {2, 5, 10};
+    static int[] topK = {2, 5, 10, 20};
     //static int[] topK = {2};
 
     public static void main(String[] args) throws IOException {
-        String path = "../Data/data/siamese-reducedVectors-0.csv";
+        //String path = "../Data/data/siamese-reducedVectors-0.csv";
         //String path = "../Data/data/triplet-reducedVectors-0.csv";
-        //String path = "data/class-0.csv";
+        String path = "data/class-0.csv";
         MTreeClass mtree = new MTreeClass();
         //Set<Data> allData = new HashSet<Data>();
         List<Data> allData = new ArrayList<Data>();
@@ -36,7 +36,7 @@ public class MTreeTest {
             //bw.write(data.getID() + "");
             //System.out.print(data.getID() + ": ");
             startTime = System.currentTimeMillis();
-            MTreeClass.Query query = mtree.getNearestByLimit(data, 10);
+            MTreeClass.Query query = mtree.getNearestByLimit(data, topK[topK.length - 1]);
             endTime = System.currentTimeMillis();
             totalTime += (endTime - startTime);
             for(MTreeClass.ResultItem ri : query) {

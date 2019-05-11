@@ -4,10 +4,10 @@ public class DataGenerator {
 
     public static void main(String[] args) throws IOException {
 
-        int numDims = 6;
-        int numPoints = 2000;
+        int numDims = 20;
+        int numPoints = 200;
         int numClusters = 1;
-        int topK = 10;
+        int topK = 50;
         String dataType = "Double";
 
         String path = "./data";
@@ -18,8 +18,7 @@ public class DataGenerator {
         //go to this class if need to chance mean and deviation.
         GaussianData gd = new GaussianData(path, files, numDims, numPoints, numClusters);
         RankData rd = new RankData(path, files, maxDist, topK, dataType);
-        TripletData td = new TripletData(path, files, maxDist, trainRatio, dataType);
-        SiameseData sd = new SiameseData(path, files, maxDist, trainRatio, dataType);
+        TrainingData td = new TrainingData(path, files, maxDist, trainRatio, dataType);
 
         gd.generateData();
         System.out.println("******************\n* data generated *\n******************");
@@ -27,10 +26,10 @@ public class DataGenerator {
         rd.generateRanks();
         System.out.println("\n***********************\n* rank data generated *\n***********************");
 
-        //td.generateSamples();
+        //td.generateTripletSamples();
         System.out.println("\n*****************************\n* triplet samples generated *\n*****************************");
 
-        sd.generateSamples();
+        td.generateSiameseSamples();
         System.out.println("\n*****************************\n* siamese samples generated *\n*****************************");
         //System.out.println("maximal knn distance: " + rd.getLowestRankScore());
     }
@@ -53,6 +52,7 @@ public class DataGenerator {
             }
         }
     }
+
     //balance positive (kNN) and negative (non-kNN) points
     private static double getSampleRatio(int topK, int numPoints) {
         return (double)topK / (double)numPoints * 3;

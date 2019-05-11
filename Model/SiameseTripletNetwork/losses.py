@@ -46,23 +46,32 @@ class ContrastiveLossMLP(nn.Module):
     def __init__(self):
         super(ContrastiveLossMLP, self).__init__()
         self.eps = 1e-9
+        self.alpha = 0.9 # alpha * accuracy + (1-alpha) * efficiency
 
     def forward(self, output1, output2, y, cutoff):
-        #print("output: " + str(output1))
-        cutoff = cutoff.type(torch.FloatTensor)
         _y = (output2 - output1 + self.eps).pow(2).sum(1).sqrt()
         _y = _y.type(torch.FloatTensor)
         y = y.type(torch.FloatTensor)
+        cutoff = cutoff.type(torch.FloatTensor)
 
-        mask1 = torch.le(y, cutoff.float()).type(torch.FloatTensor)
-        losses1 = mask1 * (y.float() - _y + self.eps).pow(2).sqrt()
-        mask2 = (torch.le(_y, 2 * cutoff) * torch.le(cutoff, y)).type(torch.FloatTensor)
-        #losses2 = mask2 * (2 * cutoff - _y)
-        losses2 = mask2 * torch.le(_y, 2 * cutoff).type(torch.FloatTensor)
-        scale = (losses1.mean().data.numpy()) / (losses2.mean().data.numpy() + self.eps)
-        loss = losses1 + scale * losses2
-        #print(str(losses1.mean().data.numpy()) + " # " + str(losses2.mean().data.numpy()))
-        return loss.mean()
+        mask1 = torch.le(y, cutoff).type(torch.FloatTensor)
+        losses1 = mask1 * (y - _y + self.eps).pow(2).sqrt()
+
+        mask2 = (torch.le(cutoff, y) * torch.le(_y, cutoff)).type(torch.FloatTensor)
+        losses2 = mask2 * torch.le(_y, cutoff).type(torch.FloatTensor)
+
+        scale = (losses1.mean().data.numpy() + self.eps) / (losses2.mean().data.numpy() + self.eps)
+        accuracy_loss = self.alpha * (losses1 + scale * losses2)
+
+        mask3 = (torch.le(cutoff, y) * torch.le(_y, 2 * cutoff)).type(torch.FloatTensor)
+        losses3 = mask3 * torch.le(_y, 2 * cutoff).type(torch.FloatTensor)
+
+        scale = (losses1.mean().data.numpy() + self.eps) / (losses3.mean().data.numpy() + self.eps)
+        efficiency_loss = (1 - self.alpha) * scale * losses3
+
+        #print("accuracy loss: " + str(accuracy_loss.mean().data.numpy()) + "; efficiency loss: " + str(efficiency_loss.mean().data.numpy()))
+        losses = accuracy_loss + efficiency_loss
+        return losses.mean()
         #return losses1.mean()
 
 

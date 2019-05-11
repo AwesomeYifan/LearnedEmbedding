@@ -12,30 +12,35 @@ from losses import ContrastiveLossMLP
 from networks import SiameseNet, EmbeddingNetMLP
 from trainer import fit
 
-embedding_dim = 20
+embedding_dim = 6
 gpus = 0
-n_epoch = 50
+n_epoch = 1
 num_clusters = 1
-params = {'batch_size': 50,
+params = {'batch_size': 10,
           'shuffle': True}
 
-TRAIN_CSV = "../../Data/data/SiameseData.csv"
+TRAIN_CSV = "../../Data/data/trainingData.csv"
+TEST_CSV = "../../Data/data/validationData.csv"
 
 # Load training set
 train_df = pd.read_csv(TRAIN_CSV, delimiter=',', encoding="utf-8-sig")
+test_df = pd.read_csv(TEST_CSV, delimiter=',', encoding="utf-8-sig")
 
 # Split to train validation
-validation_size = int(len(train_df) * 0.01)
-training_size = len(train_df) - validation_size
+#validation_size = int(len(train_df) * 0.01)
+#training_size = len(train_df) - validation_size
 
-X = train_df[['P1', 'P2']]
-Y = train_df[['distance', 'cutoff']]
+training_samples = train_df[['P1', 'P2']]
+training_labels = train_df[['distance', 'cutoff']]
+testing_samples = test_df[['P1', 'P2']]
+testing_labels = test_df[['distance', 'cutoff']]
 
-input_dim = len(X['P1'][0].split())
+input_dim = len(training_samples['P1'][0].split())
 cuda = torch.cuda.is_available()
 
-X_train, X_temp, Y_train, Y_temp = train_test_split(X, Y, test_size=0)
-X_validation, X_temp, Y_validation, Y_temp = train_test_split(X, Y, test_size=0)
+X_train, X_temp, Y_train, Y_temp = train_test_split(training_samples, training_labels, test_size=0)
+X_validation, X_temp, Y_validation, Y_temp = train_test_split(testing_samples, testing_labels, test_size=0)
+#X_validation, X_temp, Y_validation, Y_temp = train_test_split(training_samples, training_labels, test_size=0)
 
 siamese_train_dataset = SiameseDataset(X_train, Y_train)  # Returns pairs of images and target same/different
 siamese_test_dataset = SiameseDataset(X_validation, Y_validation)

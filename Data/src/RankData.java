@@ -35,7 +35,11 @@ class RankData <T> {
             //PriorityQueue rankQueue = new PriorityQueue("descending");
             PriorityQueue rankQueue = new PriorityQueue(topK,"ascending");
             reader1 = new BufferedReader(new FileReader(new File(path + "/" + file)));
+            int marker = 0;
             while ((line1 = reader1.readLine()) != null) {
+                marker++;
+                if(marker % 100 == 0)
+                    System.out.println(String.valueOf(marker) + " points processed for ranking");
                 vec1 = Utils.getValuesFromLine(line1, " ", dataType);
                 reader2 = new BufferedReader(new FileReader(new File(path + "/" + file)));
                 int idx = 0;
