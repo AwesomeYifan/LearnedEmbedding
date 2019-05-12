@@ -4,15 +4,13 @@ import java.util.Random;
 class TrainingData {
     private String path;
     private String[] files;
-    private double maxDist;
     private double trainRatio;
     private double testRatio;
     private String dataType;
 
-    TrainingData(String path, String[] files, double maxDist, double sampleRatio, String dataType) {
+    TrainingData(String path, String[] files, double sampleRatio, String dataType) {
         this.path = path;
         this.files = files;
-        this.maxDist = maxDist;
         this.trainRatio = sampleRatio;
         this.testRatio = sampleRatio / 5;
         this.dataType = dataType;
@@ -30,8 +28,9 @@ class TrainingData {
 
         //iterates each file
         for(int i = 0; i < files.length; i++) {
-            p1Reader = new BufferedReader(new FileReader(new File(path + "/" + files[i])));
-            thresholdReader = new BufferedReader(new FileReader(new File(path + "/threshold-" + files[i])));
+            String file = files[i];
+            p1Reader = new BufferedReader(new FileReader(new File(file)));
+            thresholdReader = new BufferedReader(new FileReader(new File(file + "-threshold")));
             String threshold;
             int marker = 0;
             while((lines[0] = p1Reader.readLine()) != null &&
@@ -43,7 +42,7 @@ class TrainingData {
                 points[0] = Utils.getValuesFromLine(lines[0], " ", dataType);
                 double thres = Double.parseDouble(threshold);
                 for(int j = i; j < files.length; j++) {
-                    p2Reader = new BufferedReader(new FileReader(new File(path + "/" + files[j])));
+                    p2Reader = new BufferedReader(new FileReader(new File(files[j])));
                     while((lines[1] = p2Reader.readLine()) != null) {
                         points[1] = Utils.getValuesFromLine(lines[1], " ", dataType);
                         //double sim = Utils.computeSimilarity(points[0], points[1], maxDist, "Euclidean", "staircase");
@@ -65,27 +64,27 @@ class TrainingData {
     void generateTripletSamples() throws IOException {
         Random random = new Random();
         BufferedReader anchorReader, positiveReader, negativeReader;
-        BufferedWriter writer = new BufferedWriter(new FileWriter(new File(path + "/TripletData.csv")));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(new File("TripletData.csv")));
         writer.write("anchor,positive,negative,diff\n");
         String[] lines = new String[3];//anchor, positive, negative
         Object[][] points = new Object[3][];
         //iterates each file
         for(int i = 0; i < files.length; i++) {
-            anchorReader = new BufferedReader(new FileReader(new File(path + "/" + files[i])));
+            anchorReader = new BufferedReader(new FileReader(new File(files[i])));
             int marker = 0;
             while((lines[0] = anchorReader.readLine()) != null) {
                 marker++;
                 if(marker % 100 == 0)
                     System.out.println(String.valueOf(marker) + " triplet samples generated");
                 points[0] = Utils.getValuesFromLine(lines[0], " ", dataType);
-                positiveReader = new BufferedReader(new FileReader(new File(path + "/" + files[i])));
+                positiveReader = new BufferedReader(new FileReader(new File(files[i])));
                 while((lines[1] = positiveReader.readLine()) != null) {
                     if(random.nextDouble() > Math.sqrt(trainRatio))
                         continue;
                     points[1] = Utils.getValuesFromLine(lines[1], " ", dataType);
                     for(int j = i + 1; j < files.length; j++) {
 
-                        negativeReader = new BufferedReader(new FileReader(new File(path + "/" + files[j])));
+                        negativeReader = new BufferedReader(new FileReader(new File(files[j])));
                         while((lines[2] = negativeReader.readLine()) != null) {
                             if(random.nextDouble() > Math.sqrt(trainRatio))
                                 continue;

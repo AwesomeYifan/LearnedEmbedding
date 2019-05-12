@@ -12,11 +12,11 @@ from losses import ContrastiveLossMLP
 from networks import SiameseNet, EmbeddingNetMLP
 from trainer import fit
 
-embedding_dim = 6
+embedding_dim = 15
 gpus = 0
-n_epoch = 1
-num_clusters = 1
-params = {'batch_size': 10,
+n_epoch = 50
+num_threads = 8
+params = {'batch_size': 100,
           'shuffle': True}
 
 TRAIN_CSV = "../../Data/data/trainingData.csv"
@@ -59,12 +59,13 @@ scheduler = lr_scheduler.StepLR(optimizer, 8, gamma=0.1, last_epoch=-1)
 log_interval = 100
 patience = 3
 fit(siamese_train_loader, siamese_test_loader, model, loss_fn, optimizer, scheduler, patience, n_epoch, cuda, log_interval)
+torch.save(model, "./data/SiameseNetwork.pt")
 
-
-for i in range(num_clusters):
-    TEST_CSV = "../../Data/data/class-" + str(i) + ".csv"
+#model = torch.load("./data/SiameseNetwork.pt")
+for i in range(num_threads):
+    TEST_CSV = "../../Data/data/thread-" + str(i)
     with open(TEST_CSV) as csv_file:
-        with open('../../Data/data/siamese-reducedVectors-' + str(i) + ".csv", 'w') as writeFile:
+        with open('../../Data/data/siamese-reducedVectors-' + str(i), 'w') as writeFile:
             csv_reader = csv.reader(csv_file, delimiter=' ')
             for row in csv_reader:
                 vec = [float(k) for k in row]

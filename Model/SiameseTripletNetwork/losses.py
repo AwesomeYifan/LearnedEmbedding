@@ -69,8 +69,8 @@ class ContrastiveLossMLP(nn.Module):
         scale = (losses1.mean().data.numpy() + self.eps) / (losses3.mean().data.numpy() + self.eps)
         efficiency_loss = (1 - self.alpha) * scale * losses3
 
-        #print("accuracy loss: " + str(accuracy_loss.mean().data.numpy()) + "; efficiency loss: " + str(efficiency_loss.mean().data.numpy()))
-        losses = accuracy_loss + efficiency_loss
+        #losses = accuracy_loss + efficiency_loss
+        losses = accuracy_loss
         return losses.mean()
         #return losses1.mean()
 

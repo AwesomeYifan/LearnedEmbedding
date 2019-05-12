@@ -2,42 +2,46 @@ import java.io.IOException;
 
 public class DataGenerator {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
+
+        int numThreads = 8;
+        int fileSize = 3000; //numThreads * fileSize = numPoints
 
         int numDims = 20;
-        int numPoints = 200;
+        int numPoints = numThreads * fileSize;
         int numClusters = 1;
         int topK = 50;
+
         String dataType = "Double";
 
         String path = "./data";
-        String[] files = getFileNames(numClusters);
-        double maxDist = getMaxDist(numDims, "Euclidean");
+        String[] files = getFileNames(path, numThreads);
+        //double maxDist = getMaxDist(numDims, "Euclidean");
         double trainRatio = getSampleRatio(topK, numPoints);
 
-        //go to this class if need to chance mean and deviation.
-        GaussianData gd = new GaussianData(path, files, numDims, numPoints, numClusters);
-        RankData rd = new RankData(path, files, maxDist, topK, dataType);
-        TrainingData td = new TrainingData(path, files, maxDist, trainRatio, dataType);
+        //GaussianData gd = new GaussianData(files, fileSize, numDims, numClusters, numThreads);
+        UniformData ud = new UniformData(files, fileSize, numDims, numThreads);
+        RankData rd = new RankData(files, fileSize, topK, dataType, numThreads);
+        TrainingData td = new TrainingData(path, files, trainRatio, dataType);
 
-        gd.generateData();
+        //gd.generateData();
+        //ud.generateData();
         System.out.println("******************\n* data generated *\n******************");
 
-        rd.generateRanks();
+        //rd.generateRanks();
         System.out.println("\n***********************\n* rank data generated *\n***********************");
 
         //td.generateTripletSamples();
-        System.out.println("\n*****************************\n* triplet samples generated *\n*****************************");
+        //System.out.println("\n*****************************\n* triplet samples generated *\n*****************************");
 
-        td.generateSiameseSamples();
+        //td.generateSiameseSamples();
         System.out.println("\n*****************************\n* siamese samples generated *\n*****************************");
-        //System.out.println("maximal knn distance: " + rd.getLowestRankScore());
     }
 
-    private static String[] getFileNames(int numFiles) {
-        String[] files = new String[numFiles];
-        for(int i = 0; i < numFiles; i++) {
-            files[i] = "class-" + String.valueOf(i) + ".csv";
+    private static String[] getFileNames(String path, int numThreads) {
+        String[] files = new String[numThreads];
+        for(int i = 0; i < numThreads; i++) {
+            files[i] = path + "/thread-" + String.valueOf(i);
         }
         return files;
     }

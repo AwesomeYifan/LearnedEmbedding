@@ -5,38 +5,41 @@ import java.io.IOException;
 
 class GaussianData {
     private int numDims;
-    private int numPoints;
     private String[] files;
-    private String path;
+    private int fileSize;
     private double[][] centers;
     private double[] deviations;
+    private int numThreads;
 
-    GaussianData(String path, String[] files, int numDims, int numPoints, int numClusters) {
-        this.path = path;
+    GaussianData(String[] files, int fileSize, int numDims, int numClusters, int numThreads) {
         this.files = files;
+        this.fileSize = fileSize;
         this.numDims = numDims;
-        this.numPoints = numPoints;
         this.centers = this.getCenters(numClusters);
         this.deviations = this.getDeviation(numClusters);
+        this.numThreads = numThreads;
     }
 
     void generateData() throws IOException {
         BufferedWriter bw = null;
         int numClusters = centers.length;
-        int numPointsEachCluster = numPoints / numClusters;
-        for(int i = 0; i < numClusters; i++) {
-            bw = new BufferedWriter(new FileWriter(new File(path + "/" + files[i])));
-            double[][] points = Utils.getGaussianPoints(numPointsEachCluster, centers[i], deviations[i]);
-            for(int j = 0; j < numPointsEachCluster; j++) {
-                for(int k = 0; k < numDims - 1; k++) {
-                    bw.write(String.valueOf(points[j][k]) + " ");
-                }
-                bw.write(String.valueOf(points[j][numDims-1]));
-                bw.write("\r\n");
-            }
+        for(int i = 0; i < files.length; i++) {
+            bw = new BufferedWriter(new FileWriter(new File(files[i])));
+            double[][] points = Utils.getGaussianPoints(fileSize, centers[i/numThreads], deviations[i/numThreads]);
+            writeVectors(bw, points, fileSize, numDims);
             bw.flush();
+            bw.close();
         }
-        bw.close();
+    }
+
+    static void writeVectors(BufferedWriter bw, double[][] points, int fileSize, int numDims) throws IOException {
+        for(int j = 0; j < fileSize; j++) {
+            for(int k = 0; k < numDims - 1; k++) {
+                bw.write(String.valueOf(points[j][k]) + " ");
+            }
+            bw.write(String.valueOf(points[j][numDims -1]));
+            bw.write("\r\n");
+        }
     }
 
     private double[][] getCenters(int numClusters) {

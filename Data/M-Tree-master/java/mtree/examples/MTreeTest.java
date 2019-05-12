@@ -5,29 +5,18 @@ import java.util.*;
 
 public class MTreeTest {
     static int[] topK = {2, 5, 10, 20};
+    static int numThreads = 8;
     //static int[] topK = {2};
 
     public static void main(String[] args) throws IOException {
-        //String path = "../Data/data/siamese-reducedVectors-0.csv";
-        //String path = "../Data/data/triplet-reducedVectors-0.csv";
-        String path = "data/class-0.csv";
+
         MTreeClass mtree = new MTreeClass();
-        //Set<Data> allData = new HashSet<Data>();
         List<Data> allData = new ArrayList<Data>();
-        BufferedReader br = new BufferedReader(new FileReader(path));
-        int ID = 0;
-        String line = "";
-        while((line = br.readLine()) != null) {
-            String[] records = line.split(" ");
-            double[] values = new double[records.length];
-            for(int i = 0; i < records.length; i++) {
-                values[i] = Double.parseDouble(records[i]);
-            }
-            Data data = new Data(values, ID++);
-            mtree.add(data);
-            allData.add(data);
-        }
-        br.close();
+
+
+        //buildTree("original", mtree, allData);
+        buildTree("embedded", mtree, allData);
+
         BufferedWriter bw = new BufferedWriter(new FileWriter("../Data/data/mtree.csv"));
         double totalTime = 0;
         double startTime;
@@ -51,9 +40,34 @@ public class MTreeTest {
         System.out.println(totalTime);
         MTreeTest.compareRank();
     }
+    private static void buildTree(String opt, MTreeClass mtree, List<Data> allData) throws IOException {
+
+        String filePrefix = opt.equals("original")? "data/thread-" : "../Data/data/siamese-reducedVectors-";
+
+        int ID = 0;
+        for(int fileID = 0; fileID < numThreads; fileID++) {
+            String file = filePrefix + String.valueOf(fileID);
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            while((line = br.readLine()) != null) {
+                String[] records = line.split(" ");
+                double[] values = new double[records.length];
+                for(int i = 0; i < records.length; i++) {
+                    values[i] = Double.parseDouble(records[i]);
+                }
+                Data data = new Data(values, ID++);
+                mtree.add(data);
+                if(fileID == 0)
+                    allData.add(data);
+            }
+            br.close();
+        }
+    }
+
+
     private static double[] compareRank() throws IOException{
         double[] perf = new double[topK.length];
-        BufferedReader br1 = new BufferedReader(new FileReader("data/rank-class-0.csv"));
+        BufferedReader br1 = new BufferedReader(new FileReader("data/thread-0-rank"));
         BufferedReader br2 = new BufferedReader(new FileReader("../Data/data/mtree.csv"));
         String line1, line2 = "";
         int count = 0;
