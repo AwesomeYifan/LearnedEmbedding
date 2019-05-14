@@ -5,12 +5,12 @@ public class DataGenerator {
     public static void main(String[] args) throws IOException, InterruptedException {
 
         int numThreads = 8;
-        int fileSize = 3000; //numThreads * fileSize = numPoints
+        int fileSize = 30; //numThreads * fileSize = numPoints
 
-        int numDims = 20;
+        int numDims = 5;
         int numPoints = numThreads * fileSize;
         int numClusters = 1;
-        int topK = 50;
+        int topK = 3;
 
         String dataType = "Double";
 
@@ -25,17 +25,17 @@ public class DataGenerator {
         TrainingData td = new TrainingData(path, files, trainRatio, dataType);
 
         //gd.generateData();
-        //ud.generateData();
+        ud.generateData();
         System.out.println("******************\n* data generated *\n******************");
 
-        //rd.generateRanks();
+        rd.generateRanks();
         System.out.println("\n***********************\n* rank data generated *\n***********************");
+
+        td.generateSiameseSamples();
+        System.out.println("\n*****************************\n* siamese samples generated *\n*****************************");
 
         //td.generateTripletSamples();
         //System.out.println("\n*****************************\n* triplet samples generated *\n*****************************");
-
-        //td.generateSiameseSamples();
-        System.out.println("\n*****************************\n* siamese samples generated *\n*****************************");
     }
 
     private static String[] getFileNames(String path, int numThreads) {

@@ -9,15 +9,17 @@ from torch.optim import lr_scheduler
 from pytorchtools import EarlyStopping
 from datasets import SiameseDataset
 from losses import ContrastiveLossMLP
-from networks import SiameseNet, EmbeddingNetMLP
+from networks import SiameseNet, EmbeddingNetMLP, EmbeddingNet
 from trainer import fit
+from numpy import genfromtxt
 
-embedding_dim = 15
+embedding_dim = 10
 gpus = 0
 n_epoch = 50
 num_threads = 8
-params = {'batch_size': 100,
-          'shuffle': True}
+test_size = 0.2
+params = {'batch_size': 10,
+          'shuffle': False}
 
 TRAIN_CSV = "../../Data/data/trainingData.csv"
 TEST_CSV = "../../Data/data/validationData.csv"
@@ -36,11 +38,18 @@ testing_samples = test_df[['P1', 'P2']]
 testing_labels = test_df[['distance', 'cutoff']]
 
 input_dim = len(training_samples['P1'][0].split())
+
+training_samples = training_samples.values
+training_labels = training_labels.values
+testing_samples = testing_samples.values
+testing_labels = testing_labels.values
+
 cuda = torch.cuda.is_available()
 
-X_train, X_temp, Y_train, Y_temp = train_test_split(training_samples, training_labels, test_size=0)
-X_validation, X_temp, Y_validation, Y_temp = train_test_split(testing_samples, testing_labels, test_size=0)
-#X_validation, X_temp, Y_validation, Y_temp = train_test_split(training_samples, training_labels, test_size=0)
+#X_train, X_validation, Y_train, Y_validation = train_test_split(training_samples, training_labels, test_size=test_size)
+X_train, X_temp, Y_train, Y_temp = train_test_split(training_samples, training_labels, test_size=0, shuffle=False)
+X_validation, X_temp, Y_validation, Y_temp = train_test_split(testing_samples, testing_labels, test_size=0, shuffle=False)
+
 
 siamese_train_dataset = SiameseDataset(X_train, Y_train)  # Returns pairs of images and target same/different
 siamese_test_dataset = SiameseDataset(X_validation, Y_validation)
@@ -49,15 +58,17 @@ siamese_train_loader = torch.utils.data.DataLoader(siamese_train_dataset, **para
 siamese_test_loader = torch.utils.data.DataLoader(siamese_test_dataset, **params)
 
 embedding_net = EmbeddingNetMLP(input_dim, embedding_dim)
+
 model = SiameseNet(embedding_net)
 if cuda:
     model.cuda()
 loss_fn = ContrastiveLossMLP()
 lr = 1e-3
-optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+#optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
+optimizer = optim.Adam(model.parameters(), lr=lr)
 scheduler = lr_scheduler.StepLR(optimizer, 8, gamma=0.1, last_epoch=-1)
 log_interval = 100
-patience = 3
+patience = 15
 fit(siamese_train_loader, siamese_test_loader, model, loss_fn, optimizer, scheduler, patience, n_epoch, cuda, log_interval)
 torch.save(model, "./data/SiameseNetwork.pt")
 

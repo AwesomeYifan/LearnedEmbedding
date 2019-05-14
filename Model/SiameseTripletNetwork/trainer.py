@@ -32,6 +32,9 @@ def fit(train_loader, val_loader, model, loss_fn, optimizer, scheduler, patience
 
         early_stopping(val_loss, model)
 
+        #for param in model.parameters():
+        #    print(param.data)
+
         if early_stopping.early_stop:
             print("Early stopping")
             break

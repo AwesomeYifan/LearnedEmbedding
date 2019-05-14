@@ -4,67 +4,53 @@
     <list default="true" id="f5f01c0a-ebff-4e31-99e9-350abf2d5a26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/DataGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/DataGenerator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/GaussianData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/GaussianData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/RankData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/RankData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/RankDataThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/RankDataThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/TrainingData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/TrainingData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/Utils/PriorityQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Utils/PriorityQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Point1d.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Point1d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Point2d.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Point2d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Point3d.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Point3d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Pointnd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Pointnd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Range1d.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Range1d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Rect2d.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Rect2d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Rect3d.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Rect3d.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Rectnd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/geometry/Rectnd.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeaf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/Branch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/Branch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/ConcurrentRTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/ConcurrentRTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/Leaf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeaf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeaf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeaf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$1$Pair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$1$Pair.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$3$1IntegerListEuclideanCoordinate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$3$1IntegerListEuclideanCoordinate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$4$1DoubleListEuclideanCoordinate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$4$1DoubleListEuclideanCoordinate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/DistanceFunctions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/UniformData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/UniformData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$Entry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$IndexItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$IndexItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$InternalNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$InternalNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$LeafNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$LeafNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$LeafNodeTrait.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$LeafNodeTrait.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$NodeTrait.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$NodeTrait.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$NonLeafNodeTrait$1CandidateChild.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$NonLeafNodeTrait$1CandidateChild.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$NonLeafNodeTrait$1ChildWithDistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$NonLeafNodeTrait$1ChildWithDistance.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$NonLeafNodeTrait.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$NonLeafNodeTrait.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$NonRootNodeTrait.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$NonRootNodeTrait.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$Query$ResultsIterator$ItemWithDistances.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$Query$ResultsIterator$ItemWithDistances.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$Query$ResultsIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$Query$ResultsIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$Query.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$RootLeafNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$RootLeafNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$RootNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$RootNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$RootNodeReplacement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$RootNodeReplacement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$RootNodeTrait.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$RootNodeTrait.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree$SplitNodeReplacement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree$SplitNodeReplacement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/MTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/MTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/PartitionFunctions$BalancedPartition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/PartitionFunctions$BalancedPartition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/examples/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/examples/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/examples/Fixture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/examples/Fixture.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeClass$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeClass$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeTestold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeTestold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/utils/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/temp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/temp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/wd/Stats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/wd/Stats.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Data/wd/WordDistance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/wd/WordDistance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeafTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Data/com/conversantmedia/util/collection/spatial/AxialSplitLeafTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeafTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Data/com/conversantmedia/util/collection/spatial/LinearSplitLeafTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeafTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Data/com/conversantmedia/util/collection/spatial/QuadraticSplitLeafTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GaussianData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GaussianData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RankData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RankData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TrainingData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TrainingData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/.idea/Model.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/Model.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseNetwork/DR/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseNetwork/DR/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/checkpoint.pt" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/checkpoint.pt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/data/SiameseNetwork.pt" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/data/SiameseNetwork.pt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/datasets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/losses.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/losses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/networks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/networks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/temp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/trainSiamese.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/trainSiamese.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/trainer.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,7 +71,8 @@
     <session id="-1561114557">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.33" value="1" />
@@ -93,14 +80,15 @@
           <entry key="project.open.time.36" value="2" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.43" value="1" />
+          <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="50" />
-          <entry key="java" value="111" />
+          <entry key="java" value="112" />
           <entry key="png" value="4" />
           <entry key="ranks" value="8" />
           <entry key="ranks2" value="3" />
@@ -112,21 +100,21 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="111" />
+          <entry key="JAVA" value="112" />
           <entry key="PLAIN_TEXT" value="81" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="54" />
-          <entry key="java" value="23751" />
+          <entry key="java" value="24658" />
           <entry key="test" value="1" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="23751" />
+          <entry key="JAVA" value="24658" />
           <entry key="PLAIN_TEXT" value="58" />
         </counts>
       </usages-collector>
@@ -143,33 +131,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="3" />
+          <entry key="java" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="3" />
+          <entry key="JAVA" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1962" />
+          <entry key="java" value="2938" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1962" />
+          <entry key="JAVA" value="2938" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+            <state relative-caret-position="228">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -177,11 +165,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3268">
+              <caret line="189" column="45" selection-start-line="189" selection-start-column="45" selection-end-line="189" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DataGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="152">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -189,8 +186,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GaussianData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-118">
-              <caret line="12" column="75" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="75" />
+            <state relative-caret-position="228">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -201,17 +198,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTestold.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="361">
               <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -219,8 +207,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TrainingData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+            <state relative-caret-position="209">
+              <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#generateTripletSamples#0;class#TrainingData#0" />
@@ -230,19 +218,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Dropbox/MinHash.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="30" column="9" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="30" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RankData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+            <state relative-caret-position="703">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -250,7 +232,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utils/PriorityQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
+            <state relative-caret-position="1292">
               <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
             </state>
           </provider>
@@ -285,6 +267,13 @@
       <find>computeSimilarity</find>
       <find>split</find>
       <find>splitFunction</find>
+      <find>yieldedCount</find>
+      <find>limit</find>
+      <find>data</find>
+      <find>hasNext</find>
+      <find>fetchNext</find>
+      <find>next</find>
+      <find>topK</find>
     </findStrings>
     <replaceStrings>
       <replace>raw</replace>
@@ -319,7 +308,6 @@
         <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/tests/MTreeClass.java" />
         <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/tests/Search.java" />
         <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/tests/Data.java" />
-        <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java" />
         <option value="$PROJECT_DIR$/M-Tree-master/cpp/tests/fixtures/f04.txt" />
         <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Fixture.java" />
         <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Data.java" />
@@ -337,11 +325,14 @@
         <option value="$PROJECT_DIR$/src/Utils/PriorityQueue.java" />
         <option value="$PROJECT_DIR$/src/SiameseData.java" />
         <option value="$PROJECT_DIR$/src/TripletData.java" />
-        <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java" />
+        <option value="$PROJECT_DIR$/src/UniformData.java" />
         <option value="$PROJECT_DIR$/src/GaussianData.java" />
         <option value="$PROJECT_DIR$/src/RankData.java" />
-        <option value="$PROJECT_DIR$/src/TrainingData.java" />
+        <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java" />
+        <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java" />
+        <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java" />
         <option value="$PROJECT_DIR$/src/DataGenerator.java" />
+        <option value="$PROJECT_DIR$/src/TrainingData.java" />
       </list>
     </option>
   </component>
@@ -357,9 +348,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -370,8 +361,6 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -398,6 +387,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -406,8 +397,8 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557616750216" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/rtree/src/jars/mockito-core-1.10.19.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557866079349" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/LearnedEmbedding-master/Data" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -439,7 +430,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DataGenerator">
+  <component name="RunManager" selected="Application.MTreeTest">
     <configuration name="DataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DataGenerator" />
       <module name="Data" />
@@ -503,8 +494,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DataGenerator" />
         <item itemvalue="Application.MTreeTest" />
+        <item itemvalue="Application.DataGenerator" />
         <item itemvalue="Application.temp" />
         <item itemvalue="Application.Temp" />
         <item itemvalue="JUnit.MTreeTestold" />
@@ -532,7 +523,9 @@
       <workItem from="1556422783903" duration="36528000" />
       <workItem from="1556935769843" duration="6422000" />
       <workItem from="1557583796959" duration="1024000" />
-      <workItem from="1557608057890" duration="3438000" />
+      <workItem from="1557608057890" duration="11998000" />
+      <workItem from="1557759436859" duration="20734000" />
+      <workItem from="1557867485211" duration="253000" />
     </task>
     <servers />
   </component>
@@ -569,13 +562,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231449000" />
+    <option name="totallyTimeSpent" value="276777000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.14949928" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.13646056" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.14925373" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -584,15 +577,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26024097" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.30552545" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29252437" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.30444205" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.26868907" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.33333334" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.66775775" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -614,20 +607,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/wd/WordDistanceFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/wd/WordDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-874">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/cpp/tests/fixtures/f07.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -747,9 +726,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GaussianNumbers.java" />
-    <entry file="file://$PROJECT_DIR$/data/rank-class-0.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/rank-class-0.csv" />
     <entry file="file://$PROJECT_DIR$/data/reducedVectors-0.csv" />
     <entry file="file://$PROJECT_DIR$/data/reducedVectors-1.csv" />
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Temp.java">
@@ -759,9 +736,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/class-0.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/class-0.csv" />
     <entry file="file://$PROJECT_DIR$/src/Traces/Comparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="793">
@@ -773,9 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -800,13 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/PartitionFunction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -821,18 +786,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java">
+    <entry file="file://$PROJECT_DIR$/src/TripletData.java" />
+    <entry file="file://$USER_HOME$/Dropbox/MinHash.java" />
+    <entry file="file://$PROJECT_DIR$/src/DataDistribution.java" />
+    <entry file="file://$PROJECT_DIR$/src/UniformData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="314" column="40" selection-start-line="314" selection-start-column="40" selection-end-line="314" selection-end-column="40" />
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TripletData.java" />
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+        <state relative-caret-position="187">
+          <caret line="19" column="61" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3268">
+          <caret line="189" column="45" selection-start-line="189" selection-start-column="45" selection-end-line="189" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussianData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -841,53 +836,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTestold.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="361">
           <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/PriorityQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/RankData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussianData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118">
-          <caret line="12" column="75" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="75" />
+        <state relative-caret-position="703">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Dropbox/MinHash.java">
+    <entry file="file://$PROJECT_DIR$/src/Utils/PriorityQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RankData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+        <state relative-caret-position="1292">
+          <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TrainingData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        <state relative-caret-position="209">
+          <caret line="35" column="61" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#generateTripletSamples#0;class#TrainingData#0" />
@@ -895,10 +869,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataGenerator.java">
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="228">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

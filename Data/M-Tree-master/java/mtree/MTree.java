@@ -119,6 +119,8 @@ public class MTree<DATA> {
 			private double nextPendingMinDistance;
 			private PriorityQueue<ItemWithDistances<Entry>> nearestQueue = new PriorityQueue<ItemWithDistances<Entry>>();
 			private int yieldedCount;
+			private int visitedCount;
+
 			
 			private ResultsIterator() {
 				if(MTree.this.root == null) {
@@ -190,6 +192,8 @@ public class MTree<DATA> {
 					for(IndexItem child : node.children.values()) {
 						if(Math.abs(pending.distance - child.distanceToParent) - child.radius <= Query.this.range) {
 							double childDistance = MTree.this.distanceFunction.calculate(Query.this.data, child.data);
+							visitedCount++;
+							Query.this.checkedCount++;
 							double childMinDistance = Math.max(childDistance - child.radius, 0.0);
 							if(childMinDistance <= Query.this.range) {
 								if(child instanceof MTree.Entry) {
@@ -245,10 +249,15 @@ public class MTree<DATA> {
 			return new ResultsIterator();
 		}
 
+		public int getCheckedCount() {
+			return this.checkedCount;
+		}
+
 		
 		private DATA data;
 		private double range;
 		private int limit;
+		private int checkedCount;
 	}
 
 

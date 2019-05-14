@@ -40,6 +40,50 @@ class ContrastiveLossMLP(nn.Module):
         return loss.mean()
 '''
 
+'''
+class ContrastiveLossMLP(nn.Module):
+
+    def __init__(self):
+        super(ContrastiveLossMLP, self).__init__()
+        self.eps = 1e-9
+        self.alpha = 0.9 # alpha * accuracy + (1-alpha) * efficiency
+
+    def forward(self, output1, output2, y, cutoff):
+        #print(output1.data)
+        _y = ((output2 - output1).pow(2).sum(1) + self.eps).sqrt()
+        _y = _y.type(torch.FloatTensor)
+        y = y.type(torch.FloatTensor)
+        cutoff = cutoff.type(torch.FloatTensor)
+
+        mask1 = torch.le(y, cutoff).type(torch.FloatTensor)
+        losses1 = (mask1 * (y - _y).pow(2) + self.eps).sqrt()
+
+        mask2 = (torch.le(cutoff, y) * torch.le(_y, cutoff)).type(torch.FloatTensor)
+        losses2 = mask2 * torch.le(_y, cutoff).type(torch.FloatTensor)
+
+        #scale = (losses1.mean().data.numpy() + self.eps) / (losses2.mean().data.numpy() + self.eps)
+        #accuracy_loss = self.alpha * (losses1 + scale * losses2)
+        accuracy_loss = self.alpha * losses1
+        #print(str(y < cutoff) + "-label: " + str(y) + "-pred: " + str(_y))
+        mask3 = (torch.le(cutoff, y) * torch.le(_y, cutoff)).type(torch.FloatTensor) # highlight points which should be distant but is actually within cutoff
+        losses3 = mask3 * torch.le(_y, cutoff).type(torch.FloatTensor)
+        losses3 = mask3 * (cutoff - _y)
+
+        scale = (losses1.mean().data.numpy() + self.eps) / (losses3.mean().data.numpy() + self.eps)
+        #efficiency_loss = (1 - self.alpha) * scale * losses3
+        efficiency_loss = (1 - self.alpha) * losses3
+        efficiency_loss = Variable(efficiency_loss.data, requires_grad=True)
+        #print(str(accuracy_loss.mean()) + "-" + str(efficiency_loss.mean()))
+
+        #losses = accuracy_loss + efficiency_loss
+        #losses = accuracy_loss
+        losses = efficiency_loss
+        if(y.data.numpy() > cutoff.data.numpy() and _y.data.numpy() < cutoff.data.numpy()):
+            print(str(cutoff) + "-" + str(_y))
+        return losses.mean()
+        #return losses1.mean()
+'''
+
 
 class ContrastiveLossMLP(nn.Module):
 
@@ -49,30 +93,22 @@ class ContrastiveLossMLP(nn.Module):
         self.alpha = 0.9 # alpha * accuracy + (1-alpha) * efficiency
 
     def forward(self, output1, output2, y, cutoff):
-        _y = (output2 - output1 + self.eps).pow(2).sum(1).sqrt()
-        _y = _y.type(torch.FloatTensor)
+        #print(output1.data)
+        _y = ((output2 - output1).pow(2).sum(1)).sqrt().type(torch.FloatTensor)
         y = y.type(torch.FloatTensor)
         cutoff = cutoff.type(torch.FloatTensor)
 
         mask1 = torch.le(y, cutoff).type(torch.FloatTensor)
-        losses1 = mask1 * (y - _y + self.eps).pow(2).sqrt()
+        losses1 = mask1 * (_y - y).abs()
 
         mask2 = (torch.le(cutoff, y) * torch.le(_y, cutoff)).type(torch.FloatTensor)
-        losses2 = mask2 * torch.le(_y, cutoff).type(torch.FloatTensor)
+        losses2 = mask2 * (_y - cutoff).abs()
 
-        scale = (losses1.mean().data.numpy() + self.eps) / (losses2.mean().data.numpy() + self.eps)
-        accuracy_loss = self.alpha * (losses1 + scale * losses2)
-
-        mask3 = (torch.le(cutoff, y) * torch.le(_y, 2 * cutoff)).type(torch.FloatTensor)
-        losses3 = mask3 * torch.le(_y, 2 * cutoff).type(torch.FloatTensor)
-
-        scale = (losses1.mean().data.numpy() + self.eps) / (losses3.mean().data.numpy() + self.eps)
-        efficiency_loss = (1 - self.alpha) * scale * losses3
-
-        #losses = accuracy_loss + efficiency_loss
-        losses = accuracy_loss
+        mask3 = torch.le(_y, 10).type(torch.FloatTensor)
+        losses3 = mask3 * (10 - _y).abs().type(torch.FloatTensor)
+        losses = losses1 + losses2
+        #print(str(losses1.mean().data) + str(losses2.mean().data))
         return losses.mean()
-        #return losses1.mean()
 
 
 class TripletLossMLP(nn.Module):

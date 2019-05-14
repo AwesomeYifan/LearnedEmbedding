@@ -34,16 +34,28 @@ class SiameseDataset(Dataset):
         return len(self.X)
 
     def __getitem__(self, idx):
-        #print("*****************************************")
-        #print(self.X)
-        #print("*****************************************")
-        left = [float(i) for i in str(self.X.loc[idx, 'P1']).split()]
-        left = torch.FloatTensor(left)
-        right = [float(i) for i in str(self.X.loc[idx, 'P2']).split()]
-        right = torch.FloatTensor(right)
-        distance = float(self.labels.loc[idx, 'distance'])
-        cutoff = float(self.labels.loc[idx, 'cutoff'])
+
+        left = torch.FloatTensor([float(i) for i in str(self.X[idx][0]).split()])
+        #print(left)
+        right = torch.FloatTensor([float(i) for i in str(self.X[idx][1]).split()])
+        distance = float(self.labels[idx][0])
+        #print(distance)
+        cutoff = float(self.labels[idx][1])
         return (left, right), distance, cutoff
+
+    # def __getitem__(self, idx):
+    #     #print("*****************************************")
+    #     #print(self.X)
+    #     #print("*****************************************")
+    #     left = [float(i) for i in str(self.X.loc[idx, 'P1']).split()]
+    #     left = torch.FloatTensor(left)
+    #     right = [float(i) for i in str(self.X.loc[idx, 'P2']).split()]
+    #     right = torch.FloatTensor(right)
+    #     distance = float(self.labels.loc[idx, 'distance'])
+    #     print(distance)
+    #     cutoff = float(self.labels.loc[idx, 'cutoff'])
+    #     return (left, right), distance, cutoff
+
 
 #triplet dataset format: ancher, positive, negative, d(AP) - d(AN)
 class TripletDataset(Dataset):

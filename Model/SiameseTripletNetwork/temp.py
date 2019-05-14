@@ -1,7 +1,7 @@
-from torchvision.datasets import MNIST
-from torchvision import transforms
-import torch
-a = torch.tensor([3, 4]).type(torch.FloatTensor)
-b = a.pow(2).sum(-1).sqrt()
-print(a)
-print(b)
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn import datasets
+from sklearn import svm
+
+iris = datasets.load_iris()
+print(iris.data.shape)

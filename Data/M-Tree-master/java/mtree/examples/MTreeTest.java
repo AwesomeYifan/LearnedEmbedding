@@ -4,7 +4,8 @@ import java.io.*;
 import java.util.*;
 
 public class MTreeTest {
-    static int[] topK = {2, 5, 10, 20};
+    //static int[] topK = {1, 5, 10, 20, 50};
+    static int[] topK = {1};
     static int numThreads = 8;
     //static int[] topK = {2};
 
@@ -12,32 +13,35 @@ public class MTreeTest {
 
         MTreeClass mtree = new MTreeClass();
         List<Data> allData = new ArrayList<Data>();
-
-
+        double buildStartTime = System.currentTimeMillis();
         //buildTree("original", mtree, allData);
         buildTree("embedded", mtree, allData);
+        double buildEndTime = System.currentTimeMillis();
+        System.out.println("build time: " + (buildEndTime - buildStartTime));
 
         BufferedWriter bw = new BufferedWriter(new FileWriter("../Data/data/mtree.csv"));
-        double totalTime = 0;
-        double startTime;
-        double endTime;
+        int checkedCount = 0;
+        double startTime = System.currentTimeMillis();
         for(Data data: allData) {
             //bw.write(data.getID() + "");
             //System.out.print(data.getID() + ": ");
-            startTime = System.currentTimeMillis();
-            MTreeClass.Query query = mtree.getNearestByLimit(data, topK[topK.length - 1]);
-            endTime = System.currentTimeMillis();
-            totalTime += (endTime - startTime);
+            MTreeClass.Query query = mtree.getNearestByLimit(data, topK[topK.length - 1] + 1);
+            //System.out.println(query.getCheckedCount());
+
             for(MTreeClass.ResultItem ri : query) {
                 //System.out.print(ri.data.getID() + ", ");
                 bw.write(ri.data.getID() + ",");
             }
+            checkedCount += query.getCheckedCount();
+
             bw.write("\r\n");
            //System.out.println(" ");
         }
-
+        double endTime = System.currentTimeMillis();
+        double totalTime = endTime - startTime;
         bw.flush();bw.close();
-        System.out.println(totalTime);
+        System.out.println("Average computations: " + (double)checkedCount / allData.size());
+        System.out.println("Average search time: " + (double)totalTime / allData.size());
         MTreeTest.compareRank();
     }
     private static void buildTree(String opt, MTreeClass mtree, List<Data> allData) throws IOException {
@@ -74,12 +78,12 @@ public class MTreeTest {
         while((line1 = br1.readLine()) != null && (line2 = br2.readLine()) != null) {
             String[] records1 = line1.split(",");
             String[] records2 = line2.split(",");
-            List<Integer> list1 = toIntList(records1, topK[topK.length-1]);
-            List<Integer> list2 = toIntList(records2, topK[topK.length-1]);
+            List<Integer> list1 = toIntList(records1, topK[topK.length-1] + 1);
+            List<Integer> list2 = toIntList(records2, topK[topK.length-1] + 1);
             //System.out.println(list1.size());
             for(int i = 0; i < topK.length; i++) {
-                List<Integer> subList1 = list1.subList(0,topK[i]);
-                List<Integer> subList2 = list2.subList(0,topK[i]);
+                List<Integer> subList1 = list1.subList(0,topK[i] + 1);
+                List<Integer> subList2 = list2.subList(0,topK[i] + 1);
                 List<Integer> subListTemp = new ArrayList<>(subList1);
                 subListTemp.retainAll(subList2);
                 perf[i] += subListTemp.size();
@@ -88,7 +92,7 @@ public class MTreeTest {
         }
         for(int i = 0; i < topK.length; i++) {
             perf[i] -= count;
-            perf[i] /= (count * (topK[i]-1));
+            perf[i] /= (count * (topK[i]));
         }
         System.out.println(Arrays.toString(perf));
         return perf;

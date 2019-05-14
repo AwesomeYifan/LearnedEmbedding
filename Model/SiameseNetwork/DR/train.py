@@ -47,7 +47,7 @@ X = train_df[['P1', 'P2']]
 Y = train_df['dist']
 
 X_train, X_validation, Y_train, Y_validation = train_test_split(X, Y, test_size=validation_size)
-
+print(X_train)
 # Reformt data to ndarray to feed into the ML model
 #X_train = reformat(X_train)
 #X_validation = reformat(X_validation)

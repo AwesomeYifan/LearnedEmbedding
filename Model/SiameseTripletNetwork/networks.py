@@ -1,5 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
+import torch
+
 
 class EmbeddingNet(nn.Module):
     def __init__(self):
@@ -37,7 +39,10 @@ class EmbeddingNetMLP(nn.Module):
         #                          nn.Linear(50, output_dim),
         #                          nn.PReLU()
         #                          )
-        self.net = nn.Sequential(nn.Linear(input_dim, output_dim)
+        self.net = nn.Sequential(nn.Linear(input_dim, 50),
+                                 nn.PReLU(),
+                                 nn.Linear(50, output_dim),
+                                 nn.PReLU(),
                                  )
 
     def forward(self, x):

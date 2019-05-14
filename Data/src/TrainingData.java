@@ -27,12 +27,12 @@ class TrainingData {
         Object[][] points = new Object[2][];
 
         //iterates each file
+        int marker = 0;
         for(int i = 0; i < files.length; i++) {
             String file = files[i];
             p1Reader = new BufferedReader(new FileReader(new File(file)));
             thresholdReader = new BufferedReader(new FileReader(new File(file + "-threshold")));
             String threshold;
-            int marker = 0;
             while((lines[0] = p1Reader.readLine()) != null &&
                     (threshold = thresholdReader.readLine()) != null) {
                 marker++;
@@ -47,6 +47,7 @@ class TrainingData {
                         points[1] = Utils.getValuesFromLine(lines[1], " ", dataType);
                         //double sim = Utils.computeSimilarity(points[0], points[1], maxDist, "Euclidean", "staircase");
                         double dist = Utils.computeEuclideanDist(points[0], points[1]);
+                        if(dist==0) continue;
                         if(random.nextDouble() < trainRatio || dist < thres)
                             trainWriter.write(lines[0] + "," + lines[1] + "," + String.valueOf(dist) + "," + threshold + "\n");
                         if(random.nextDouble() < testRatio || dist < thres)
