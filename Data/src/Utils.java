@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Utils {
@@ -11,18 +12,20 @@ public class Utils {
         Random random = new Random();
         for(int i = 0; i < numPoints; i++) {
             for(int j = 0; j < numDims; j++) {
-
                 do results[i][j] = random.nextGaussian() * deviationEachAxis + centers[j]; while(results[i][j] < 0 || results[i][j] >1);
+                results[i][j] = Math.round(results[i][j] * 10000.0) / 10000.0;
             }
         }
         return results;
     }
     static double[][] getUniformPoints(int numPoints, int dim) {
+        DecimalFormat f = new DecimalFormat("##.0000");
         double[][] results = new double[numPoints][dim];
         Random random = new Random();
         for(int i = 0; i < numPoints; i++) {
             for(int j = 0; j < dim; j++) {
-                results[i][j] = random.nextDouble();
+                results[i][j] = Math.round((random.nextDouble() * 10000.0))/ 10000.0;
+                //results[i][j] = random.nextDouble();
             }
         }
         return results;

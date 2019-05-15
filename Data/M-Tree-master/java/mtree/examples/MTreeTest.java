@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.*;
 
 public class MTreeTest {
-    //static int[] topK = {1, 5, 10, 20, 50};
-    static int[] topK = {1};
+    static int[] topK = {1, 5, 10, 20, 49};
+    //static int[] topK = {1};
     static int numThreads = 8;
     //static int[] topK = {2};
 
@@ -47,9 +47,11 @@ public class MTreeTest {
     private static void buildTree(String opt, MTreeClass mtree, List<Data> allData) throws IOException {
 
         String filePrefix = opt.equals("original")? "data/thread-" : "../Data/data/siamese-reducedVectors-";
+        //String filePrefix = "data/siamese-reducedVectors-";
 
         int ID = 0;
         for(int fileID = 0; fileID < numThreads; fileID++) {
+        //for(int fileID = 0; fileID < 1; fileID++) {
             String file = filePrefix + String.valueOf(fileID);
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;

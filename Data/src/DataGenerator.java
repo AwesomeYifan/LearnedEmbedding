@@ -5,12 +5,12 @@ public class DataGenerator {
     public static void main(String[] args) throws IOException, InterruptedException {
 
         int numThreads = 8;
-        int fileSize = 30; //numThreads * fileSize = numPoints
+        int fileSize = 500; //numThreads * fileSize = numPoints
 
-        int numDims = 5;
+        int numDims = 20;
         int numPoints = numThreads * fileSize;
         int numClusters = 1;
-        int topK = 3;
+        int topK = 50;
 
         String dataType = "Double";
 
@@ -59,6 +59,6 @@ public class DataGenerator {
 
     //balance positive (kNN) and negative (non-kNN) points
     private static double getSampleRatio(int topK, int numPoints) {
-        return (double)topK / (double)numPoints * 3;
+        return (double)topK * 3 / (double)numPoints;
     }
 }

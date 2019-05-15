@@ -52,7 +52,7 @@ class SiameseDataset(Dataset):
     #     right = [float(i) for i in str(self.X.loc[idx, 'P2']).split()]
     #     right = torch.FloatTensor(right)
     #     distance = float(self.labels.loc[idx, 'distance'])
-    #     print(distance)
+    #     #print(distance)
     #     cutoff = float(self.labels.loc[idx, 'cutoff'])
     #     return (left, right), distance, cutoff
 

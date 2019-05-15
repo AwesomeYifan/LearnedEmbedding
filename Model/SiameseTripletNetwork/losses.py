@@ -92,21 +92,54 @@ class ContrastiveLossMLP(nn.Module):
         self.eps = 1e-9
         self.alpha = 0.9 # alpha * accuracy + (1-alpha) * efficiency
 
+    # def forward(self, output1, output2, y, cutoff):
+    #     _y = (output2 - output1 + self.eps).pow(2).sum(1).sqrt()
+    #     _y = _y.type(torch.FloatTensor)
+    #     y = y.type(torch.FloatTensor)
+    #     cutoff = cutoff.type(torch.FloatTensor)
+    #
+    #     mask1 = torch.le(y, cutoff).type(torch.FloatTensor)
+    #     losses1 = mask1 * (y - _y + self.eps).pow(2).sqrt()
+    #
+    #     mask2 = (torch.le(cutoff, y) * torch.le(_y, cutoff)).type(torch.FloatTensor)
+    #     losses2 = mask2 * torch.le(_y, cutoff).type(torch.FloatTensor)
+    #
+    #     scale = (losses1.mean().data.numpy() + self.eps) / (losses2.mean().data.numpy() + self.eps)
+    #     accuracy_loss = self.alpha * (losses1 + scale * losses2)
+    #
+    #     mask3 = (torch.le(cutoff, y) * torch.le(_y, cutoff)).type(torch.FloatTensor)
+    #     losses3 = mask3 * torch.le(_y, cutoff).type(torch.FloatTensor)
+    #
+    #     scale = (losses1.mean().data.numpy() + self.eps) / (losses3.mean().data.numpy() + self.eps)
+    #     efficiency_loss = (1 - self.alpha) * losses3
+    #
+    #     losses = accuracy_loss + efficiency_loss
+    #     #losses = accuracy_loss
+    #     return losses.mean()
+    #     #return losses1.mean()
+
     def forward(self, output1, output2, y, cutoff):
         #print(output1.data)
-        _y = ((output2 - output1).pow(2).sum(1)).sqrt().type(torch.FloatTensor)
+        _y = ((output2 - output1).pow(2).sum(1) + self.eps).sqrt().type(torch.FloatTensor)
         y = y.type(torch.FloatTensor)
         cutoff = cutoff.type(torch.FloatTensor)
 
         mask1 = torch.le(y, cutoff).type(torch.FloatTensor)
-        losses1 = mask1 * (_y - y).abs()
+        #losses1 = mask1 * (torch.exp(-y) * (_y - y).abs())
+        #losses1 = mask1 *  (_y - y).abs()
+        losses1 = mask1 * (torch.exp(-y) * _y)
+
+        mask1 = (torch.le(y, cutoff) * torch.le(cutoff, _y)).type(torch.FloatTensor)
+        #losses1 = mask1 * (torch.exp(-y) * (_y - cutoff).abs())
+        losses1 = mask1 * (_y - cutoff).abs()
 
         mask2 = (torch.le(cutoff, y) * torch.le(_y, cutoff)).type(torch.FloatTensor)
         losses2 = mask2 * (_y - cutoff).abs()
+        #losses2 = mask2 * torch.exp(-_y)
 
-        mask3 = torch.le(_y, 10).type(torch.FloatTensor)
-        losses3 = mask3 * (10 - _y).abs().type(torch.FloatTensor)
+        #losses = self.alpha * losses1 + (1-self.alpha) * losses2
         losses = losses1 + losses2
+        #losses = losses1
         #print(str(losses1.mean().data) + str(losses2.mean().data))
         return losses.mean()
 

@@ -65,11 +65,11 @@ class RankDataThread <T> extends Thread  {
 
         String line1, line2;
         Object[] vec1, vec2;
-        int marker = 0;
+        double marker = 0;
         while((line1 = reader1.readLine()) != null) {
             marker++;
             if(threadID == 0 && marker % 100 == 0)
-                System.out.println(String.valueOf(marker*8) + " points processed");
+                System.out.println(String.valueOf(marker / fileSize * 100) + "%\t points processed");
             PriorityQueue rankQueue = new PriorityQueue(topK,"ascending");
             vec1 = Utils.getValuesFromLine(line1, " ", dataType);
 

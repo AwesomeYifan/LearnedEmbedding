@@ -16,7 +16,7 @@ public class MTreeClass extends MTree<Data> {
 
 
     MTreeClass() {
-        super(25, DistanceFunctions.EUCLIDEAN,
+        super(2, DistanceFunctions.EUCLIDEAN,
                 new ComposedSplitFunction<Data>(
                         nonRandomPromotion,
                         new PartitionFunctions.BalancedPartition<Data>()
