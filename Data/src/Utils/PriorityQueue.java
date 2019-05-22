@@ -48,6 +48,30 @@ public class PriorityQueue<K extends Comparable,V> {
             }
         }
     }
+    public List<K> serializeKeys() {
+        List<K> queueList = new ArrayList<>();
+        if(isAscending) {
+            while(!queue.isEmpty()) {
+                K k = queue.firstKey();
+                int count = queue.get(k).size();
+                for(int i = 0; i < count; i++) {
+                    queueList.add(k);
+                }
+                queue.pollFirstEntry();
+            }
+        }
+        else {
+            while(!queue.isEmpty()) {
+                K k = queue.lastKey();
+                int count = queue.get(k).size();
+                for(int i = 0; i < count; i++) {
+                    queueList.add(k);
+                }
+                queue.pollLastEntry();
+            }
+        }
+        return queueList;
+    }
     public List<V> serialize() {
         List<V> queueList = new ArrayList<>();
         if(isAscending) {
@@ -73,6 +97,12 @@ public class PriorityQueue<K extends Comparable,V> {
             return this.queue.lastKey();
         else
             return this.queue.firstKey();
+    }
+    public K getTopKey() {
+        if(isAscending)
+            return this.queue.firstKey();
+        else
+            return this.queue.lastKey();
     }
     public void clear() {
         this.size = 0;

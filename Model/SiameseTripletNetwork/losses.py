@@ -89,7 +89,8 @@ class ContrastiveLossMLP(nn.Module):
 
     def __init__(self):
         super(ContrastiveLossMLP, self).__init__()
-        self.eps = 1e-9
+        self.delta = 1e-9
+        self.epsilon = 0.9
         self.alpha = 0.9 # alpha * accuracy + (1-alpha) * efficiency
 
     # def forward(self, output1, output2, y, cutoff):
@@ -120,27 +121,20 @@ class ContrastiveLossMLP(nn.Module):
 
     def forward(self, output1, output2, y, cutoff):
         #print(output1.data)
-        _y = ((output2 - output1).pow(2).sum(1) + self.eps).sqrt().type(torch.FloatTensor)
+        _y = ((output2 - output1).pow(2).sum(1) + self.delta).sqrt().type(torch.FloatTensor)
         y = y.type(torch.FloatTensor)
         cutoff = cutoff.type(torch.FloatTensor)
 
         mask1 = torch.le(y, cutoff).type(torch.FloatTensor)
-        #losses1 = mask1 * (torch.exp(-y) * (_y - y).abs())
-        #losses1 = mask1 *  (_y - y).abs()
-        losses1 = mask1 * (torch.exp(-y) * _y)
+        #losses1 = mask1 * (torch.exp(-(y/cutoff)) * (_y - y).abs())
+        losses1 = mask1 * (_y - y).abs()
 
-        mask1 = (torch.le(y, cutoff) * torch.le(cutoff, _y)).type(torch.FloatTensor)
-        #losses1 = mask1 * (torch.exp(-y) * (_y - cutoff).abs())
-        losses1 = mask1 * (_y - cutoff).abs()
+        mask2 = (torch.le(cutoff, y) * torch.le(_y, (1+self.epsilon) * cutoff)).type(torch.FloatTensor)
+        losses2 = mask2 * (_y - (1+self.epsilon) * cutoff).abs()
+        #losses2 = mask2 * (cutoff / _y)
 
-        mask2 = (torch.le(cutoff, y) * torch.le(_y, cutoff)).type(torch.FloatTensor)
-        losses2 = mask2 * (_y - cutoff).abs()
-        #losses2 = mask2 * torch.exp(-_y)
-
-        #losses = self.alpha * losses1 + (1-self.alpha) * losses2
-        losses = losses1 + losses2
-        #losses = losses1
-        #print(str(losses1.mean().data) + str(losses2.mean().data))
+        losses = self.alpha * losses1 + (1-self.alpha) * losses2
+        #losses = losses1 + losses2
         return losses.mean()
 
 

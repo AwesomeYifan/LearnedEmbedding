@@ -1,11 +1,12 @@
 from sklearn.datasets import load_digits
 from sklearn.manifold import LocallyLinearEmbedding
+import matplotlib.pyplot as plt
 from numpy import genfromtxt
 import torch
 import numpy as np
 
 num_threads = 8
-new_dim = 20
+new_dim = 50
 flag = True
 for i in range(num_threads):
     TEST_CSV = "../../Data/data/thread-" + str(i)
@@ -17,7 +18,7 @@ for i in range(num_threads):
     else:
         X = np.concatenate((X, temp))
 print(X.shape)
-embedding = LocallyLinearEmbedding(n_neighbors=10, n_components=new_dim)
+embedding = LocallyLinearEmbedding(n_neighbors=50, n_components=new_dim)
 X_transformed = embedding.fit_transform(X)
 print(X_transformed.shape)
 path = '../../Data/data/siamese-reducedVectors-0'

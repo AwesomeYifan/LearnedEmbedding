@@ -38,11 +38,9 @@ class EmbeddingNetMLP(nn.Module):
         #                          nn.Linear(50, output_dim),
         #                          nn.PReLU()
         #                          )
-        self.net = nn.Sequential(nn.Linear(input_dim, 250),
+        self.net = nn.Sequential(nn.Linear(input_dim, 400),
                                  nn.PReLU(),
-                                 nn.Linear(250, 150),
-                                 nn.PReLU(),
-                                 nn.Linear(150, output_dim),
+                                 nn.Linear(400, output_dim),
                                  nn.PReLU(),
                                  )
         #self.net = nn.Sequential(nn.Linear(input_dim, output_dim))

@@ -2,17 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5f01c0a-ebff-4e31-99e9-350abf2d5a26" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/LLE.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/PCA.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Data/DataGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/DataGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/RankDataThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/RankDataThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Data/mtree/examples/MTreeTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RankData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RankData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/checkpoint.pt" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/checkpoint.pt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/data/SiameseNetwork.pt" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/data/SiameseNetwork.pt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/datasets.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/losses.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/losses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/networks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/networks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/temp.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/trainSiamese.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Model/SiameseTripletNetwork/trainSiamese.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,49 +45,53 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="10" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.36" value="3" />
           <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.47" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="50" />
-          <entry key="java" value="116" />
+          <entry key="java" value="132" />
           <entry key="png" value="4" />
           <entry key="ranks" value="8" />
           <entry key="ranks2" value="3" />
           <entry key="test" value="5" />
+          <entry key="thread-0-rank" value="1" />
           <entry key="traces" value="5" />
           <entry key="txt" value="10" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="116" />
-          <entry key="PLAIN_TEXT" value="81" />
+          <entry key="JAVA" value="132" />
+          <entry key="PLAIN_TEXT" value="82" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="54" />
-          <entry key="java" value="24730" />
+          <entry key="java" value="27645" />
           <entry key="test" value="1" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="24730" />
+          <entry key="JAVA" value="27645" />
           <entry key="PLAIN_TEXT" value="58" />
         </counts>
       </usages-collector>
@@ -116,11 +130,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="291">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/temp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,8 +157,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="266">
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="256" column="21" selection-start-line="256" selection-start-column="21" selection-end-line="256" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/DistanceFunction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -140,38 +184,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DataGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UniformData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GaussianData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="95">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -179,33 +193,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TrainingData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+            <state relative-caret-position="293">
+              <caret line="155" column="13" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#generateTripletSamples#0;class#TrainingData#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/RankData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/PriorityQueue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -247,6 +240,8 @@
       <find>next</find>
       <find>topK</find>
       <find>minNodeCapacity</find>
+      <find>++</find>
+      <find>dependency</find>
     </findStrings>
     <replaceStrings>
       <replace>raw</replace>
@@ -293,19 +288,20 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Traces/Comparator.java" />
         <option value="$PROJECT_DIR$/src/Traces/Record.java" />
-        <option value="$PROJECT_DIR$/src/temp.java" />
-        <option value="$PROJECT_DIR$/src/Utils/PriorityQueue.java" />
         <option value="$PROJECT_DIR$/src/SiameseData.java" />
         <option value="$PROJECT_DIR$/src/TripletData.java" />
         <option value="$PROJECT_DIR$/src/UniformData.java" />
         <option value="$PROJECT_DIR$/src/GaussianData.java" />
-        <option value="$PROJECT_DIR$/src/RankData.java" />
         <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java" />
-        <option value="$PROJECT_DIR$/src/TrainingData.java" />
-        <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java" />
         <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java" />
         <option value="$PROJECT_DIR$/src/Utils.java" />
+        <option value="$PROJECT_DIR$/src/TrainingData.java" />
+        <option value="$PROJECT_DIR$/src/Utils/PriorityQueue.java" />
+        <option value="$PROJECT_DIR$/src/RankData.java" />
         <option value="$PROJECT_DIR$/src/DataGenerator.java" />
+        <option value="$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java" />
+        <option value="$PROJECT_DIR$/LSH/src/main/java/info/debatty/java/lsh/examples/SuperBitSparseExample.java" />
+        <option value="$PROJECT_DIR$/src/temp.java" />
       </list>
     </option>
   </component>
@@ -333,6 +329,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -347,12 +344,6 @@
             </path>
             <path>
               <item name="Data" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Data" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -360,7 +351,6 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -370,12 +360,12 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557933912045" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/LearnedEmbedding-ce36aeaea531f5b325fb90bcce97f7d1c77eaba5/Data" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558452621662" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/java-string-similarity-1.2.1.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -403,7 +393,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MTreeTest">
+  <component name="RunManager" selected="Application.temp">
     <configuration name="DataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DataGenerator" />
       <module name="Data" />
@@ -467,9 +457,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.temp" />
         <item itemvalue="Application.MTreeTest" />
         <item itemvalue="Application.DataGenerator" />
-        <item itemvalue="Application.temp" />
         <item itemvalue="Application.Temp" />
         <item itemvalue="JUnit.MTreeTestold" />
       </list>
@@ -500,6 +490,8 @@
       <workItem from="1557759436859" duration="20734000" />
       <workItem from="1557867485211" duration="2287000" />
       <workItem from="1557931079421" duration="3156000" />
+      <workItem from="1557935286579" duration="27276000" />
+      <workItem from="1558035097933" duration="43681000" />
     </task>
     <servers />
   </component>
@@ -536,12 +528,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281967000" />
+    <option name="totallyTimeSpent" value="352924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.12633263" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.20682302" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.14925373" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -550,15 +543,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27843988" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.24702059" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.30444205" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.26868907" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" weight="0.24702059" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.66775775" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.16901408" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -580,49 +573,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/cpp/tests/fixtures/f07.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/cpp/tests/fixtures/f03.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/cpp/tests/fixtures/f15.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/cpp/tests/fixtures/f20.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/cpp/tests/fixtures/f08.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/cpp/tests/fixtures/f12.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/cpp/tests/fixtures/f01.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/cpp/tests/fixtures/fLots.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="51" lean-forward="true" selection-start-line="3" selection-end-line="3" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/utils/Pair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="47" column="30" lean-forward="true" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/tests/Search.java" />
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/tests/MTreeTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -677,20 +627,6 @@
     <entry file="file://$PROJECT_DIR$/data/origin.csv" />
     <entry file="file://$PROJECT_DIR$/data/mtree.csv" />
     <entry file="file://$PROJECT_DIR$/data/rank.csv" />
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/DistanceFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/PartitionFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1824">
-          <caret line="103" column="29" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/Data.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -738,27 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/temp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/PartitionFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/ComposedSplitFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TripletData.java" />
     <entry file="file://$USER_HOME$/Dropbox/MinHash.java" />
     <entry file="file://$PROJECT_DIR$/src/DataDistribution.java" />
@@ -769,10 +684,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RankData.java">
+    <entry file="file://$PROJECT_DIR$/data/thread-0-rank">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        <state relative-caret-position="-1316" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UniformData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="86" column="9" lean-forward="true" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GaussianData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -781,46 +715,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/PriorityQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+        <state relative-caret-position="465">
+          <caret line="100" column="26" lean-forward="true" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+          <folding>
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GaussianData.java">
+    <entry file="file://$PROJECT_DIR$/src/RankData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+        <state relative-caret-position="970">
+          <caret line="87" column="28" lean-forward="true" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java">
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/PartitionFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="300" column="49" selection-start-line="300" selection-start-column="34" selection-end-line="300" selection-end-column="49" />
+        <state relative-caret-position="171">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UniformData.java">
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/PromotionFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        <state relative-caret-position="171">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils.java">
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/DistanceFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        <state relative-caret-position="285">
+          <caret line="100" column="4" lean-forward="true" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/ComposedSplitFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/PromotionFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/SplitFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/PartitionFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1026">
+          <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TrainingData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+        <state relative-caret-position="293">
+          <caret line="155" column="13" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#generateTripletSamples#0;class#TrainingData#0" />
@@ -830,22 +796,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DataGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        <state relative-caret-position="95">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="266">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/DistanceFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/MTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="256" column="21" selection-start-line="256" selection-start-column="21" selection-end-line="256" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-string-similarity-master/src/main/java/info/debatty/java/stringsimilarity/NGram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-string-similarity-master/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="183" selection-start-line="183" selection-end-line="183" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LSH/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="163" column="20" selection-start-line="163" selection-start-column="20" selection-end-line="163" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LSH/src/main/java/info/debatty/java/lsh/examples/SuperBitSparseExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="28" column="50" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/M-Tree-master/java/mtree/examples/MTreeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="291">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/temp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -5,7 +5,7 @@ public class DataGenerator {
     public static void main(String[] args) throws IOException, InterruptedException {
 
         int numThreads = 8;
-        int fileSize = 500; //numThreads * fileSize = numPoints
+        int fileSize = 3125; //numThreads * fileSize = numPoints
 
         int numDims = 20;
         int numPoints = numThreads * fileSize;
@@ -17,16 +17,16 @@ public class DataGenerator {
         String path = "./data";
         String[] files = getFileNames(path, numThreads);
         //double maxDist = getMaxDist(numDims, "Euclidean");
-        double trainRatio = getSampleRatio(topK, numPoints);
+        double trainRatio = getSampleRatio(topK+1, numPoints);
 
         //GaussianData gd = new GaussianData(files, fileSize, numDims, numClusters, numThreads);
-        UniformData ud = new UniformData(files, fileSize, numDims, numThreads);
-        RankData rd = new RankData(files, fileSize, topK, dataType, numThreads);
-        TrainingData td = new TrainingData(path, files, trainRatio, dataType);
+        //UniformData ud = new UniformData(files, fileSize, numDims, numThreads);
+        RankData rd = new RankData(files, fileSize, topK+1, dataType, numThreads);
+        TrainingData td = new TrainingData(numThreads, fileSize, path, files, trainRatio, dataType);
 
         //gd.generateData();
-        ud.generateData();
-        System.out.println("******************\n* data generated *\n******************");
+        //ud.generateData();
+        //System.out.println("******************\n* data generated *\n******************");
 
         rd.generateRanks();
         System.out.println("\n***********************\n* rank data generated *\n***********************");
@@ -59,6 +59,6 @@ public class DataGenerator {
 
     //balance positive (kNN) and negative (non-kNN) points
     private static double getSampleRatio(int topK, int numPoints) {
-        return (double)topK * 3 / (double)numPoints;
+        return (double)topK * 2 / (double)numPoints;
     }
 }

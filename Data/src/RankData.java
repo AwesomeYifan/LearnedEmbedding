@@ -39,6 +39,7 @@ class RankDataThread <T> extends Thread  {
 
     public RankDataThread(String[] files, int threadID, String dataType, int topK, int fileSize) {
         this.files = files;
+        this.fileSize = fileSize;
         this.threadID = threadID;
         this.dataType = dataType;
         this.topK = topK;
@@ -69,7 +70,7 @@ class RankDataThread <T> extends Thread  {
         while((line1 = reader1.readLine()) != null) {
             marker++;
             if(threadID == 0 && marker % 100 == 0)
-                System.out.println(String.valueOf(marker / fileSize * 100) + "%\t points processed");
+                System.out.println(Math.round(marker / fileSize * 100) + "% points processed...");
             PriorityQueue rankQueue = new PriorityQueue(topK,"ascending");
             vec1 = Utils.getValuesFromLine(line1, " ", dataType);
 
@@ -81,7 +82,7 @@ class RankDataThread <T> extends Thread  {
                     vec2 = Utils.getValuesFromLine(line2, " ", dataType);
                     double dist = Utils.computeEuclideanDist(vec1, vec2);
                     //Utils.updatePriorityQueue(rankList, sim, idx);
-
+                    if (dist==0) continue;
                     rankQueue.insert(dist, fileID * fileSize + objID);
 
                     objID++;
@@ -89,6 +90,7 @@ class RankDataThread <T> extends Thread  {
                 reader2.close();
             }
             writerOfThreshold.write(String.valueOf(rankQueue.getBottomKey()) + "\n");
+            //writerOfThreshold.write(String.valueOf(rankQueue.getTopKey()) + "\n");
             //Utils.writeDescending(writer, rankList);
             List<T> rankList = rankQueue.serialize();
             for(T i : rankList) {

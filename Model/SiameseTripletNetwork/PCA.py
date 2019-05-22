@@ -5,7 +5,7 @@ import torch
 from sklearn import svm
 from numpy import genfromtxt
 num_threads = 8
-new_dim = 18
+new_dim = 50
 flag = True
 for i in range(num_threads):
     TEST_CSV = "../../Data/data/thread-" + str(i)
@@ -13,7 +13,7 @@ for i in range(num_threads):
     temp = torch.from_numpy(temp)
     if flag:
         X = temp
-        flag = False
+        #flag = False
     else:
         X = torch.cat((X, temp))
 

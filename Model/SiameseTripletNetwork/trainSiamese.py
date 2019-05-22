@@ -12,20 +12,20 @@ from losses import ContrastiveLossMLP
 from networks import SiameseNet, EmbeddingNetMLP, EmbeddingNet
 from trainer import fit
 
-embedding_dim = 10
+embedding_dim = 50
 gpus = 0
 n_epoch = 100
 num_threads = 8
 test_size = 0.2
-params = {'batch_size': 100,
+params = {'batch_size': 248,
           'shuffle': True}
 
 TRAIN_CSV = "../../Data/data/trainingData.csv"
-TEST_CSV = "../../Data/data/validationData.csv"
+#TEST_CSV = "../../Data/data/validationData.csv"
 
 # Load training set
 train_df = pd.read_csv(TRAIN_CSV, delimiter=',', encoding="utf-8-sig")
-test_df = pd.read_csv(TEST_CSV, delimiter=',', encoding="utf-8-sig")
+#test_df = pd.read_csv(TEST_CSV, delimiter=',', encoding="utf-8-sig")
 
 # Split to train validation
 #validation_size = int(len(train_df) * 0.01)
@@ -33,15 +33,15 @@ test_df = pd.read_csv(TEST_CSV, delimiter=',', encoding="utf-8-sig")
 
 training_samples = train_df[['P1', 'P2']]
 training_labels = train_df[['distance', 'cutoff']]
-testing_samples = test_df[['P1', 'P2']]
-testing_labels = test_df[['distance', 'cutoff']]
+#testing_samples = test_df[['P1', 'P2']]
+#testing_labels = test_df[['distance', 'cutoff']]
 
 input_dim = len(training_samples['P1'][0].split())
 
 training_samples = training_samples.values
 training_labels = training_labels.values
-testing_samples = testing_samples.values
-testing_labels = testing_labels.values
+#testing_samples = testing_samples.values
+#testing_labels = testing_labels.values
 
 cuda = torch.cuda.is_available()
 
@@ -66,7 +66,7 @@ lr = 1e-3
 optimizer = optim.Adam(model.parameters(), lr=lr)
 scheduler = lr_scheduler.StepLR(optimizer, 8, gamma=0.1, last_epoch=-1)
 log_interval = 100
-patience = 10
+patience = 7
 fit(siamese_train_loader, siamese_test_loader, model, loss_fn, optimizer, scheduler, patience, n_epoch, cuda, log_interval)
 torch.save(model, "./data/SiameseNetwork.pt")
 

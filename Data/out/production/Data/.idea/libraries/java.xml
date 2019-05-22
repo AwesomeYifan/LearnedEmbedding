@@ -1,10 +1,11 @@
 <component name="libraryTable">
   <library name="java">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jcip-annotations-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/java-lsh-0.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/java-string-similarity-1.2.1.jar!/" />
+    </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/Indexing/rtree-1.0.5.zip!/rtree-1.0.5/src/main/java" />
-      <root url="jar://$PROJECT_DIR$/Indexing/rtree-1.0.5.zip!/rtree-1.0.5/src/test/java" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
