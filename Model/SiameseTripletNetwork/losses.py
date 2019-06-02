@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import numpy as np
 from torch.autograd import Variable
 import math
 
@@ -120,6 +121,12 @@ class ContrastiveLossMLP(nn.Module):
     #     #return losses1.mean()
 
     def forward(self, output1, output2, y, cutoff):
+        for row in output1.split(1):
+            _y = row - output2
+            print(row)
+            print(output2)
+            print(_y)
+
         #print(output1.data)
         _y = ((output2 - output1).pow(2).sum(1) + self.delta).sqrt().type(torch.FloatTensor)
         y = y.type(torch.FloatTensor)
@@ -128,31 +135,41 @@ class ContrastiveLossMLP(nn.Module):
         mask1 = torch.le(y, cutoff).type(torch.FloatTensor)
         #losses1 = mask1 * (torch.exp(-(y/cutoff)) * (_y - y).abs())
         losses1 = mask1 * (_y - y).abs()
+        #losses1 = mask1 * (_y - y/cutoff).abs()
 
         mask2 = (torch.le(cutoff, y) * torch.le(_y, (1+self.epsilon) * cutoff)).type(torch.FloatTensor)
         losses2 = mask2 * (_y - (1+self.epsilon) * cutoff).abs()
-        #losses2 = mask2 * (cutoff / _y)
+
+        #mask2 = (torch.le(cutoff, y) * torch.le(_y, 1)).type(torch.FloatTensor)
+        #losses2 = mask2 * (_y - 1).abs()
+
+        #mask2 = torch.le(cutoff, y).type(torch.FloatTensor)
+        #losses2 = mask2 * (cutoff / _y).abs()
 
         losses = self.alpha * losses1 + (1-self.alpha) * losses2
+        losses = losses1
         #losses = losses1 + losses2
         return losses.mean()
 
-
-class TripletLossMLP(nn.Module):
-    """
-    Triplet loss
-    Takes embeddings of an anchor sample, a positive sample and a negative sample
-    """
+class ContrastiveLossSoftNN(nn.Module):
 
     def __init__(self):
-        super(TripletLossMLP, self).__init__()
+        super(ContrastiveLossSoftNN, self).__init__()
+        self.T = 1.5
+        self.delta = 1e-9
 
-    def forward(self, anchor, positive, negative, label, size_average=True):
-        distance_positive = (anchor - positive).pow(2).sum(1)  # .pow(.5)
-        distance_negative = (anchor - negative).pow(2).sum(1)  # .pow(.5)
-        d_p = torch.exp(-distance_positive) / (torch.exp(-distance_positive) + torch.exp(-distance_negative))
-        losses = d_p.pow(2).double() * label.double()
-        return losses.mean() if size_average else losses.sum()
+    def forward(self, output1, output2, y1, y2):
+        b = y1.size()[0]
+        loss = Variable(torch.zeros(1, 1), requires_grad=True)
+        for row1, label1 in zip(output1.split(1), y1.split(1)):
+            diff = ((row1 - output2).pow(2).sum(1) + self.delta).sqrt()
+            diff = torch.exp(-diff / self.T)
+            class_agree_mask = torch.eq(label1, y2).type(torch.FloatTensor)
+            nomi = (diff * class_agree_mask).sum() + self.delta
+            #print(diff)
+            denomi = diff.sum() + self.delta
+            loss = loss + torch.log(nomi / denomi)
+        return -loss/b
 
 
 class ContrastiveLoss(nn.Module):
@@ -172,6 +189,23 @@ class ContrastiveLoss(nn.Module):
                         (1 + -1 * target).float() * F.relu(self.margin - (distances + self.eps).sqrt()).pow(2))
         return losses.mean() if size_average else losses.sum()
 
+
+class TripletLossMLP(nn.Module):
+    """
+    Triplet loss
+    Takes embeddings of an anchor sample, a positive sample and a negative sample
+    """
+
+    def __init__(self):
+        super(TripletLossMLP, self).__init__()
+        self.eps = 1e-9
+        self.margin = 1e-9
+
+    def forward(self, anchor, positive, negative, size_average=True):
+        distance_positive = (anchor - positive).pow(2).sum(1)  # .pow(.5)
+        distance_negative = (anchor - negative).pow(2).sum(1)  # .pow(.5)
+        losses = F.relu(distance_positive - distance_negative + self.margin)
+        return losses.mean() if size_average else losses.sum()
 
 
 class TripletLoss(nn.Module):

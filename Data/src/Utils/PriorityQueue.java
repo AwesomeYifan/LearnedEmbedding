@@ -24,13 +24,15 @@ public class PriorityQueue<K extends Comparable,V> {
         this.queue = new TreeMap<>();
         switch (opt) {
             case "ascending":
+            case "high":
                 isAscending = true;
                 break;
             case "descending":
+            case "low":
                 isAscending = false;
                 break;
             default:
-                throw new IllegalArgumentException("Option error! Must be ascending ot descending");
+                throw new IllegalArgumentException("Priority queue option error!");
         }
     }
 

@@ -8,16 +8,16 @@ from torch.optim import lr_scheduler
 
 from pytorchtools import EarlyStopping
 from datasets import SiameseDataset
-from losses import ContrastiveLossMLP
+from losses import ContrastiveLossMLP, ContrastiveLossSoftNN
 from networks import SiameseNet, EmbeddingNetMLP, EmbeddingNet
-from trainer import fit
+from trainer import fit_siamese
 
-embedding_dim = 50
+embedding_dim = 20
 gpus = 0
 n_epoch = 100
 num_threads = 8
 test_size = 0.2
-params = {'batch_size': 248,
+params = {'batch_size': 32,
           'shuffle': True}
 
 TRAIN_CSV = "../../Data/data/trainingData.csv"
@@ -32,7 +32,8 @@ train_df = pd.read_csv(TRAIN_CSV, delimiter=',', encoding="utf-8-sig")
 #training_size = len(train_df) - validation_size
 
 training_samples = train_df[['P1', 'P2']]
-training_labels = train_df[['distance', 'cutoff']]
+#training_labels = train_df[['distance', 'cutoff']]
+training_labels = train_df[['label1', 'label2']]
 #testing_samples = test_df[['P1', 'P2']]
 #testing_labels = test_df[['distance', 'cutoff']]
 
@@ -60,24 +61,45 @@ embedding_net = EmbeddingNetMLP(input_dim, embedding_dim)
 model = SiameseNet(embedding_net)
 if cuda:
     model.cuda()
-loss_fn = ContrastiveLossMLP()
+#loss_fn = ContrastiveLossMLP()
+loss_fn = ContrastiveLossSoftNN()
 lr = 1e-3
 #optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
 optimizer = optim.Adam(model.parameters(), lr=lr)
 scheduler = lr_scheduler.StepLR(optimizer, 8, gamma=0.1, last_epoch=-1)
 log_interval = 100
-patience = 7
-fit(siamese_train_loader, siamese_test_loader, model, loss_fn, optimizer, scheduler, patience, n_epoch, cuda, log_interval)
+patience = 4
+fit_siamese(siamese_train_loader, siamese_test_loader, model, loss_fn, optimizer, scheduler, patience, n_epoch, cuda, log_interval)
 torch.save(model, "./data/SiameseNetwork.pt")
 
 #model = torch.load("./data/SiameseNetwork.pt")
-for i in range(num_threads):
-    TEST_CSV = "../../Data/data/thread-" + str(i)
-    with open(TEST_CSV) as csv_file:
-        with open('../../Data/data/siamese-reducedVectors-' + str(i), 'w') as writeFile:
-            csv_reader = csv.reader(csv_file, delimiter=' ')
-            for row in csv_reader:
-                vec = [float(k) for k in row]
-                vec = torch.FloatTensor(vec)
-                writeFile.write(' '.join(map(str, model.get_embedding(vec).data.numpy())) + "\n")
-            writeFile.close()
+#below for unlabeled data
+# for i in range(num_threads):
+#     TEST_CSV = "../../Data/data/thread-" + str(i)
+#     with open(TEST_CSV) as csv_file:
+#         with open('../../Data/data/siamese-reducedVectors-' + str(i), 'w') as writeFile:
+#             csv_reader = csv.reader(csv_file, delimiter=' ')
+#             for row in csv_reader:
+#                 vec = [float(k) for k in row]
+#                 vec = torch.FloatTensor(vec)
+#                 writeFile.write(' '.join(map(str, model.get_embedding(vec).data.numpy())) + "\n")
+#             writeFile.close()
+#below for labeled data
+TEST_CSV = "../../Data/data/mnist.csv"
+with open(TEST_CSV) as csv_file:
+    with open('../../Data/data/siamese-reducedVectors-MNIST', 'w') as writeFile:
+        csv_reader = csv.reader(csv_file, delimiter=' ')
+        for row in csv_reader:
+            vec = [float(k) for k in row]
+            vec = torch.FloatTensor(vec)
+            writeFile.write(' '.join(map(str, model.get_embedding(vec).data.numpy())) + "\n")
+        writeFile.close()
+# TEST_CSV = "../../Data/data/mnist-test"
+# with open(TEST_CSV) as csv_file:
+#     with open('../../Data/data/siamese-reducedVectors-MNIST-test', 'w') as writeFile:
+#         csv_reader = csv.reader(csv_file, delimiter=' ')
+#         for row in csv_reader:
+#             vec = [float(k) for k in row]
+#             vec = torch.FloatTensor(vec)
+#             writeFile.write(' '.join(map(str, model.get_embedding(vec).data.numpy())) + "\n")
+#         writeFile.close()

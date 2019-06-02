@@ -31,7 +31,8 @@ public class DataGenerator {
         rd.generateRanks();
         System.out.println("\n***********************\n* rank data generated *\n***********************");
 
-        td.generateSiameseSamples();
+        //td.generateSiameseSamples();
+        td.generateTripletSamples();
         System.out.println("\n*****************************\n* siamese samples generated *\n*****************************");
 
         //td.generateTripletSamples();

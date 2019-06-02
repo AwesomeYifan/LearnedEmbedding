@@ -59,25 +59,34 @@ class SiameseDataset(Dataset):
 
 #triplet dataset format: ancher, positive, negative, d(AP) - d(AN)
 class TripletDataset(Dataset):
-    def __init__(self, X, labels):
+    def __init__(self, X):
         self.X = X
-        self.labels = labels
 
     def __len__(self):
         return len(self.X)
 
     def __getitem__(self, idx):
-        #print("*****************************************")
-        #print(self.X)
-        #print("*****************************************")
-        anchor = [float(i) for i in str(self.X.loc[idx, 'anchor']).split()]
-        anchor = torch.FloatTensor(anchor)
-        positive = [float(i) for i in str(self.X.loc[idx, 'positive']).split()]
-        positive = torch.FloatTensor(positive)
-        negative = [float(i) for i in str(self.X.loc[idx, 'negative']).split()]
-        negative = torch.FloatTensor(negative)
-        label = float(self.labels[idx])
-        return (anchor, positive, negative), label
+        # print("*****************************************")
+        # print(self.X)
+        # print("*****************************************")
+        anchor = torch.FloatTensor([float(i) for i in str(self.X[idx][0]).split()])
+        positive = torch.FloatTensor([float(i) for i in str(self.X[idx][1]).split()])
+        negative = torch.FloatTensor([float(i) for i in str(self.X[idx][2]).split()])
+        result = (anchor, positive, negative)
+        return result
+
+    # def __getitem__(self, idx):
+    #     #print("*****************************************")
+    #     #print(self.X)
+    #     #print("*****************************************")
+    #     anchor = [float(i) for i in str(self.X.loc[idx, 'anchor']).split()]
+    #     anchor = torch.FloatTensor(anchor)
+    #     positive = [float(i) for i in str(self.X.loc[idx, 'positive']).split()]
+    #     positive = torch.FloatTensor(positive)
+    #     negative = [float(i) for i in str(self.X.loc[idx, 'negative']).split()]
+    #     negative = torch.FloatTensor(negative)
+    #     label = float(self.labels[idx])
+    #     return (anchor, positive, negative), label
 
 
 class SiameseMNIST(Dataset):

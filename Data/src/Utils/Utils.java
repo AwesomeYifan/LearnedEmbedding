@@ -1,3 +1,5 @@
+package Utils;
+
 import java.io.*;
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -6,7 +8,7 @@ import java.util.Random;
 
 public class Utils {
 
-    static double[][] getGaussianPoints(int numPoints, double centers[], double deviation) {
+    public static double[][] getGaussianPoints(int numPoints, double centers[], double deviation) {
         int numDims = centers.length;
         double deviationEachAxis = Math.sqrt(Math.pow(deviation, 2)/numDims);
         double[][] results = new double[numPoints][numDims];
@@ -19,7 +21,7 @@ public class Utils {
         }
         return results;
     }
-    static double[][] getUniformPoints(int numPoints, int dim) {
+    public static double[][] getUniformPoints(int numPoints, int dim) {
         DecimalFormat f = new DecimalFormat("##.0000");
         double[][] results = new double[numPoints][dim];
         Random random = new Random();
@@ -32,7 +34,7 @@ public class Utils {
         return results;
     }
 
-    static double computeEuclideanDist(Object[] vec1, Object[] vec2) {
+    public static double computeEuclideanDist(Object[] vec1, Object[] vec2) {
         double sumDist = 0;
         for(int i = 0; i < vec1.length; i++) {
             sumDist += Math.pow((Double)vec1[i] - (Double)vec2[i], 2);
@@ -40,7 +42,7 @@ public class Utils {
         return Math.sqrt(sumDist);
     }
 
-    static double computeSimilarity(Object[] vec1, Object[] vec2, double maxDist, String distOpt, String scaleOpt) {
+    public static double computeSimilarity(Object[] vec1, Object[] vec2, double maxDist, String distOpt, String scaleOpt) {
         double sim;
         switch (distOpt) {
             case "Euclidean": {
@@ -79,7 +81,7 @@ public class Utils {
     }
 
     //return number of records per file
-    static int splitFile(String sourcePath, String targetPath, int numThreads) throws IOException {
+    public static int splitFile(String sourcePath, String targetPath, int numThreads) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(new File(sourcePath)));
         BufferedWriter[] bws = new BufferedWriter[numThreads];
         for(int i = 0; i < numThreads; i++) {
@@ -113,7 +115,7 @@ public class Utils {
         }
     }
 
-    static Object[] getValuesFromLine(String line, String separator, String opt) {
+    public static Object[] getValuesFromLine(String line, String separator, String opt) {
         String[] record = line.split(separator);
         Object[] result = new Object[record.length];
         int idx = 0;

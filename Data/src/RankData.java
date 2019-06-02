@@ -1,4 +1,5 @@
 import Utils.PriorityQueue;
+import Utils.Utils;
 
 import java.io.*;
 import java.util.List;
@@ -81,7 +82,7 @@ class RankDataThread <T> extends Thread  {
                 while ((line2 = reader2.readLine()) != null) {
                     vec2 = Utils.getValuesFromLine(line2, " ", dataType);
                     double dist = Utils.computeEuclideanDist(vec1, vec2);
-                    //Utils.updatePriorityQueue(rankList, sim, idx);
+                    //Utils.Utils.updatePriorityQueue(rankList, sim, idx);
                     if (dist==0) continue;
                     rankQueue.insert(dist, fileID * fileSize + objID);
 
@@ -91,7 +92,7 @@ class RankDataThread <T> extends Thread  {
             }
             writerOfThreshold.write(String.valueOf(rankQueue.getBottomKey()) + "\n");
             //writerOfThreshold.write(String.valueOf(rankQueue.getTopKey()) + "\n");
-            //Utils.writeDescending(writer, rankList);
+            //Utils.Utils.writeDescending(writer, rankList);
             List<T> rankList = rankQueue.serialize();
             for(T i : rankList) {
                 writerOfRank.write(String.valueOf(i) + ",");
