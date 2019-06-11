@@ -2,48 +2,46 @@ import Utils.PriorityQueue;
 import Utils.Utils;
 
 import java.io.*;
+import java.sql.ParameterMetaData;
+import java.util.Arrays;
 import java.util.List;
 
 class RankData <T> {
-    private String[] files;
+    private String dir;
     private String dataType;
     private int topK;
     private int numThreads;
     private int fileSize;
 
-    RankData(String[] files, int fileSize, int topK, String dataType, int numThreads) {
-        this.files = files;
+    RankData(String dir, int fileSize, String dataType, int numThreads) {
+        this.dir = dir;
         this.fileSize = fileSize;
         this.dataType = dataType;
-        this.topK = topK;
+        this.topK = Parameters.topK[Parameters.topK.length - 1];
         this.numThreads = numThreads;
     }
     void generateRanks() throws InterruptedException {
         RankDataThread[] rdT = new RankDataThread[numThreads];
         for(int i = 0; i < numThreads; i++) {
-            rdT[i] = new RankDataThread(files, i, dataType, topK, fileSize);
+            rdT[i] = new RankDataThread(dir, i, dataType, topK, fileSize);
             rdT[i].start();
         }
         for(int i = 0; i < numThreads; i++) {
             rdT[i].join();
         }
-
     }
-
 }
 class RankDataThread <T> extends Thread  {
-    private String[] files;
+    private String dir;
     private int threadID;
     private String dataType;
-    private int topK;
     private int fileSize;
 
-    public RankDataThread(String[] files, int threadID, String dataType, int topK, int fileSize) {
-        this.files = files;
+    public RankDataThread(String dir, int threadID, String dataType, int topK, int fileSize) {
+        this.dir = dir;
         this.fileSize = fileSize;
         this.threadID = threadID;
         this.dataType = dataType;
-        this.topK = topK;
         this.fileSize = fileSize;
     }
 
@@ -58,11 +56,11 @@ class RankDataThread <T> extends Thread  {
 
     void generateRanks() throws IOException {
         BufferedReader reader1, reader2;
-        String path = files[threadID];
+        String path = dir + "/thread-" + String.valueOf(threadID);
         reader1 = new BufferedReader(new FileReader(new File(path)));
 
-        BufferedWriter writerOfRank, writerOfThreshold;
-        writerOfRank = new BufferedWriter(new FileWriter(new File(path + "-rank")));
+        BufferedWriter writerOfDist, writerOfThreshold;
+        writerOfDist = new BufferedWriter(new FileWriter(new File("./data/kNNDist")));
         writerOfThreshold = new BufferedWriter(new FileWriter(new File(path + "-threshold")));
 
         String line1, line2;
@@ -72,37 +70,40 @@ class RankDataThread <T> extends Thread  {
             marker++;
             if(threadID == 0 && marker % 100 == 0)
                 System.out.println(Math.round(marker / fileSize * 100) + "% points processed...");
-            PriorityQueue rankQueue = new PriorityQueue(topK,"ascending");
+            int maxQueueSize = Parameters.topK[Parameters.topK.length - 1];
+            PriorityQueue rankQueue = new PriorityQueue(maxQueueSize,"ascending");
             vec1 = Utils.getValuesFromLine(line1, " ", dataType);
-
-            for (int fileID = 0; fileID < files.length; fileID++) {
-                String file = files[fileID];
+            for (int fileID = 0; fileID < DataGenerator.numThreads; fileID++) {
+                String file = dir + "/thread-" + String.valueOf(fileID);;
                 reader2 = new BufferedReader(new FileReader(new File(file)));
-                int objID = 0;
+                int objID = -1;
                 while ((line2 = reader2.readLine()) != null) {
+                    objID++;
                     vec2 = Utils.getValuesFromLine(line2, " ", dataType);
                     double dist = Utils.computeEuclideanDist(vec1, vec2);
                     //Utils.Utils.updatePriorityQueue(rankList, sim, idx);
                     if (dist==0) continue;
                     rankQueue.insert(dist, fileID * fileSize + objID);
-
-                    objID++;
                 }
                 reader2.close();
             }
             writerOfThreshold.write(String.valueOf(rankQueue.getBottomKey()) + "\n");
-            //writerOfThreshold.write(String.valueOf(rankQueue.getTopKey()) + "\n");
-            //Utils.Utils.writeDescending(writer, rankList);
-            List<T> rankList = rankQueue.serialize();
-            for(T i : rankList) {
-                writerOfRank.write(String.valueOf(i) + ",");
+            if(threadID == 0 && marker <= Parameters.testSize) {
+                String[] distances = new String[Parameters.topK.length];
+                for(int i = Parameters.topK.length - 1; i >= 0; i--) {
+                    int newSize = Parameters.topK[i];
+                    rankQueue.reSize(newSize);
+                    distances[i] = String.valueOf(rankQueue.getBottomKey());
+                    //System.out.println(Arrays.toString(rankQueue.serialize().toArray()));
+                }
+                for(String dist : distances) {
+                    writerOfDist.write(dist + ",");
+                }
+                writerOfDist.write("\n");
             }
-            writerOfRank.write("\r\n");
-            rankQueue.clear();
-
         }
         reader1.close();
-        writerOfRank.flush(); writerOfRank.close();
+        writerOfDist.flush(); writerOfDist.close();
         writerOfThreshold.flush(); writerOfThreshold.close();
     }
 }

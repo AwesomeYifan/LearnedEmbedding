@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/SiameseNetwork/DR" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SiameseTripletNetwork" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/LSHash/lshash" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ann-benchmarks" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/LSHash-master" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6.8 (C:\Users\esoadmin\AppData\Local\Programs\Python\Python36\python.exe)" jdkType="Python SDK" />

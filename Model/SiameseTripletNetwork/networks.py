@@ -43,8 +43,6 @@ class EmbeddingNetMLP(nn.Module):
                                  nn.Linear(400, output_dim),
                                  nn.PReLU(),
                                  )
-        #self.net = nn.Sequential(nn.Linear(input_dim, output_dim))
-
     def forward(self, x):
         output = self.net(x)
         return output
@@ -92,6 +90,7 @@ class SiameseNet(nn.Module):
     def forward(self, x1, x2):
         output1 = self.embedding_net(x1)
         output2 = self.embedding_net(x2)
+        #print(output2)
         return output1, output2
 
     def get_embedding(self, x):
@@ -104,6 +103,7 @@ class TripletNet(nn.Module):
         self.embedding_net = embedding_net
 
     def forward(self, x1, x2, x3):
+
         output1 = self.embedding_net(x1)
         output2 = self.embedding_net(x2)
         output3 = self.embedding_net(x3)
@@ -111,3 +111,22 @@ class TripletNet(nn.Module):
 
     def get_embedding(self, x):
         return self.embedding_net(x)
+
+
+class MultipletNet(nn.Module):
+    def __init__(self, embedding_net):
+        super(MultipletNet, self).__init__()
+        self.embedding_net = embedding_net
+
+    def forward(self, anchor, others):
+        output_anchor = self.embedding_net(anchor)
+        output_others = []
+        for point in others:
+            output_this = self.embedding_net(point)
+            output_others.append(output_this)
+
+        return output_anchor, output_others
+
+    def get_embedding(self, x):
+        return self.embedding_net(x)
+

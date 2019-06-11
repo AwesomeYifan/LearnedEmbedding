@@ -36,6 +36,14 @@ public class PriorityQueue<K extends Comparable,V> {
         }
     }
 
+    public void reSize(int newSize) {
+        this.limit = newSize;
+        while(this.size > newSize) {
+            cutQueue();
+            this.size--;
+        }
+    }
+
     public void insert(K key, V value) {
         if(size < limit) {
             updateQueue(key, value);
@@ -45,12 +53,13 @@ public class PriorityQueue<K extends Comparable,V> {
             if((isAscending && key.compareTo(queue.lastKey()) <= 0) ||
                     (!isAscending && key.compareTo(queue.firstKey()) >= 0)) {
                 updateQueue(key, value);
-                cutQueue(queue);
+                cutQueue();
                 size = limit;
             }
         }
     }
     public List<K> serializeKeys() {
+        TreeMap<K, Set<V>> queue = new TreeMap<>(this.queue);
         List<K> queueList = new ArrayList<>();
         if(isAscending) {
             while(!queue.isEmpty()) {
@@ -75,6 +84,7 @@ public class PriorityQueue<K extends Comparable,V> {
         return queueList;
     }
     public List<V> serialize() {
+        TreeMap<K, Set<V>> queue = new TreeMap<>(this.queue);
         List<V> queueList = new ArrayList<>();
         if(isAscending) {
             while(!queue.isEmpty()) {
@@ -121,7 +131,7 @@ public class PriorityQueue<K extends Comparable,V> {
             queue.put(key, tempSet);
         }
     }
-    private void cutQueue(TreeMap<K, Set<V>> queue) {
+    private void cutQueue() {
         if(isAscending) {
             Set<V> tempSet = queue.get(queue.lastKey());
             V elementToRemove = tempSet.stream().findFirst().orElse(null);

@@ -42,6 +42,14 @@ public class Utils {
         return Math.sqrt(sumDist);
     }
 
+    public static double computeEuclideanDist(double[] vec1, double[] vec2) {
+        double sumDist = 0;
+        for(int i = 0; i < vec1.length; i++) {
+            sumDist += Math.pow(vec1[i] - vec2[i], 2);
+        }
+        return Math.sqrt(sumDist);
+    }
+
     public static double computeSimilarity(Object[] vec1, Object[] vec2, double maxDist, String distOpt, String scaleOpt) {
         double sim;
         switch (distOpt) {

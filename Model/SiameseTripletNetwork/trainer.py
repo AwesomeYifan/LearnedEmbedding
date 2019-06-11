@@ -115,7 +115,6 @@ def train_siamese(train_loader, model, loss_fn, optimizer, cuda, log_interval, m
 
 
         optimizer.zero_grad()
-        print(data)
         outputs = model(*data)
 
         if type(outputs) not in (tuple, list):

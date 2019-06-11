@@ -88,6 +88,40 @@ class TripletDataset(Dataset):
     #     label = float(self.labels[idx])
     #     return (anchor, positive, negative), label
 
+class MultipletDataset(Dataset):
+    def __init__(self, X):
+        self.X = X
+
+    def __len__(self):
+        return len(self.X)
+
+    def __getitem__(self, idx):
+        # print("*****************************************")
+        # print(self.X)
+        # print("*****************************************")
+
+        anchor = torch.FloatTensor([float(i) for i in str(self.X[idx][0]).split()])
+
+        others = []
+        points = str(self.X[idx][1]).split("#")
+        for point in points:
+            point = torch.FloatTensor([float(i) for i in point.split()])
+            others.append(point)
+
+        return anchor, others
+
+    # def __getitem__(self, idx):
+    #     #print("*****************************************")
+    #     #print(self.X)
+    #     #print("*****************************************")
+    #     anchor = [float(i) for i in str(self.X.loc[idx, 'anchor']).split()]
+    #     anchor = torch.FloatTensor(anchor)
+    #     positive = [float(i) for i in str(self.X.loc[idx, 'positive']).split()]
+    #     positive = torch.FloatTensor(positive)
+    #     negative = [float(i) for i in str(self.X.loc[idx, 'negative']).split()]
+    #     negative = torch.FloatTensor(negative)
+    #     label = float(self.labels[idx])
+    #     return (anchor, positive, negative), label
 
 class SiameseMNIST(Dataset):
     """
