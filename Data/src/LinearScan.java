@@ -1,25 +1,43 @@
 import Utils.PriorityQueue;
-
 import java.io.*;
 import java.util.*;
-
 import Utils.Utils;
 public class LinearScan {
-
+    //args: dataset, d', epsilon, method
     public static void main(String[] args) throws IOException {
-        int numPoints = 25000;
+        String dataset = args[0];
+        int reducedDim = Integer.parseInt(args[1]);
+        double eps = Double.parseDouble(args[2]);
+        String method = args[3];
+        String suffix = "-" + args[0] + "-" + args[1] + "-" + args[2] + "-" + args[3];
+        if(method.equals("hard")) suffix = "-" + args[0] + "-" + args[1] + "-0-" + args[3];
+        int numPoints = Parameters.numPoints;
         int originalDim = 128;
-        int reducedDim = 20;
-        double[][] thresholds = readThreasholds();
-        double[][] points = getPointsInReducedSpace(numPoints, reducedDim);
-        List<List<Set<Integer>>> kNNs = getkNN(points);
-        double[][] testPoints = getPointsInOriginalSpace(numPoints, originalDim);
-        double[] acc = compareResults(testPoints, kNNs, thresholds);
+        double[][] thresholds = readThreasholds(dataset);
+        double[][] points = getPointsInReducedSpace(numPoints, reducedDim, suffix);
+        List<List<Set<Integer>>> kNNs = getkNNFromVectors(points);
+        //List<List<Set<Integer>>> kNNs = getkNNFromFile("./data/results-hnsw");
+        double[][] testPoints = getPointsInOriginalSpace(numPoints, dataset);
+        double[] acc = compareResults(testPoints, kNNs, thresholds, dataset, eps);
         System.out.println(Arrays.toString(acc));
+        try(FileWriter fw = new FileWriter("Data/data/accuracy.csv", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter out = new PrintWriter(bw))
+        {
+            out.println(String.join("-", args));
+
+            for(double d : acc) {
+                out.print(String.valueOf(d) + ",");
+            }
+            out.println();
+
+        } catch (IOException e) {
+            //exception handling left as an exercise for the reader
+        }
     }
 
-    static double[] compareResults(double[][] points, List<List<Set<Integer>>> kNNs, double[][] thresholds) throws IOException {
-        String file = "./data/originalVectors";
+    static double[] compareResults(double[][] points, List<List<Set<Integer>>> kNNs, double[][] thresholds, String dataset, double eps) throws IOException {
+        String file = "Data/data/originalVectors-" + dataset;
         BufferedReader br = new BufferedReader(new FileReader(new File(file)));
         String line;
         Integer id = 0;
@@ -37,7 +55,7 @@ public class LinearScan {
                     if(kNNOfThisK.contains(id)) {
                         double dist = Utils.computeEuclideanDist(points[i], vectors);
                         //System.out.println(dist + "," + thresholds[i][j]);
-                        if(dist < (1+Parameters.eps) * thresholds[i][j]) {
+                        if(dist < (1 + eps) * thresholds[i][j]) {
                             truePositiveCount[j]++;
                         }
                     }
@@ -51,9 +69,11 @@ public class LinearScan {
         return truePositiveCount;
     }
 
-    static double[][] getPointsInReducedSpace(int numPoints, int dim) throws IOException {
+    static double[][] getPointsInReducedSpace(int numPoints, int dim, String suffix) throws IOException {
 
-        String file = "./data/reducedVectors-siameseNet";
+        String file = "Data/data/reducedVectors-siameseNet" + suffix;
+        //String file = "./data/reducedVectors-PCA" + "-Uniform";
+        //String file = "./data/originalVectors";
         BufferedReader br = new BufferedReader(new FileReader(new File(file)));
         String line;
         double[][] points = new double[numPoints][dim];
@@ -70,14 +90,14 @@ public class LinearScan {
         return points;
     }
 
-    static double[][] getPointsInOriginalSpace(int numPoints, int dim) throws IOException {
+    static double[][] getPointsInOriginalSpace(int numPoints, String dataset) throws IOException {
 
-        String file = "./data/originalVectors";
+        String file = "Data/data/originalVectors-" + dataset;
         BufferedReader br = new BufferedReader(new FileReader(new File(file)));
-        String line;
-        double[][] points = new double[numPoints][dim];
+        double[][] points = new double[numPoints][];
         for(int i = 0; i < Parameters.testSize; i++) {
             String[] records = br.readLine().split(" ");
+            points[i] = new double[records.length];
             for(int j = 0; j < records.length; j++) {
                 points[i][j] = Double.parseDouble(records[j]);
             }
@@ -85,7 +105,25 @@ public class LinearScan {
         return points;
     }
 
-    static List<List<Set<Integer>>> getkNN(double[][] points) throws IOException {
+    static List<List<Set<Integer>>> getkNNFromFile(String path) throws IOException {
+        List<List<Set<Integer>>> kNNs = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new FileReader(new File(path)));
+        for(int id = 0; id < Parameters.testSize; id++) {
+            String[] record = br.readLine().split(" ");
+            List<Set<Integer>> list = new ArrayList<>();
+            for(int k : Parameters.topK) {
+                Set<Integer> set = new HashSet<>();
+                for(int i = 0; i < k; i++) {
+                    set.add(Integer.parseInt(record[i]));
+                }
+                list.add(set);
+            }
+            kNNs.add(list);
+        }
+        return kNNs;
+    }
+
+    static List<List<Set<Integer>>> getkNNFromVectors(double[][] points) throws IOException {
         List<List<Set<Integer>>> kNNs = new ArrayList<>();
         int maxK = Parameters.topK[Parameters.topK.length - 1];
         double startTime = System.currentTimeMillis();
@@ -110,8 +148,9 @@ public class LinearScan {
         return kNNs;
     }
 
-    static private double[][] readThreasholds() throws IOException {
-        String file = "./data/kNNDist";
+    static private double[][] readThreasholds(String dataset) throws IOException {
+        String file = "Data/data/kNNDist-" + dataset;
+        //file = "./data/siftsmall-1-10-50/kNNDist";
         BufferedReader br = new BufferedReader(new FileReader(new File(file)));
         double[][] kNNDist = new double[Parameters.testSize][Parameters.topK.length];
         String line;
@@ -119,12 +158,11 @@ public class LinearScan {
         while((line = br.readLine()) != null) {
             String[] record = line.split(",");
             List<Double> list = new ArrayList<>();
-            for(int j = 0; j < record.length; j++) {
+            for(int j = 0; j < Parameters.topK.length; j++) {
                 kNNDist[i][j] = Double.parseDouble(record[j]);
             }
             i++;
         }
         return  kNNDist;
     }
-
 }

@@ -68,18 +68,19 @@ class RankDataThread <T> extends Thread  {
         double marker = 0;
         while((line1 = reader1.readLine()) != null) {
             marker++;
-            if(threadID == 0 && marker % 100 == 0)
-                System.out.println(Math.round(marker / fileSize * 100) + "% points processed...");
+            if(marker > 1000) break;
+            if(threadID == 0 && marker % 10 == 0)
+                System.out.println(Math.round(marker / 1000 * 100) + "% points processed...");
             int maxQueueSize = Parameters.topK[Parameters.topK.length - 1];
             PriorityQueue rankQueue = new PriorityQueue(maxQueueSize,"ascending");
-            vec1 = Utils.getValuesFromLine(line1, " ", dataType);
-            for (int fileID = 0; fileID < DataGenerator.numThreads; fileID++) {
+            vec1 = Utils.getValuesFromLine(line1, ",", dataType);
+            for (int fileID = 0; fileID < Parameters.numThreads; fileID++) {
                 String file = dir + "/thread-" + String.valueOf(fileID);;
                 reader2 = new BufferedReader(new FileReader(new File(file)));
                 int objID = -1;
                 while ((line2 = reader2.readLine()) != null) {
                     objID++;
-                    vec2 = Utils.getValuesFromLine(line2, " ", dataType);
+                    vec2 = Utils.getValuesFromLine(line2, ",", dataType);
                     double dist = Utils.computeEuclideanDist(vec1, vec2);
                     //Utils.Utils.updatePriorityQueue(rankList, sim, idx);
                     if (dist==0) continue;

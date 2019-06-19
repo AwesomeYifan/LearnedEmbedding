@@ -32,21 +32,7 @@ class TrainingData {
             tdT[i].join();
         }
 
-        File file;
-        String line;
-        BufferedWriter trainWriterT = new BufferedWriter(new FileWriter(new File("./data/trainingData-triplet")));
-        for(int i = 0; i < numThreads; i++) {
-            file = new File("./data/trainingData-triplet-" + String.valueOf(i));
-            if(!file.exists()) break;
-            BufferedReader trainReader = new BufferedReader(new FileReader(file));
-            if(i != 0) trainReader.readLine();
-            while((line = trainReader.readLine()) != null) {
-                trainWriterT.write(line + "\n");
-            }
-            trainReader.close();
-            file.delete();
-        }
-        trainWriterT.flush(); trainWriterT.close();
+        this.combineTrainingFiles("triplet");
         System.out.println("subfiles generated");
     }
 
@@ -60,11 +46,19 @@ class TrainingData {
             sdT[i].join();
         }
 
-        BufferedWriter trainWriter = new BufferedWriter(new FileWriter(new File("./data/trainingData-siamese")));
+        this.combineTrainingFiles("siamese");
+        System.out.println("subfiles generated");
+    }
+    void clean() throws IOException {
+        this.combineOtherFiles();
+    }
+
+    void combineTrainingFiles(String opt) throws IOException {
+        BufferedWriter trainWriter = new BufferedWriter(new FileWriter(new File("./data/trainingData-" + opt)));
         String line;
         File file;
         for(int i = 0; i < numThreads; i++) {
-            file = new File("./data/trainingData-siamese-" + String.valueOf(i));
+            file = new File("./data/trainingData-" + opt + "-" + String.valueOf(i));
             if(!file.exists()) break;
             BufferedReader trainReader = new BufferedReader(new FileReader(file));
             if(i != 0) trainReader.readLine();
@@ -75,14 +69,9 @@ class TrainingData {
             file.delete();
         }
         trainWriter.flush(); trainWriter.close();
-
-        System.out.println("subfiles generated");
-    }
-    void clean() throws IOException {
-        this.combineFiles();
     }
 
-    void combineFiles() throws IOException {
+    void combineOtherFiles() throws IOException {
         String line;
         File file;
         //combine original data separated for different threads
@@ -163,13 +152,14 @@ class SiameseDataThread extends Thread  {
         while((lines[0] = p1Reader.readLine()) != null &&
                 (threshold = thresholdReader.readLine()) != null) {
             marker++;
-            if(marker % 100 == 0 && threadID == 0) {
-                System.out.println(String.valueOf(Math.round(marker / fileSize * 100)) + "% points processed...");
+            if(marker > 1000) break;
+            if(marker % 10 == 0 && threadID == 0) {
+                System.out.println(String.valueOf(Math.round(marker / 1000 * 100)) + "% points processed...");
             }
-            if(random.nextDouble() < 0.8) continue;
+            if(random.nextDouble() < 0.2) continue;
             points[0] = Utils.getValuesFromLine(lines[0], " ", dataType);
             double thres = Double.parseDouble(threshold);
-            for(int j = threadID; j < DataGenerator.numThreads; j++) {
+            for(int j = threadID; j < Parameters.numThreads; j++) {
                 p2Reader = new BufferedReader(new FileReader(new File(datasetDir + "/thread-" + String.valueOf(j))));
                 while((lines[1] = p2Reader.readLine()) != null) {
                     points[1] = Utils.getValuesFromLine(lines[1], " ", dataType);
@@ -238,7 +228,7 @@ class TripletDataThread extends Thread  {
             points[0] = Utils.getValuesFromLine(lines[0], " ", dataType);
             PriorityQueue rankQueue = new PriorityQueue(51,"ascending");
             Set<String> nonNeighbors = new HashSet<>();
-            for(int j = threadID; j < DataGenerator.numThreads; j++) {
+            for(int j = threadID; j < Parameters.numThreads; j++) {
                 p2Reader = new BufferedReader(new FileReader(new File(datasetDir + "/thread-" + String.valueOf(j))));
                 while((lines[1] = p2Reader.readLine()) != null) {
                     points[1] = Utils.getValuesFromLine(lines[1], " ", dataType);

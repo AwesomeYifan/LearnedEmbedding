@@ -21,14 +21,12 @@ public class Utils {
         }
         return results;
     }
-    public static double[][] getUniformPoints(int numPoints, int dim) {
-        DecimalFormat f = new DecimalFormat("##.0000");
-        double[][] results = new double[numPoints][dim];
+    public static int[][] getUniformPoints(int numPoints, int dim) {
+        int[][] results = new int[numPoints][dim];
         Random random = new Random();
         for(int i = 0; i < numPoints; i++) {
             for(int j = 0; j < dim; j++) {
-                results[i][j] = Math.round((random.nextDouble() * 10000.0))/ 10000.0;
-                //results[i][j] = random.nextDouble();
+                results[i][j] = (int)Math.round((random.nextDouble() * 100.0));
             }
         }
         return results;
