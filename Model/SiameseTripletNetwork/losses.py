@@ -117,6 +117,7 @@ class ContrastiveLossSoft(nn.Module):
         self.eps = eps
         self.alpha = 0.1  # alpha * accuracy + (1-alpha) * efficiency
         self.weight_scale = 1.0
+        self.margin = 0.5
 
     def forward(self, output1, output2, y, cutoff):
         _y = ((output2 - output1).pow(2).sum(1) + self.delta).sqrt().type(torch.FloatTensor)
@@ -131,7 +132,7 @@ class ContrastiveLossSoft(nn.Module):
         losses1 = mask1 * (F.relu(y - _y) + F.relu(_y - (1 + self.eps) * y))
 
         mask2 = torch.le(cutoff, y).type(torch.FloatTensor)
-        losses2 = mask2 * F.relu((1 + self.eps + self.delta) * cutoff - _y)
+        losses2 = mask2 * F.relu((1 + self.eps + self.delta + self.margin) * cutoff - _y)
 
         losses = self.alpha * weights * losses1 + (1-self.alpha) * losses2
         return losses.mean()

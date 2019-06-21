@@ -12,10 +12,18 @@ from losses import ContrastiveLossHard, ContrastiveLossSoft
 from networks import SiameseNet, EmbeddingNetMLP, EmbeddingNet
 from trainer import fit_siamese
 #args: dataset, d', epss
+'''
 training_dataset = sys.argv[1]
 embedding_dim = int(sys.argv[2])
 epsilon = float(sys.argv[3])
 suffix = "-" + str(sys.argv[1]) + "-" + str(sys.argv[2]) + "-" + str(sys.argv[3]) + "-" + str(sys.argv[4])
+'''
+
+training_dataset = "Uniform"
+embedding_dim = 20
+epsilon = 0
+suffix = "-" + str(training_dataset) + "-" + str(embedding_dim) + "-" + str(epsilon) + "-" + "hard" + "-" + str(0.5)
+
 gpus = 0
 n_epoch = 100
 num_threads = 8
@@ -25,7 +33,7 @@ params = {'batch_size': 512,
           'shuffle': True}
 #loss_fn = ContrastiveLossHard()
 loss_fn = ContrastiveLossSoft(epsilon)
-TRAIN_CSV = "Data/data/trainingData-siamese-" + training_dataset
+TRAIN_CSV = "../../Data/data/trainingData-siamese-" + training_dataset
 
 # Load training set
 train_df = pd.read_csv(TRAIN_CSV, delimiter=',', encoding="utf-8-sig")
@@ -73,14 +81,14 @@ scheduler = lr_scheduler.StepLR(optimizer, 8, gamma=0.1, last_epoch=-1)
 log_interval = 100
 patience = 4
 fit_siamese(siamese_train_loader, siamese_test_loader, model, loss_fn, optimizer, scheduler, patience, n_epoch, cuda, log_interval)
-torch.save(model, "Model/data/SiameseNetwork.pt")
+torch.save(model, "data/SiameseNetwork.pt")
 
-model = torch.load("Model/data/SiameseNetwork.pt")
+model = torch.load("data/SiameseNetwork.pt")
 #below for unlabeled data
 
-TEST_CSV = "Data/data/originalVectors-" + training_dataset
+TEST_CSV = "../../Data/data/originalVectors-" + training_dataset
 with open(TEST_CSV) as csv_file:
-    with open('Data/data/reducedVectors-siameseNet' + suffix, 'w') as writeFile:
+    with open('../../Data/data/reducedVectors-siameseNet' + suffix, 'w') as writeFile:
         csv_reader = csv.reader(csv_file, delimiter=' ')
         for row in csv_reader:
             vec = [float(k) for k in row]

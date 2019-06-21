@@ -1,8 +1,11 @@
 package Utils;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import java.io.*;
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.nio.Buffer;
 import java.text.DecimalFormat;
 import java.util.Random;
 
@@ -40,12 +43,52 @@ public class Utils {
         return Math.sqrt(sumDist);
     }
 
+
+
     public static double computeEuclideanDist(double[] vec1, double[] vec2) {
         double sumDist = 0;
         for(int i = 0; i < vec1.length; i++) {
             sumDist += Math.pow(vec1[i] - vec2[i], 2);
         }
         return Math.sqrt(sumDist);
+    }
+
+    public static double computeEuclideanDist(int[] vec1, int[] vec2) {
+        double sumDist = 0;
+        for(int i = 0; i < vec1.length; i++) {
+            sumDist += (vec1[i] - vec2[i]) * (vec1[i] - vec2[i]);
+            //sumDist += Math.pow(vec1[i] - vec2[i], 2);
+        }
+        return Math.sqrt(sumDist);
+    }
+
+    public static void normalizeData(String file) throws IOException {
+        String newFile = file + "-normalized";
+        double maxValue = 0;
+        double minValue = Double.MAX_VALUE;
+        BufferedReader br = new BufferedReader(new FileReader(new File(file)));
+        String line;
+        while((line = br.readLine()) != null) {
+            String[] record = line.split(" ");
+            for(int i = 0; i < record.length; i++) {
+                maxValue = Math.max(maxValue, Double.parseDouble(record[i]));
+                minValue = Math.min(minValue, Double.parseDouble(record[i]));
+            }
+        }
+        double width = maxValue - minValue;
+        br = new BufferedReader(new FileReader(new File(file)));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(new File(newFile)));
+        while((line = br.readLine()) != null) {
+            String[] record = line.split(" ");
+            double[] data = new double[record.length];
+            for(String s : record) {
+                bw.write(String.valueOf((Double.parseDouble(s) - minValue) / width) + " ");
+            }
+            bw.write("\n");
+        }
+        bw.flush();
+        bw.close();
+        br.close();
     }
 
     public static double computeSimilarity(Object[] vec1, Object[] vec2, double maxDist, String distOpt, String scaleOpt) {

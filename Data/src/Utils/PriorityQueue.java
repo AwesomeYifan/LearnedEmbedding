@@ -36,12 +36,37 @@ public class PriorityQueue<K extends Comparable,V> {
         }
     }
 
+    //get the k-th element, k>=0
+    public K getKey(int position) {
+        Iterator<K> itr = queue.keySet().iterator();
+        int id = 0;
+        K current = null;
+        while(itr.hasNext()) {
+            current = itr.next();
+            if(id == position) break;
+            id++;
+        }
+        return current;
+    }
+    public Set<V> getValues(int position) {
+
+        K key = getKey(position);
+
+        return queue.get(key);
+    }
     public void reSize(int newSize) {
         this.limit = newSize;
         while(this.size > newSize) {
             cutQueue();
             this.size--;
         }
+    }
+
+    public int getNumEntries() {
+        return this.queue.size();
+    }
+    public int getSize() {
+        return this.size;
     }
 
     public void insert(K key, V value) {
@@ -104,17 +129,26 @@ public class PriorityQueue<K extends Comparable,V> {
         }
         return queueList;
     }
+    //the largest
     public K getBottomKey() {
         if(isAscending)
             return this.queue.lastKey();
         else
             return this.queue.firstKey();
     }
+
+    //the smallest
     public K getTopKey() {
         if(isAscending)
             return this.queue.firstKey();
         else
             return this.queue.lastKey();
+    }
+    public Set<V> pop() {
+        if(isAscending)
+            return this.queue.pollFirstEntry().getValue();
+        else
+            return this.queue.pollLastEntry().getValue();
     }
     public void clear() {
         this.size = 0;
