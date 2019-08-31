@@ -17,6 +17,7 @@ for i in range(num_threads):
         flag = False
     else:
         X = np.concatenate((X, temp))
+
 print(X.shape)
 embedding = LocallyLinearEmbedding(n_neighbors=50, n_components=new_dim)
 X_transformed = embedding.fit_transform(X)

@@ -2,14 +2,14 @@ package mtree.examples;
 
 import mtree.DistanceFunctions.EuclideanCoordinate;
 
-//Each point is an instance of Data
-class Data implements EuclideanCoordinate, Comparable<Data> {
+//Each point is an instance of DataSet
+public class Data implements EuclideanCoordinate, Comparable<Data> {
 	
-	private final double[] values;
+	public final double[] values;
 	private final int hashCode;
 	private final int ID;
 	
-	Data(double[] values, int ID) {
+	public Data(double[] values, int ID) {
 		this.values = values;
 
 		this.ID = ID;
@@ -28,6 +28,7 @@ class Data implements EuclideanCoordinate, Comparable<Data> {
 
 	public int getID() {return ID;}
 
+	public double[] getValues() { return values; }
 	@Override
 	public double get(int index) {
 		return values[index];

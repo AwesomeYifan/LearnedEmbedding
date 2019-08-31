@@ -5,8 +5,9 @@ import java.util.*;
 public class PriorityQueue<K extends Comparable,V> {
     private int limit;
     private int size;
-    private TreeMap<K, Set<V>> queue;
+    public TreeMap<K, Set<V>> queue;
     private boolean isAscending;
+    public Map<V, K> invertedList;
 
     public PriorityQueue(int limit, String opt) {
         prepareQueue(limit, opt);
@@ -15,12 +16,68 @@ public class PriorityQueue<K extends Comparable,V> {
     public PriorityQueue(String opt) {
         int limit = Integer.MAX_VALUE;
         prepareQueue(limit, opt);
+    }
 
+    public boolean isEmpty() {
+        return queue.size() == 0;
+    }
+
+    public V dequeue() {
+        if(isAscending) {
+            Set<V> set = queue.get(queue.firstKey());
+            for(V v : set) {
+                set.remove(v);
+                invertedList.remove(v);
+                size--;
+                if(set.size() == 0) {
+                    queue.remove(queue.firstKey());
+                }
+                return v;
+            }
+        }
+        else{
+            Set<V> set = queue.get(queue.lastKey());
+            for(V v : set) {
+                set.remove(v);
+                invertedList.remove(v);
+                size--;
+                if(set.size() == 0) {
+                    queue.remove(queue.lastKey());
+                }
+                return v;
+            }
+        }
+        System.out.println("No element to dequeue because the queue is empty!");
+        return null;
+    }
+
+    public K findByValue(V element) {
+        if(invertedList.containsKey(element)) {
+            return invertedList.get(element);
+        }
+        System.out.println("Element " + element + " not found!");
+        return null;
+    }
+
+    public void removeByValue(V elementToRemove) {
+        if(!invertedList.containsKey(elementToRemove)) {
+            System.out.println("The queue does not contain element " + elementToRemove);
+        }
+        else {
+            K key = invertedList.get(elementToRemove);
+            queue.get(key).remove(elementToRemove);
+            size--;
+            if(queue.get(key).isEmpty()) {
+                queue.remove(key);
+            }
+            invertedList.remove(elementToRemove);
+        }
     }
 
     private void prepareQueue(int limit, String opt) {
         this.limit = limit;
         this.size = 0;
+        invertedList = new HashMap<>();
         this.queue = new TreeMap<>();
         switch (opt) {
             case "ascending":
@@ -82,6 +139,7 @@ public class PriorityQueue<K extends Comparable,V> {
                 size = limit;
             }
         }
+        invertedList.put(value, key);
     }
     public List<K> serializeKeys() {
         TreeMap<K, Set<V>> queue = new TreeMap<>(this.queue);

@@ -54,7 +54,7 @@ public class LSH {
         return nomi/deno;
     }
     private boolean[] computeCode(String input) {
-        Object[] vector = Utils.getValuesFromLine(input, " ", "double");
+        double[] vector = Utils.getValuesFromLine(input, " ");
         boolean[] code = new boolean[outputDim];
         for(int i = 0; i < outputDim; i++) {
             double value = 0;

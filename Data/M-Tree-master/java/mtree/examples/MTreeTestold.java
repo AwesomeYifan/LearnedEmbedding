@@ -29,8 +29,8 @@ public class MTreeTestold {
 	
 //	@Test
 //	public void testEmpty() {
-//		_checkNearestByRange(new Data(1, 2, 3), 4);
-//		_checkNearestByLimit(new Data(1, 2, 3), 4);
+//		_checkNearestByRange(new DataSet(1, 2, 3), 4);
+//		_checkNearestByLimit(new DataSet(1, 2, 3), 4);
 //	}
 	
 	@Test public void test01() { _test("f01"); }
@@ -59,26 +59,26 @@ public class MTreeTestold {
 //	@Test
 //	public void testRemoveNonExisting() {
 //		// Empty
-//		assert !mtree.remove(new Data([99, 77]));
+//		assert !mtree.remove(new DataSet([99, 77]));
 //
 //		// With some items
-//		mtree.add(new Data(4, 44));
-//		assert(!mtree.remove(new Data(99, 77)));
+//		mtree.add(new DataSet(4, 44));
+//		assert(!mtree.remove(new DataSet(99, 77)));
 //
-//		mtree.add(new Data(95, 43));
-//		assert(!mtree.remove(new Data(99, 77)));
+//		mtree.add(new DataSet(95, 43));
+//		assert(!mtree.remove(new DataSet(99, 77)));
 //
-//		mtree.add(new Data(76, 21));
-//		assert(!mtree.remove(new Data(99, 77)));
+//		mtree.add(new DataSet(76, 21));
+//		assert(!mtree.remove(new DataSet(99, 77)));
 //
-//		mtree.add(new Data(64, 53));
-//		assert(!mtree.remove(new Data(99, 77)));
+//		mtree.add(new DataSet(64, 53));
+//		assert(!mtree.remove(new DataSet(99, 77)));
 //
-//		mtree.add(new Data(47, 3));
-//		assert(!mtree.remove(new Data(99, 77)));
+//		mtree.add(new DataSet(47, 3));
+//		assert(!mtree.remove(new DataSet(99, 77)));
 //
-//		mtree.add(new Data(26, 11));
-//		assert(!mtree.remove(new Data(99, 77)));
+//		mtree.add(new DataSet(26, 11));
+//		assert(!mtree.remove(new DataSet(99, 77)));
 //	}
 
 	private int ID = 0;

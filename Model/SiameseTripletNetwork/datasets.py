@@ -40,8 +40,11 @@ class SiameseDataset(Dataset):
         right = torch.FloatTensor([float(i) for i in str(self.X[idx][1]).split()])
         distance = float(self.labels[idx][0])
         #print(distance)
+        # mindist = float(self.labels[idx][1])
         cutoff = float(self.labels[idx][1])
-        return (left, right), distance, cutoff
+        thisCluster = float(self.labels[idx][2])
+        otherCluster = float(self.labels[idx][3])
+        return (left, right), distance, cutoff, thisCluster, otherCluster
 
     # def __getitem__(self, idx):
     #     #print("*****************************************")

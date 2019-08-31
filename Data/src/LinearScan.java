@@ -1,82 +1,43 @@
 import Utils.PriorityQueue;
 import java.io.*;
+import java.lang.reflect.Parameter;
 import java.util.*;
 import Utils.Utils;
 public class LinearScan {
+
     //args: dataset, d', epsilon, method
+    private static int testSize;
     public static void main(String[] args) throws IOException {
-        String dataset = args[0];
-        int reducedDim = Integer.parseInt(args[1]);
-        double eps = Double.parseDouble(args[2]);
-        String method = args[3];
-        String suffix = "-" + args[0] + "-" + args[1] + "-" + args[2] + "-" + args[3];
-        if(method.equals("hard")) suffix = "-" + args[0] + "-" + args[1] + "-0-" + args[3];
+        testSize = Parameters.testSize;
+
+        String dir = "./data/Gaussian/";
+
+        //String suffix = "-" + dataset + "-" + String.valueOf(reducedDim) + "-" + String.valueOf(traineps);
+        String file = dir + "reducedPoints";
+        file = dir + "points";
         int numPoints = Parameters.numPoints;
-        int originalDim = 128;
-        double[][] thresholds = readThreasholds(dataset);
-        double[][] points = getPointsInReducedSpace(numPoints, reducedDim, suffix);
-        List<List<Set<Integer>>> kNNs = getkNNFromVectors(points);
-        //List<List<Set<Integer>>> kNNs = getkNNFromFile("./data/results-hnsw");
-        double[][] testPoints = getPointsInOriginalSpace(numPoints, dataset);
-        double[] acc = compareResults(testPoints, kNNs, thresholds, dataset, eps);
-        System.out.println(Arrays.toString(acc));
-        try(FileWriter fw = new FileWriter("Data/data/accuracy.csv", true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter out = new PrintWriter(bw))
+        double[][] points = getPointsInReducedSpace(numPoints, file);
+        int[] clusterInfo = readClusterInfo(dir);
+        double[] avgDists = getAvgDists(points, clusterInfo);
+        System.out.println(Arrays.toString(avgDists));
+        try(FileWriter fw = new FileWriter("./data/distances.csv", true);
+              BufferedWriter bw = new BufferedWriter(fw);
+              PrintWriter out = new PrintWriter(bw))
         {
             out.println(String.join("-", args));
-
-            for(double d : acc) {
-                out.print(String.valueOf(d) + ",");
-            }
-            out.println();
-
+            out.println(avgDists[0] + "," + avgDists[1]);
         } catch (IOException e) {
-            //exception handling left as an exercise for the reader
         }
     }
 
-    static double[] compareResults(double[][] points, List<List<Set<Integer>>> kNNs, double[][] thresholds, String dataset, double eps) throws IOException {
-        String file = "Data/data/originalVectors-" + dataset;
-        BufferedReader br = new BufferedReader(new FileReader(new File(file)));
-        String line;
-        Integer id = 0;
-        double[] truePositiveCount = new double[Parameters.topK.length];
-        while((line = br.readLine()) != null) {
-            String[] record = line.split(" ");
-            double[] vectors = new double[record.length];
-            for(int i = 0; i < record.length; i++) {
-                vectors[i] = Double.parseDouble(record[i]);
-            }
-            for(int i = 0; i < kNNs.size(); i++) {
-                List<Set<Integer>> kNNOfThisPoint = kNNs.get(i);
-                for(int j = 0; j < kNNOfThisPoint.size(); j++) {
-                    Set<Integer> kNNOfThisK = kNNOfThisPoint.get(j);
-                    if(kNNOfThisK.contains(id)) {
-                        double dist = Utils.computeEuclideanDist(points[i], vectors);
-                        //System.out.println(dist + "," + thresholds[i][j]);
-                        if(dist < (1 + eps) * thresholds[i][j]) {
-                            truePositiveCount[j]++;
-                        }
-                    }
-                }
-            }
-            id++;
-        }
-        for(int j = 0; j < truePositiveCount.length; j++) {
-            truePositiveCount[j] /= (kNNs.size() * Parameters.topK[j]);
-        }
-        return truePositiveCount;
-    }
+    static double[][] getPointsInReducedSpace(int numPoints, String file) throws IOException {
 
-    static double[][] getPointsInReducedSpace(int numPoints, int dim, String suffix) throws IOException {
-
-        String file = "Data/data/reducedVectors-siameseNet" + suffix;
         //String file = "./data/reducedVectors-PCA" + "-Uniform";
         //String file = "./data/originalVectors";
+        //System.out.println("*********************" + testSize);
         BufferedReader br = new BufferedReader(new FileReader(new File(file)));
         String line;
-        double[][] points = new double[numPoints][dim];
+        double[][] points = new double[numPoints][];
         int idx = 0;
         while((line = br.readLine()) != null) {
             String[] records = line.split(" ");
@@ -89,80 +50,45 @@ public class LinearScan {
         }
         return points;
     }
-
-    static double[][] getPointsInOriginalSpace(int numPoints, String dataset) throws IOException {
-
-        String file = "Data/data/originalVectors-" + dataset;
-        BufferedReader br = new BufferedReader(new FileReader(new File(file)));
-        double[][] points = new double[numPoints][];
-        for(int i = 0; i < Parameters.testSize; i++) {
-            String[] records = br.readLine().split(" ");
-            points[i] = new double[records.length];
-            for(int j = 0; j < records.length; j++) {
-                points[i][j] = Double.parseDouble(records[j]);
-            }
-        }
-        return points;
-    }
-
-    static List<List<Set<Integer>>> getkNNFromFile(String path) throws IOException {
-        List<List<Set<Integer>>> kNNs = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader(new File(path)));
-        for(int id = 0; id < Parameters.testSize; id++) {
-            String[] record = br.readLine().split(" ");
-            List<Set<Integer>> list = new ArrayList<>();
-            for(int k : Parameters.topK) {
-                Set<Integer> set = new HashSet<>();
-                for(int i = 0; i < k; i++) {
-                    set.add(Integer.parseInt(record[i]));
-                }
-                list.add(set);
-            }
-            kNNs.add(list);
-        }
-        return kNNs;
-    }
-
-    static List<List<Set<Integer>>> getkNNFromVectors(double[][] points) throws IOException {
+    static double[] getAvgDists(double[][] points, int[] clusterInfo) throws IOException {
         List<List<Set<Integer>>> kNNs = new ArrayList<>();
         int maxK = Parameters.topK[Parameters.topK.length - 1];
-        double startTime = System.currentTimeMillis();
-        for(int i = 0; i < Parameters.testSize; i++) {
-            List<Set<Integer>> list = new ArrayList<>();
-            PriorityQueue pq = new PriorityQueue(maxK, "ascending");
+        double[] avgDists = new double[2];
+        int kNNCount = 0;
+        int nonKNNCount = 0;
+        for(int i = 0; i < points.length; i++) {
+//            PriorityQueue pq = new PriorityQueue(maxK, "ascending");
+//            for(int j = 0; j < points.length; j++) {
+//                double dist = Utils.computeEuclideanDist(points[i], points[j]);
+//                if(dist == 0) continue;
+//                pq.insert(dist, j);
+//            }
+//            List<Integer> kNN = pq.serialize();
             for(int j = 0; j < points.length; j++) {
                 double dist = Utils.computeEuclideanDist(points[i], points[j]);
                 if(dist == 0) continue;
-                pq.insert(dist, j);
+//                if(kNN.contains(j)) {
+                if(clusterInfo[i] == clusterInfo[j]) {
+                    kNNCount++;
+                    avgDists[0] += dist;
+                }
+                else {
+                    nonKNNCount++;
+                    avgDists[1] += dist;
+                }
             }
-            for(int kID = Parameters.topK.length - 1; kID >= 0 ; kID--) {
-                int k = Parameters.topK[kID];
-                pq.reSize(k);
-                Set<Integer> set = new HashSet<>(pq.serialize());
-                list.add(0, set);
-            }
-            kNNs.add(list);
         }
-        double endTime = System.currentTimeMillis();
-        System.out.println("Average search time: " + (endTime - startTime) / Parameters.testSize);
-        return kNNs;
+        avgDists[0] /= kNNCount;
+        avgDists[1] /= nonKNNCount;
+        return avgDists;
     }
-
-    static private double[][] readThreasholds(String dataset) throws IOException {
-        String file = "Data/data/kNNDist-" + dataset;
-        //file = "./data/siftsmall-1-10-50/kNNDist";
-        BufferedReader br = new BufferedReader(new FileReader(new File(file)));
-        double[][] kNNDist = new double[Parameters.testSize][Parameters.topK.length];
-        String line;
-        int i = 0;
-        while((line = br.readLine()) != null) {
-            String[] record = line.split(",");
-            List<Double> list = new ArrayList<>();
-            for(int j = 0; j < Parameters.topK.length; j++) {
-                kNNDist[i][j] = Double.parseDouble(record[j]);
-            }
-            i++;
+    private static int[] readClusterInfo(String dir) throws IOException {
+        int[] clusterInfo = new int[Parameters.numPoints];
+        BufferedReader reader = new BufferedReader(new FileReader(new File(dir + "clusterInfo")));
+        for(int i = 0; i < Parameters.numPoints; i++) {
+            clusterInfo[i] = Integer.parseInt(reader.readLine());
         }
-        return  kNNDist;
+        reader.close();
+        return clusterInfo;
     }
 }

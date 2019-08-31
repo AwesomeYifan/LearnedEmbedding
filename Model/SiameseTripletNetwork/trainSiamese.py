@@ -6,34 +6,49 @@ import torch.optim as optim
 from sklearn.model_selection import train_test_split
 from torch.optim import lr_scheduler
 
-from pytorchtools import EarlyStopping
 from datasets import SiameseDataset
-from losses import ContrastiveLossHard, ContrastiveLossSoft
-from networks import SiameseNet, EmbeddingNetMLP, EmbeddingNet
+from losses import ContrastiveLoss
+from networks import SiameseNet, EmbeddingNetMLP
 from trainer import fit_siamese
 #args: dataset, d', epss
-'''
-training_dataset = sys.argv[1]
-embedding_dim = int(sys.argv[2])
-epsilon = float(sys.argv[3])
-suffix = "-" + str(sys.argv[1]) + "-" + str(sys.argv[2]) + "-" + str(sys.argv[3]) + "-" + str(sys.argv[4])
-'''
+# below are the input values required by the script
+#
+# flag=1: consider weight
+# flag=0: not
+# dir = sys.argv[1]
+# embedding_dim = int(sys.argv[2])
+# flag = float(sys.argv[3])
 
-training_dataset = "Uniform"
-embedding_dim = 20
-epsilon = 0
-suffix = "-" + str(training_dataset) + "-" + str(embedding_dim) + "-" + str(epsilon) + "-" + "hard" + "-" + str(0.5)
+embedding_dim = int(sys.argv[2])
+m = float(sys.argv[1])
+#embedding_dim = 2
+#m = 10
+dir = "data/Gaussian/"
+
+TRAIN_CSV = dir + "training"
+TEST_CSV = dir + "points"
+WRITE_CSV = dir + "reducedPoints"
+
+# training_dataset = "SIFT
+# originalSampleDim = 10
+# originalSampleRatio = 0.1
+# embedding_dim = 5
+# epsilon = 0.0
+# pf=0.1
+
+# TRAIN_CSV = "../../Data/data/trainingData-SIFT"
+# TEST_CSV = "../../Data/data/originalVectors-SIFT-10"
+# WRITE_CSV = '../../Data/data/reducedVectors-siameseNet-SIFT-10-0.1-0.0'
 
 gpus = 0
-n_epoch = 100
+n_epoch = 50
 num_threads = 8
 test_size = 0.2
 
-params = {'batch_size': 512,
+params = {'batch_size': 10240,
           'shuffle': True}
 #loss_fn = ContrastiveLossHard()
-loss_fn = ContrastiveLossSoft(epsilon)
-TRAIN_CSV = "../../Data/data/trainingData-siamese-" + training_dataset
+loss_fn = ContrastiveLoss(m)
 
 # Load training set
 train_df = pd.read_csv(TRAIN_CSV, delimiter=',', encoding="utf-8-sig")
@@ -45,7 +60,7 @@ train_df = pd.read_csv(TRAIN_CSV, delimiter=',', encoding="utf-8-sig")
 
 training_samples = train_df[['P1', 'P2']]
 #training_labels = train_df[['distance', 'cutoff']]
-training_labels = train_df[['distance', 'cutoff']]
+training_labels = train_df[['distance', 'cutoff', 'thisCluster', 'otherCluster']]
 #testing_samples = test_df[['P1', 'P2']]
 #testing_labels = test_df[['distance', 'cutoff']]
 
@@ -59,8 +74,6 @@ training_labels = training_labels.values
 cuda = torch.cuda.is_available()
 
 X_train, X_validation, Y_train, Y_validation = train_test_split(training_samples, training_labels, test_size=test_size)
-# X_train, X_temp, Y_train, Y_temp = train_test_split(training_samples, training_labels, test_size=0)
-# X_validation, X_temp, Y_validation, Y_temp = train_test_split(testing_samples, testing_labels, test_size=0)
 siamese_train_dataset = SiameseDataset(X_train, Y_train)  # Returns pairs of images and target same/different
 siamese_test_dataset = SiameseDataset(X_validation, Y_validation)
 
@@ -74,21 +87,20 @@ if cuda:
     model.cuda()
 
 #loss_fn = ContrastiveLossSoftNN()
-lr = 1e-3
-#optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
-optimizer = optim.Adam(model.parameters(), lr=lr)
+lr = 1e-4
+optimizer = optim.SGD(model.parameters(), lr=lr, momentum=0.9)
+#optimizer = optim.Adam(model.parameters(), lr=lr)
 scheduler = lr_scheduler.StepLR(optimizer, 8, gamma=0.1, last_epoch=-1)
 log_interval = 100
-patience = 4
+patience = 50
 fit_siamese(siamese_train_loader, siamese_test_loader, model, loss_fn, optimizer, scheduler, patience, n_epoch, cuda, log_interval)
 torch.save(model, "data/SiameseNetwork.pt")
 
 model = torch.load("data/SiameseNetwork.pt")
 #below for unlabeled data
 
-TEST_CSV = "../../Data/data/originalVectors-" + training_dataset
 with open(TEST_CSV) as csv_file:
-    with open('../../Data/data/reducedVectors-siameseNet' + suffix, 'w') as writeFile:
+    with open(WRITE_CSV, 'w') as writeFile:
         csv_reader = csv.reader(csv_file, delimiter=' ')
         for row in csv_reader:
             vec = [float(k) for k in row]

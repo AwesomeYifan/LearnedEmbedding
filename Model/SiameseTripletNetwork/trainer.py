@@ -1,6 +1,7 @@
 import torch
 import numpy as np
 from pytorchtools import EarlyStopping
+import Parameters
 
 
 def fit_siamese(train_loader, val_loader, model, loss_fn, optimizer, scheduler, patience, n_epochs, cuda, log_interval, metrics=[],
@@ -22,6 +23,7 @@ def fit_siamese(train_loader, val_loader, model, loss_fn, optimizer, scheduler, 
 
         # Train stage
         train_loss, metrics = train_siamese(train_loader, model, loss_fn, optimizer, cuda, log_interval, metrics)
+        Parameters.epoch += 1
 
         message = 'Epoch: {}/{}. Train set: Average loss: {:.4f}'.format(epoch + 1, n_epochs, train_loss)
         for metric in metrics:
@@ -32,8 +34,8 @@ def fit_siamese(train_loader, val_loader, model, loss_fn, optimizer, scheduler, 
 
         early_stopping(val_loss, model)
 
-        #for param in model.parameters():
-        #    print(param.data)
+        for param in model.parameters():
+            print(param.data)
 
         if early_stopping.early_stop:
             print("Early stopping")
@@ -101,9 +103,11 @@ def train_siamese(train_loader, model, loss_fn, optimizer, cuda, log_interval, m
     #this line for siamese
     #for batch_idx, (data, target, threshold) in enumerate(train_loader):
     #this line for triplet
-    for batch_idx, (data, target, threshold) in enumerate(train_loader):
+    for batch_idx, (data, target, threshold, thisCluster, otherCluster) in enumerate(train_loader):
         target = target if len(target) > 0 else None
         threshold = threshold if len(threshold) > 0 else None
+        #weight = weight if len(weight) > 0 else None
+        # mindist = mindist if len(mindist) > 0 else None
         if not type(data) in (tuple, list):
             data = (data,)
         if cuda:
@@ -112,6 +116,14 @@ def train_siamese(train_loader, model, loss_fn, optimizer, cuda, log_interval, m
                 target = target.cuda()
             if threshold is not None:
                 threshold = threshold.cuda()
+            if thisCluster is not None:
+                thisCluster = thisCluster.cuda()
+            if otherCluster is not None:
+                otherCluster = otherCluster.cuda()
+            #if weight is not None:
+                #weight = weight.cuda()
+            # if mindist is not None:
+            #     mindist = mindist.cuda()
 
 
         optimizer.zero_grad()
@@ -128,6 +140,19 @@ def train_siamese(train_loader, model, loss_fn, optimizer, cuda, log_interval, m
         if threshold is not None:
             threshold = (threshold,)
             loss_inputs += threshold
+        if thisCluster is not None:
+            thisCluster = (thisCluster,)
+            loss_inputs += thisCluster
+        if otherCluster is not None:
+            otherCluster = (otherCluster,)
+            loss_inputs += otherCluster
+        # if weight is not None:
+        #     weight = (weight,)
+        #     loss_inputs += weight
+
+        # if mindist is not None:
+        #     mindist = (mindist,)
+        #     loss_inputs += mindist
 
         loss_outputs = loss_fn(*loss_inputs)
         loss = loss_outputs[0] if type(loss_outputs) in (tuple, list) else loss_outputs
@@ -203,9 +228,11 @@ def test_siamese(val_loader, model, loss_fn, cuda, metrics):
             metric.reset()
         model.eval()
         val_loss = 0
-        for batch_idx, (data, target, threshold) in enumerate(val_loader):
+        for batch_idx, (data, target, threshold, thisCluster, otherCluster) in enumerate(val_loader):
             target = target if len(target) > 0 else None
             threshold = threshold if len(threshold) > 0 else None
+            #weight = weight if len(weight) > 0 else None
+            # mindist = mindist if len(mindist) > 0 else None
             if not type(data) in (tuple, list):
                 data = (data,)
             if cuda:
@@ -214,6 +241,14 @@ def test_siamese(val_loader, model, loss_fn, cuda, metrics):
                     target = target.cuda()
                 if threshold is not None:
                     threshold = threshold.cuda()
+                if thisCluster is not None:
+                    thisCluster = thisCluster.cuda()
+                if otherCluster is not None:
+                    otherCluster = otherCluster.cuda()
+                #if weight is not None:
+                #    weight = weight.cuda()
+                # if mindist is not None:
+                #     mindist = mindist.cuda()
 
             outputs = model(*data)
 
@@ -227,6 +262,22 @@ def test_siamese(val_loader, model, loss_fn, cuda, metrics):
             if threshold is not None:
                 threshold = (threshold,)
                 loss_inputs += threshold
+
+            if thisCluster is not None:
+                thisCluster = (thisCluster,)
+                loss_inputs += thisCluster
+
+            if otherCluster is not None:
+                otherCluster = (otherCluster,)
+                loss_inputs += otherCluster
+
+            # if weight is not None:
+            #     weight = (weight,)
+            #     loss_inputs += weight
+
+            # if mindist is not None:
+            #     mindist = (mindist,)
+            #     loss_inputs += mindist
 
             loss_outputs = loss_fn(*loss_inputs)
             loss = loss_outputs[0] if type(loss_outputs) in (tuple, list) else loss_outputs

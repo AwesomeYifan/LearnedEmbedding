@@ -1,5 +1,6 @@
 import torch.nn as nn
 import torch.nn.functional as F
+import torch
 
 
 class EmbeddingNet(nn.Module):
@@ -26,6 +27,16 @@ class EmbeddingNet(nn.Module):
     def get_embedding(self, x):
         return self.forward(x)
 
+class AiLU(nn.Module):
+    def __init__(self):
+        super().__init__() # init the base class
+
+    def forward(self, input):
+        standard = torch.zeros(input.size()).type(torch.FloatTensor)
+        shift = torch.ones(input.size()).type(torch.FloatTensor)
+        positive_mask = torch.le(standard, input).type(torch.FloatTensor)
+        negative_mask = torch.le(input, standard).type(torch.FloatTensor)
+        return positive_mask * (input + shift) + negative_mask * (input)
 
 class EmbeddingNetMLP(nn.Module):
     def __init__(self, input_dim, output_dim):
@@ -38,17 +49,35 @@ class EmbeddingNetMLP(nn.Module):
         #                          nn.Linear(50, output_dim),
         #                          nn.PReLU()
         #                          )
-        self.net = nn.Sequential(nn.Linear(input_dim, 100),
-                                 nn.PReLU(),
-                                 nn.Linear(100, output_dim),
-                                 nn.PReLU(),
+
+        self.net = nn.Sequential(nn.Linear(input_dim, 2),
+                                 #nn.PReLU(init=3),
+                                 AiLU(),
+                                 #nn.Linear(8, 16),
+                                 #nn.PReLU(init=3),
+                                 #AiLU(),
+                                 #nn.Linear(16, 32),
+                                 #AiLU(),
+                                 #nn.PReLU(init=3),
+                                 # nn.Linear(128, 256),
+                                 # nn.PReLU(init=3),
+                                 # nn.Linear(256, 256),
+                                 # nn.PReLU(init=3),
+                                 # nn.Linear(256, 64),
+                                 # nn.PReLU(init=3),
+                                 #nn.Linear(32, 16),
+                                 #nn.PReLU(init=3),
+                                 #AiLU(),
+                                 nn.Linear(2, output_dim),
                                  )
+
     def forward(self, x):
         output = self.net(x)
         return output
 
     def get_embedding(self, x):
         return self.forward(x)
+
 
 
 class EmbeddingNetL2(EmbeddingNet):

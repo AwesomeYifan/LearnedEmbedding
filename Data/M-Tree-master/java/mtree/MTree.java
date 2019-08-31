@@ -119,16 +119,16 @@ public class MTree<DATA> {
 			private double nextPendingMinDistance;
 			private PriorityQueue<ItemWithDistances<Entry>> nearestQueue = new PriorityQueue<ItemWithDistances<Entry>>();
 			private int yieldedCount;
-			private int visitedCount;
 
-			
-			private ResultsIterator() {
+
+            private ResultsIterator() {
 				if(MTree.this.root == null) {
 					finished = true;
 					return;
 				}
 				
 				double distance = MTree.this.distanceFunction.calculate(Query.this.data, MTree.this.root.data);
+
 				double minDistance = Math.max(distance - MTree.this.root.radius, 0.0);
 				
 				pendingQueue.add(new ItemWithDistances<Node>(MTree.this.root, distance, minDistance));
@@ -192,13 +192,14 @@ public class MTree<DATA> {
 					for(IndexItem child : node.children.values()) {
 						if(Math.abs(pending.distance - child.distanceToParent) - child.radius <= Query.this.range) {
 							double childDistance = MTree.this.distanceFunction.calculate(Query.this.data, child.data);
-							visitedCount++;
-							Query.this.checkedCount++;
+
+                            Query.this.checkedCount++;
 							double childMinDistance = Math.max(childDistance - child.radius, 0.0);
 							if(childMinDistance <= Query.this.range) {
 								if(child instanceof MTree.Entry) {
 									@SuppressWarnings("unchecked")
 									Entry entry = (Entry)child;
+                                    Query.this.checkedLeafCount++;
 									nearestQueue.add(new ItemWithDistances<Entry>(entry, childDistance, childMinDistance));
 								} else {
 									@SuppressWarnings("unchecked")
@@ -215,7 +216,6 @@ public class MTree<DATA> {
 						nextPendingMinDistance = pendingQueue.peek().minDistance;
 					}
 				}
-
 				finished = true;
 			}
 
@@ -241,6 +241,8 @@ public class MTree<DATA> {
 			this.data = data;
 			this.range = range;
 			this.limit = limit;
+			this.checkedCount = 0;
+			this.checkedLeafCount = 0;
 		}
 		
 		
@@ -253,11 +255,16 @@ public class MTree<DATA> {
 			return this.checkedCount;
 		}
 
+		public int getCheckedLeafCount() {
+			return this.checkedLeafCount;
+		}
+
 		
 		private DATA data;
 		private double range;
 		private int limit;
 		private int checkedCount;
+		private int checkedLeafCount;
 	}
 
 

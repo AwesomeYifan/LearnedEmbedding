@@ -17,9 +17,9 @@ from the query data parameter.
 MTree is the core class that implements an m-tree. The data objects can be
 any object that are understood by the distance function.
 Some examples:
- * Data objects could be N-dimensional-space coordinates and the distance function
+ * DataSet objects could be N-dimensional-space coordinates and the distance function
    could return the euclidean distance between two data objects.
- * Data objects could be regular strings and the distance function could calculate
+ * DataSet objects could be regular strings and the distance function could calculate
    the edit (Levenshtein) distance between two strings.
 The distance function must be provided by the user.
 Two equal objects should not be added to the same MTree instance. There is no

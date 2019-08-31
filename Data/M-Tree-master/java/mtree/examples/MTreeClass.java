@@ -15,7 +15,7 @@ public class MTreeClass extends MTree<Data> {
     };
 
 
-    MTreeClass() {
+    public MTreeClass() {
         super(2, DistanceFunctions.EUCLIDEAN,
                 new ComposedSplitFunction<Data>(
                         nonRandomPromotion,

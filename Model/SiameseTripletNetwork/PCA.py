@@ -4,10 +4,11 @@ from sklearn import datasets
 import torch
 from sklearn import svm
 from numpy import genfromtxt
+import matplotlib.pyplot as plt
 
-new_dim = 10
-
-TEST_CSV = "../../Data/data/originalVectors" + "-Uniform"
+new_dim = 20
+#TEST_CSV = "../../Data/data/originalVectors-" + Dataset
+TEST_CSV = "../../Data/data/originalVectors-Cluster"
 X = genfromtxt(TEST_CSV, delimiter=' ')
 X = torch.from_numpy(X)
 
@@ -20,9 +21,10 @@ temp = torch.from_numpy(temp)
 temp_mean = torch.mean(temp, 0)
 temp = temp - temp_mean.expand_as(temp)
 C = torch.mm(temp, U[:, :new_dim])
-path = '../../Data/data/reducedVectors-PCA' + "-Uniform"
+path = '../../Data/data/reducedVectors-PCA' + "-Cluster"
 C = np.around(C, decimals=4)
 np.savetxt(path, C.data, fmt='%.4f', delimiter=" ")
+
 
 # for i in range(num_threads):
 #     TEST_CSV = "../../Data/data/thread-" + str(i)

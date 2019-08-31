@@ -37,11 +37,13 @@ public class VAFile {
     public double findKNN(double[] query, int k, String pathToFile) throws IOException {
         RandomAccessFile raf = new RandomAccessFile(pathToFile, "r");
         PriorityQueue candidates = findCandidates(query, k);
+        int candSize = candidates.getSize();
         //System.out.println(Arrays.toString(candidates.serialize().toArray()));
         //System.out.println(candidates.getSize());
         PriorityQueue results = new PriorityQueue(k,"ascending");
         for(int i = 0; i < candidates.getNumEntries(); i++) {
             if(results.getSize() >= k && results.getBottomKey().compareTo(candidates.getKey(i)) < 0) {
+                //System.out.println(results.getBottomKey() + "-" +candidates.getKey(i));
                 //System.out.println(i);
                 //return results;
                 return i;
@@ -63,7 +65,8 @@ public class VAFile {
             }
         }
         //return results;
-        return candidates.getSize();
+        System.out.println(candSize);
+        return candSize;
     }
     private double computeEuclideanDist(int[] vec1, int[] vec2) {
         //System.out.println(Arrays.toString(vec1));
@@ -87,6 +90,7 @@ public class VAFile {
         double sum = 0;
         for(int i = 0; i < VA.length; i++) {
             double dist = Utils.computeEuclideanDist(queryVA, VA[i]);
+
 //            for(int i = 0; i < query.length; i++) {
 //                diff += queryVA[i] - point[i];
 //            }
@@ -104,30 +108,34 @@ public class VAFile {
         int[] queryVA = getVA(query);
         for(int i = 0; i < VA.length; i++) {
             double[] dist = computeDist(queryVA, VA[i]);
+            //System.out.println(Arrays.toString(dist));
             if(CandQueue.getSize() < k) {
                 CandQueue.insert(dist[0], i);
                 UBQueue.insert(dist[1], "x");
             }
             else if(dist[0] <= (double)UBQueue.getBottomKey()) {
+                //System.out.println("yes");
                 CandQueue.insert(dist[0], i);
                 if(dist[1] < (double)UBQueue.getBottomKey()) {
                     UBQueue.insert(dist[1], "x");
                 }
             }
         }
+        //System.out.println(CandQueue.getSize());
         return CandQueue;
     }
 
     //compute the distance between two tiles: LB and UB
     private double[] computeDist(int[] query, int[] cand) {
-        int dist = 0;
-        int diff = 0;
+        double dist = 0;
+        double diff = 0;
         for(int i = 0; i < query.length; i++) {
-            int diffTemp = Math.abs(query[i] - cand[i]);
+            double diffTemp = Math.abs(query[i] - cand[i]);
             diff += diffTemp;
-            dist += diffTemp * diffTemp;
+            dist += Math.pow(diffTemp,2);
         }
-        return new double[]{Math.sqrt(((double)dist - 2 * diff) / scale), Math.sqrt(((double)dist + 2 * diff) / scale)};
+        //System.out.println(dist + "-" + scale);
+        return new double[]{Math.sqrt((dist - 2 * diff + query.length) / scale), Math.sqrt((dist + 2 * diff + query.length) / scale)};
     }
 
     private void build(String pathToFile) throws IOException {

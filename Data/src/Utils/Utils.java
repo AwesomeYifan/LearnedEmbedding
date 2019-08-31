@@ -10,6 +10,27 @@ import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Utils {
+    public static double[][] getGaussianPoints(int numPoints, int numClusters, int numDims) {
+        int numBinsPerAxis = (int)Math.ceil(Math.pow(numClusters, 1.0/numDims));
+        double binWidth = 10;//one standard deviation each side
+        Random random = new Random();
+        double[][] centers = new double[numClusters][numDims];
+        for(int i = 0; i < numClusters; i++) {
+            for(int j = 0; j < numDims; j++) {
+                centers[i][j] = random.nextInt(numBinsPerAxis) * binWidth;
+            }
+        }
+        double[][] results = new double[numPoints][numDims];
+        for(int i = 0; i < numPoints; i++) {
+            int centerID = random.nextInt(numClusters);
+            for(int j = 0; j < numDims; j++) {
+                double center = centers[centerID][j];
+                double value = random.nextGaussian() + center;
+                results[i][j] = value;
+            }
+        }
+        return results;
+    }
 
     public static double[][] getGaussianPoints(int numPoints, double centers[], double deviation) {
         int numDims = centers.length;
@@ -130,66 +151,45 @@ public class Utils {
     }
 
     //return number of records per file
-    public static int splitFile(String sourcePath, String targetPath, int numThreads) throws IOException {
+    public static void splitFile(String sourcePath, String targetPath, int numThreads) throws IOException {
+        int numLines = 0;
+
         BufferedReader br = new BufferedReader(new FileReader(new File(sourcePath)));
+        while(br.readLine() != null) {
+            numLines++;
+        }
+        br = new BufferedReader(new FileReader(new File(sourcePath)));
+        int numLinesPerFile = numLines / numThreads;
         BufferedWriter[] bws = new BufferedWriter[numThreads];
         for(int i = 0; i < numThreads; i++) {
             bws[i] = new BufferedWriter(new FileWriter(new File(targetPath + "\\thread-" + String.valueOf(i))));
         }
-        String[] lines = new String[numThreads];
-        int fileSize = 0;
-        while(true) {
-            for(int i = 0; i < numThreads; i++) {
-                String line = br.readLine();
-                if(line == null) {
-                    for(int j = 0; j < numThreads; j++) {
-                        bws[j].flush();
-                        bws[j].close();
-                    }
-                    return fileSize;
-                }
-                lines[i] = line;
-            }
-            for(int i = 0; i < numThreads; i++) {
-                bws[i].write(lines[i].replace(",", " ") + "\n");
-            }
-            fileSize++;
-//            if(fileSize == 1000){
-//                for(int j = 0; j < numThreads; j++) {
-//                    bws[j].flush();
-//                    bws[j].close();
-//                }
-//                return fileSize;
-//            }
+        for(int i = 0; i < numLines; i++) {
+            String line = br.readLine().replace(",", " ");
+            bws[i / numLinesPerFile].write(line + "\n");
+        }
+        for(int i = 0; i < numThreads; i++) {
+            bws[i].flush();
+            bws[i].close();
         }
     }
 
-    public static Object[] getValuesFromLine(String line, String separator, String opt) {
+    public static int getNumLines(String file) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(new File(file)));
+        int result = 0;
+        String line;
+        while((line = reader.readLine()) != null)
+            result++;
+        return result;
+    }
+
+    public static double[] getValuesFromLine(String line, String separator) {
         String[] record = line.split(separator);
-        Object[] result = new Object[record.length];
+        double[] result = new double[record.length];
         int idx = 0;
-        switch (opt) {
-            case "Double":
-            case "double": {
-                for(String s : record) {
-                    result[idx] = Double.valueOf(s);
-                    idx ++;
-                }
-                break;
-            }
-            case "Integer":
-            case "integer":{
-                for(String s : record) {
-                    result[idx] = Integer.valueOf(s);
-                    idx ++;
-                }
-                break;
-            }
-            case "String":
-            case "string":{
-                result = record;
-                break;
-            }
+        for(String s : record) {
+            result[idx] = Double.valueOf(s);
+            idx ++;
         }
         return result;
     }

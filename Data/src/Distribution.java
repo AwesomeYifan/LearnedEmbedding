@@ -8,12 +8,13 @@ import java.util.List;
 
 public class Distribution {
     public static void main(String[] args) throws IOException {
-        double[] distribution = getDistances();
 
-//        String file = "./data/originalVectors";
-//        double[] epsValues = {0.05,0.1,0.15,0.2,0.25,0.3};
-//        int[] kValues = {1,10,20,30,40,50,60,70,80,90,100};
-//        int testSize = 50;
+        String file = "./data/originalVectors-Cluster";
+        file = "./data/originalVectors-Uniform";
+        double[] distribution = getDistances(file);
+//        double[] epsValues = {0.05,0.1};
+//        int[] kValues = {1,5,10,20,30,40,50};
+//        int testSize = 100;
 //        double[][] thresholds = getThresholds(file, testSize, kValues);
 //        System.out.println("got thresholds");
 //        double[][] numPoints = getDistribution(file, testSize, thresholds, epsValues);
@@ -38,13 +39,13 @@ public class Distribution {
         BufferedReader br = new BufferedReader(new FileReader(new File(file)));
         for(int i = 0; i < testSize; i++) {
             String line1 = br.readLine();
-            Object[] vec1 = Utils.getValuesFromLine(line1, " ", "Double");
+            double[] vec1 = Utils.getValuesFromLine(line1, " ");
             PriorityQueue rankQueue = new PriorityQueue(kValues[kValues.length - 1],"ascending");
             BufferedReader br2 = new BufferedReader(new FileReader(new File(file)));
             String line2;
             int idx = 0;
             while((line2 = br2.readLine()) != null) {
-                Object[] vec2 = Utils.getValuesFromLine(line2, " ", "Double");
+                double[] vec2 = Utils.getValuesFromLine(line2, " ");
                 double dist = Utils.computeEuclideanDist(vec1, vec2);
                 if (dist==0) continue;
                 rankQueue.insert(dist, idx);
@@ -64,11 +65,11 @@ public class Distribution {
         for(int i = 0; i < testSize; i++) {
             System.out.println(i);
             String line1 = br1.readLine();
-            Object[] vec1 = Utils.getValuesFromLine(line1, " ", "Double");
+            double[] vec1 = Utils.getValuesFromLine(line1, " ");
             BufferedReader br2 = new BufferedReader(new FileReader(new File(file)));
             String line2;
             while((line2 = br2.readLine()) != null) {
-                Object[] vec2 = Utils.getValuesFromLine(line2, " ", "Double");
+                double[] vec2 = Utils.getValuesFromLine(line2, " ");
                 double dist = Utils.computeEuclideanDist(vec1, vec2);
                 if (dist==0) continue;
                 for(int j = 0; j < epsValues.length; j++) {
@@ -87,45 +88,80 @@ public class Distribution {
         }
         return numPoints;
     }
-    static private double[] getDistances() throws IOException{
-        PriorityQueue queue = new PriorityQueue("ascending");
-        BufferedReader br1 = new BufferedReader(new FileReader(new File("./data/originalVectors")));
+//    static private double[] getDistances(String file) throws IOException{
+//        PriorityQueue queue = new PriorityQueue("ascending");
+//        BufferedReader br1 = new BufferedReader(new FileReader(new File(file)));
+//        int testSize = 200;
+//        for(int i = 0; i < testSize; i++) {
+//            String line1 = br1.readLine();
+//            double[] vec1 = Utils.getValuesFromLine(line1, " ");
+//            BufferedReader br2 = new BufferedReader(new FileReader(new File(file)));
+//            String line2;
+//            int id = 0;
+//            while((line2 = br2.readLine()) != null) {
+//                double[] vec2 = Utils.getValuesFromLine(line2, " ");
+//                double dist = Utils.computeEuclideanDist(vec1, vec2);
+//                if (dist==0) continue;
+//                queue.insert(dist, id++);
+//            }
+//        }
+//        List<Double> distances = queue.serializeKeys();
+//        double maxDist = (double)queue.getBottomKey();
+//        double minDist = (double)queue.getTopKey();
+//        System.out.println(maxDist);
+//        System.out.println(minDist);
+//        int numBins = 50;
+//        double[] distribution = new double[numBins];
+//        double width = (maxDist - minDist) / (numBins -1);
+//        for(Double dist : distances) {
+//            int id = (int) Math.floor((dist - minDist) / width);
+//            distribution[id]++;
+//        }
+//        System.out.println(Arrays.toString(distribution));
+//        BufferedWriter bw = new BufferedWriter(new FileWriter(new File("./data/distances.csv")));
+//        for(int i = 0; i < numBins; i++) {
+//            bw.write(String.valueOf(minDist + i * width) + ",");
+//        }
+//        bw.write("\n");
+//        for(double dist : distribution) {
+//            bw.write(String.valueOf(dist/ testSize) + ",");
+//        }
+//        bw.flush(); bw.close();
+//        return distribution;
+//    }
+    static private double[] getDistances(String file) throws IOException{
+        int numNeighbors = 1000;
+
+        double[] overallDist = new double[numNeighbors];
+        BufferedReader br1 = new BufferedReader(new FileReader(new File(file)));
         int testSize = 200;
         for(int i = 0; i < testSize; i++) {
+            PriorityQueue queue = new PriorityQueue(numNeighbors,"ascending");
             String line1 = br1.readLine();
-            Object[] vec1 = Utils.getValuesFromLine(line1, " ", "Double");
-            BufferedReader br2 = new BufferedReader(new FileReader(new File("./data/originalVectors")));
+            double[] vec1 = Utils.getValuesFromLine(line1, " ");
+            BufferedReader br2 = new BufferedReader(new FileReader(new File(file)));
             String line2;
             int id = 0;
             while((line2 = br2.readLine()) != null) {
-                Object[] vec2 = Utils.getValuesFromLine(line2, " ", "Double");
+                double[] vec2 = Utils.getValuesFromLine(line2, " ");
                 double dist = Utils.computeEuclideanDist(vec1, vec2);
                 if (dist==0) continue;
                 queue.insert(dist, id++);
             }
+            List<Double> distances = queue.serializeKeys();
+            for(int j = 0; j < distances.size(); j++) {
+                overallDist[j] += distances.get(j);
+            }
         }
-        List<Double> distances = queue.serializeKeys();
-        double maxDist = (double)queue.getBottomKey();
-        double minDist = (double)queue.getTopKey();
-        System.out.println(maxDist);
-        System.out.println(minDist);
-        int numBins = 20;
-        double[] distribution = new double[numBins];
-        double width = (maxDist - minDist) / (numBins -1);
-        for(Double dist : distances) {
-            int id = (int) Math.floor((dist - minDist) / width);
-            distribution[id]++;
+        for(int i = 0; i < overallDist.length; i++) {
+            overallDist[i] /= testSize;
         }
-        System.out.println(Arrays.toString(distribution));
         BufferedWriter bw = new BufferedWriter(new FileWriter(new File("./data/distances.csv")));
-        for(int i = 0; i < numBins; i++) {
-            bw.write(String.valueOf(minDist + i * width) + ",");
+        for(double dist : overallDist) {
+            bw.write(String.valueOf(dist) + ",");
         }
         bw.write("\n");
-        for(double dist : distribution) {
-            bw.write(String.valueOf(dist/ testSize) + ",");
-        }
         bw.flush(); bw.close();
-        return distribution;
+        return overallDist;
     }
 }

@@ -1,9 +1,11 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import random
 import numpy as np
 from torch.autograd import Variable
 import math
+import Parameters
 
 # class ContrastiveLossMLP(nn.Module):
 #     """
@@ -85,57 +87,137 @@ class ContrastiveLossMLP(nn.Module):
 '''
 
 
-class ContrastiveLossHard(nn.Module):
-    def __init__(self):
-        super(ContrastiveLossHard, self).__init__()
-        self.delta = 1e-9
-        self.alpha = 0.1
+# class ContrastiveLossHard(nn.Module):
+#     def __init__(self):
+#         super(ContrastiveLossHard, self).__init__()
+#         self.delta = 1e-9
+#         self.alpha = 1.0
+#
+#     def forward(self, output1, output2, y, cutoff):
+#         _y = ((output2 - output1).pow(2).sum(1) + self.delta).sqrt().type(torch.FloatTensor)
+#         y = y.type(torch.FloatTensor)
+#         cutoff = cutoff.type(torch.FloatTensor)
+#
+#         knn_mask = torch.le(y, cutoff).type(torch.FloatTensor)
+#         knn_losses = knn_mask * (_y - y).abs()
+#
+#         nonknn_mask = torch.le(cutoff, y).type(torch.FloatTensor)
+#         nonknn_losses = nonknn_mask * F.relu(cutoff - _y)
+#
+#         losses = self.alpha * knn_losses + (1 - self.alpha) * nonknn_losses
+#         return losses.mean()
 
-    def forward(self, output1, output2, y, cutoff):
+# class ContrastiveLoss(nn.Module):
+#     def __init__(self, eps, pf):
+#         super(ContrastiveLoss, self).__init__()
+#         self.delta = 1e-9
+#         self.eps = eps
+#         self.margin = 1.0
+#         self.exp = pf
+#
+#     def forward(self, output1, output2, y, cutoff):
+#         _y = ((output2 - output1).pow(2).sum(1) + self.delta).sqrt().type(torch.FloatTensor)
+#         y = y.type(torch.FloatTensor)
+#         cutoff = cutoff.type(torch.FloatTensor)
+#
+#         #weight = cutoff / y
+#         #weight = torch.pow(weight, self.exp)
+#
+#         knn_mask = torch.le(y, cutoff).type(torch.FloatTensor)
+#         weight = (cutoff - y + self.delta) * knn_mask
+#         weight = torch.pow(weight, self.exp)
+#         #print(weight)
+#         knn_losses = knn_mask * (F.relu(y - _y) + F.relu(_y - (1 + self.eps) * y))
+#         #print(F.relu(_y-y) * F.relu((1 + self.eps) * y-_y))
+#
+#         nonknn_mask = torch.le(cutoff, y).type(torch.FloatTensor)
+#         nonknn_losses = nonknn_mask * F.relu((1 + self.margin) * cutoff - _y)
+#         #nonknn_losses = nonknn_mask * F.relu(self.max_dist - _y)
+#
+#         losses = knn_losses + nonknn_losses
+#
+#         return losses.mean()
+
+class ContrastiveLoss(nn.Module):
+    def __init__(self, inV):
+        super(ContrastiveLoss, self).__init__()
+        self.delta = 1e-9
+        self.eps = 0.0
+        self.margin = 0
+        self.flag = 1.0
+        self.scale = inV
+        self.max_dist = 50
+        self.flag = False
+        self.epoch = 0
+
+    def forward(self, output1, output2, y, cutoff, thisCluster, otherCluster):
+
         _y = ((output2 - output1).pow(2).sum(1) + self.delta).sqrt().type(torch.FloatTensor)
         y = y.type(torch.FloatTensor)
         cutoff = cutoff.type(torch.FloatTensor)
 
-        weights = cutoff / y
-        weights = weights * weights * weights
+        cluster_mask = torch.eq(thisCluster, otherCluster).type(torch.FloatTensor)
+        #print(cluster_mask.mean().data.numpy())
+        cluster_losses = cluster_mask * (F.relu(y - _y) + F.relu(_y - (1 + self.eps) * y))
 
-        mask1 = torch.le(y, cutoff).type(torch.FloatTensor)
-        losses1 = mask1 * (_y - y).abs()
+        noncluster_mask = (1 - torch.eq(thisCluster, otherCluster)).type(torch.FloatTensor)
+        noncluster_losses = noncluster_mask * (F.relu(self.scale - _y))
 
-        mask2 = torch.le(cutoff, y).type(torch.FloatTensor)
-        losses2 = mask2 * F.relu(cutoff - _y)
+        losses = F.relu(y - _y) + F.relu(_y - (1 + self.eps) * y)
+        losses = cluster_losses + noncluster_losses
+        print(str(cluster_losses.mean().data.numpy()) + "-" + str(noncluster_losses.mean().data.numpy()))
 
-        #losses = self.alpha * weights * losses1 + (1 - self.alpha) * losses2
-        losses = self.alpha * losses1 + (1 - self.alpha) * losses2
         return losses.mean()
+        if Parameters.epoch > 20:
+            if self.epoch != Parameters.epoch:
+                print(cluster_losses.mean())
+                self.epoch = Parameters.epoch
+            return noncluster_losses.mean()
+        else:
+            return 1000 * cluster_losses.mean()
 
 
-class ContrastiveLossSoft(nn.Module):
-    def __init__(self, eps):
-        super(ContrastiveLossSoft, self).__init__()
-        self.delta = 1e-9
-        self.eps = eps
-        self.alpha = 0.1  # alpha * accuracy + (1-alpha) * efficiency
-        self.weight_scale = 1.0
-        self.margin = 0.5
-
-    def forward(self, output1, output2, y, cutoff):
-        _y = ((output2 - output1).pow(2).sum(1) + self.delta).sqrt().type(torch.FloatTensor)
-        y = y.type(torch.FloatTensor)
-        cutoff = cutoff.type(torch.FloatTensor)
-
-        weights = cutoff / y
-        weights = weights * weights * weights
-        #weights = torch.exp(self.weight_scale * weights)
-
-        mask1 = torch.le(y, cutoff).type(torch.FloatTensor)
-        losses1 = mask1 * (F.relu(y - _y) + F.relu(_y - (1 + self.eps) * y))
-
-        mask2 = torch.le(cutoff, y).type(torch.FloatTensor)
-        losses2 = mask2 * F.relu((1 + self.eps + self.delta + self.margin) * cutoff - _y)
-
-        losses = self.alpha * weights * losses1 + (1-self.alpha) * losses2
-        return losses.mean()
+    # class ContrastiveLoss(nn.Module):
+    #     def __init__(self, flag):
+    #         super(ContrastiveLoss, self).__init__()
+    #         self.delta = 1e-9
+    #         self.eps = 0.0
+    #         self.margin = 0
+    #         self.flag = 1.0
+    #         self.scale = flag
+    #         self.max_dist = 50
+    #
+    #     def forward(self, output1, output2, y, cutoff, thisCluster, otherCluster):
+    #
+    #         _y = ((output2 - output1).pow(2).sum(1) + self.delta).sqrt().type(torch.FloatTensor)
+    #         y = y.type(torch.FloatTensor)
+    #         cutoff = cutoff.type(torch.FloatTensor)
+    #
+    #         cluster_mask = torch.eq(thisCluster, otherCluster).type(torch.FloatTensor)
+    #         # print(cluster_mask.mean())
+    #
+    #         knn_mask = torch.le(y, cutoff).type(torch.FloatTensor)
+    #         knn_losses = knn_mask * (F.relu(y - _y) + F.relu(_y - (1 + self.eps) * y))
+    #         knn_losses = (F.relu(y - _y) + F.relu(_y - (1 + self.eps) * y))
+    #
+    #         nonknn_mask = torch.le(cutoff, y).type(torch.FloatTensor)
+    #         nonknn_losses = nonknn_mask * F.relu((1 + self.margin) * cutoff - _y)
+    #
+    #         cluster_losses = cluster_mask * (knn_losses + nonknn_losses)
+    #         cluster_losses = cluster_mask * knn_losses
+    #
+    #         noncluster_mask = (1 - torch.eq(thisCluster, otherCluster)).type(torch.FloatTensor)
+    #
+    #         noncluster_losses = noncluster_mask * (
+    #         F.relu(self.scale * y - _y) + F.relu(_y - (1 + self.eps) * self.scale * y))
+    #         # noncluster_losses = noncluster_mask * torch.exp(-0.1 * _y / (cutoff + self.delta))
+    #
+    #         if self.flag == 1.0:
+    #             losses = cluster_losses + noncluster_losses
+    #         else:
+    #             losses = knn_losses
+    #
+    #         return losses.mean()
 
 
 # class ContrastiveLossSoftNN(nn.Module):
@@ -158,22 +240,22 @@ class ContrastiveLossSoft(nn.Module):
 #         return -loss / b
 
 
-class ContrastiveLoss(nn.Module):
-    """
-    Contrastive loss
-    Takes embeddings of two samples and a target label == 1 if samples are from the same class and label == 0 otherwise
-    """
-
-    def __init__(self, margin):
-        super(ContrastiveLoss, self).__init__()
-        self.margin = margin
-        self.eps = 1e-9
-
-    def forward(self, output1, output2, target, size_average=True):
-        distances = (output2 - output1).pow(2).sum(1)  # squared distances
-        losses = 0.5 * (target.float() * distances +
-                        (1 + -1 * target).float() * F.relu(self.margin - (distances + self.eps).sqrt()).pow(2))
-        return losses.mean() if size_average else losses.sum()
+# class ContrastiveLoss(nn.Module):
+#     """
+#     Contrastive loss
+#     Takes embeddings of two samples and a target label == 1 if samples are from the same class and label == 0 otherwise
+#     """
+#
+#     def __init__(self, margin):
+#         super(ContrastiveLoss, self).__init__()
+#         self.margin = margin
+#         self.eps = 1e-9
+#
+#     def forward(self, output1, output2, target, size_average=True):
+#         distances = (output2 - output1).pow(2).sum(1)  # squared distances
+#         losses = 0.5 * (target.float() * distances +
+#                         (1 + -1 * target).float() * F.relu(self.margin - (distances + self.eps).sqrt()).pow(2))
+#         return losses.mean() if size_average else losses.sum()
 
 
 class TripletLossMLP(nn.Module):
